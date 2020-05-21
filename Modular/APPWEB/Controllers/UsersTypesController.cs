@@ -1,6 +1,5 @@
 ﻿using API.Data;
 using Bussiness_Logic.Models;
-using Consult_API;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
@@ -24,9 +23,6 @@ namespace APPWEB.Controllers
         public async Task<IActionResult> Index()
         {
             IEnumerable<UsersType> UsersType = null;
-
-            Consult_API.ConsultAPI consultAPI = new ConsultAPI();
-
 
             using (var client = new HttpClient())
             {
