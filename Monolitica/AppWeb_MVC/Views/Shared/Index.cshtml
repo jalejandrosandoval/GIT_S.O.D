@@ -1,0 +1,91 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>DefaultIndex</h4>
+
+<div class="card shadow">
+
+    <div class="card-body">
+
+        <div class="row">
+
+            <div class="col-xl-4 col-md-6 mb-4">
+                <div class="card bg-success shadow h-100 py-2">
+                    <div class="card-body bg-success">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="h5 mb-0 font-weight-bold text-white">
+                                    <a class="text-white text-decoration-none" 
+                                       asp-area="" asp-controller="Users" asp-action="Index"> Usuarios </a>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-users fa-2x text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-md-6 mb-4 ">
+                <div class="card bg-warning shadow h-100 py-2">
+                    <div class="card-body bg-warning">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="h5 mb-0 font-weight-bold text-white">
+                                    <a class="text-white text-decoration-none" 
+                                       asp-area="" asp-controller="Providers" asp-action="Index"> Proveedores </a>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-fw fa-store-alt fa-2x text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-md-6 mb-4 ">
+                <div class="card bg-danger shadow h-100 py-2">
+                    <div class="card-body bg-danger">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="h5 mb-0 font-weight-bold text-white">
+                                    <a class="text-white text-decoration-none"
+                                       asp-area="" asp-controller="Equipment" asp-action="Index"> Equipos</a>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-fw fa-tools fa-2x text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 offset-md-4 col-md-6 mb-4">
+                <div class="card bg-info shadow h-100 py-2">
+                    <div class="card-body bg-info">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="h5 mb-0 font-weight-bold text-white">
+                                    <a class="text-white text-decoration-none" 
+                                       asp-area="" asp-controller="Complements" asp-action="Index">Complementos</a>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-fw fa-plug fa-2x text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<br />

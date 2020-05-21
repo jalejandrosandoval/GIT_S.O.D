@@ -1,0 +1,117 @@
+﻿@{
+    ViewData["Title"] = "Complementos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+
+    <div class="d-sm-flex align-items-center justify-content-between mb-4 col-xl-6 offset-sm-3 col-md-6 mb-4 text-center">
+        <h1 class="h3 mb-0 text-gray-800">
+            <i class="fas fa-network-wired"></i>
+            <b> Administrar Complementos </b>
+        </h1>
+    </div>
+
+    <div class="card shadow">
+
+        <div class="card-body">
+
+            <div class="row">
+
+                <div class="col-xl-4 col-md-6 mb-4">
+                    <div class="card bg-success shadow h-100 py-2">
+                        <div class="card-body bg-success">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="h5 mb-0 font-weight-bold text-white">
+                                        <a class="text-white text-decoration-none"
+                                           asp-area="" asp-controller="UsersTypes" asp-action="Index"> Tipo de Usuario </a>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-fw fa-sync-alt fa-2x text-white"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-md-6 mb-4 ">
+                    <div class="card bg-warning shadow h-100 py-2">
+                        <div class="card-body bg-warning">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="h5 mb-0 font-weight-bold text-white">
+                                        <a class="text-white text-decoration-none"
+                                           asp-area="" asp-controller="Purchase" asp-action="Index"> Facturas de Compra </a>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-file-invoice fa-2x text-white"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-md-6 mb-4 ">
+                    <div class="card bg-info shadow h-100 py-2">
+                        <div class="card-body bg-info">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="h5 mb-0 font-weight-bold text-white">
+                                        <a class="text-white text-decoration-none"
+                                           asp-area="" asp-controller="ProvidersType" asp-action="Index"> Tipo de Proveedores </a>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-box-open fa-2x text-white"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+                <div class="col-xl-4 offset-xl-2 col-md-6 mb-4">
+                    <div class="card bg-dark shadow h-100 py-2">
+                        <div class="card-body bg-dark">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="h5 mb-0 font-weight-bold text-white">
+                                        <a class="text-white text-decoration-none"
+                                           asp-area="" asp-controller="Ubications" asp-action="Index"> Ubicaciones </a>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-map-marker-alt fa-2x text-white"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-md-6 mb-4">
+                    <div class="card bg-primary shadow h-100 py-2">
+                        <div class="card-body bg-primary">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="h5 mb-0 font-weight-bold text-white">
+                                        <a class="text-white text-decoration-none"
+                                           asp-area="" asp-controller="Logs" asp-action="Index"> Logs del Sistema </a>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-low-vision fa-2x text-white"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

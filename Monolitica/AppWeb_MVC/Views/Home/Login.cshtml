@@ -1,0 +1,94 @@
+﻿@model AppWeb_MVC.Models.LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form id="form_Login" runat="server" class="user" asp-action="Login" method="post">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <div class="col-xl-10 col-lg-12 col-md-8">
+
+                <div class="card o-hidden border-0 shadow-lg my-5">
+
+                    <div class="card-body p-0">
+                        <div class="row">
+                            <div class="col-lg-6 d-none d-lg-block">
+                                <img src="~/images/icons/Maintenance_Image.png" class="img-fluid mx-auto d-block" alt="Responsive image" />
+                            </div>
+                            <div class="col-lg-6">
+                                
+                                <div class="p-5">
+                                    <div class="d-sm-flex align-items-center justify-content-between mb-4 ">
+                                        <h3 class="h3 mb-0 text-gray-800 text-center">
+                                            <b> Petroco Mantenimiento </b>
+                                        </h3>
+                                    </div>
+
+                                    <div class="input-group mb-2 row">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text bg-light">
+                                                <i class="fas fa-user fa-sm" style="color:#E74A3B"></i>
+                                            </div>
+                                        </div>
+                                        <input asp-for="Username" class="form-control form-control-user" type="text" placeholder="Usuario..." />
+                                        <span asp-validation-for="Username" class="text-danger"></span>
+                                    </div>
+
+                                    <br />
+
+                                    <div class="input-group mb-2 row">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text bg-light">
+                                                <i class="fas fa-lock fa-sm" style="color:#E74A3B"></i>
+                                            </div>
+                                        </div>
+                                        <input asp-for="UserPassword" class="form-control form-control-user" type="password" placeholder="Contraseña..." />
+                                        <span asp-validation-for="UserPassword" class="text-danger"></span>
+                                    </div>
+
+                                    <br />                                    
+
+                                    <div class="form-group">
+                                        <div class="custom-control custom-checkbox small">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck" asp-for="RememberMe" >
+                                            <label class="custom-control-label" for="customCheck" asp-for="RememberMe" >
+                                            @Html.DisplayNameFor(m => m.RememberMe)</label>
+                                        </div>
+                                    </div>
+                                    <hr>
+
+                                    <div class="text-center">
+                                        <button type="submit" value="Login" class="btn btn-danger btn-user btn-block"
+                                                asp-controller="Home" asp-action="Index">
+                                            Ingresar
+                                        </button>
+                                    </div>
+                                    <hr>
+
+                                    <div class="text-center">
+                                        <a class="btn btn-link btn-user btn-block" style="text-decoration:none"
+                                                asp-area="" asp-controller="Home" asp-action="RecoveryPassword">
+                                            <b> Recordar Contraseña </b>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</form>
+@section Scripts{ 
+   @await Html.PartialAsync("_ValidationScriptsPartial");
+}
