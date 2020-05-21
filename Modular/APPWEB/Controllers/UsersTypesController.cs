@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace APPWEB.Controllers
 {
+
     public class UsersTypesController : Controller
     {
         private readonly AppDBContext _context;
