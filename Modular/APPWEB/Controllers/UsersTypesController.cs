@@ -1,17 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
+using System;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
+
 using API.Data;
 using Bussiness_Logic.Models;
-using System.Net.Http;
-using Newtonsoft.Json;
 
 namespace APPWEB.Controllers
 {
+
     public class UsersTypesController : Controller
     {
         private readonly AppDBContext _context;
@@ -148,6 +150,7 @@ namespace APPWEB.Controllers
             return View(usersType);
         }
 
+        // GET: UsersTypes/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -165,6 +168,7 @@ namespace APPWEB.Controllers
             return View(usersType);
         }
 
+        // POST: UsersTypes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
