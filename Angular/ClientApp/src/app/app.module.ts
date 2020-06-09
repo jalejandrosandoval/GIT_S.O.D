@@ -24,6 +24,7 @@ import { FooterComponent } from './Components/footer/footer.component';
 import { LoginComponent } from './Components/Auth/login/login.component';
 import { AboutComponent } from './Components/about/about.component';
 import { RecoveryComponent } from './Components/Auth/recovery/recovery.component';
+import { HomeComponent } from './Components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { RecoveryComponent } from './Components/Auth/recovery/recovery.component
     LoginComponent,
     AboutComponent,
     RecoveryComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

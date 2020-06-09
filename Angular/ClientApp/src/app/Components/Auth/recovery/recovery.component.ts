@@ -6,6 +6,7 @@ import { FormBuilder } from '@angular/forms';
   templateUrl: './recovery.component.html',
   styleUrls: ['./recovery.component.css']
 })
+
 export class RecoveryComponent implements OnInit {
 
   constructor(private formBuilder : FormBuilder) { }
