@@ -1,13 +1,15 @@
-﻿using API.Data;
-using Bussiness_Logic.Models;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
+
+using API.Data;
+using Bussiness_Logic.Models;
 
 namespace APPWEB.Controllers
 {
@@ -74,17 +76,33 @@ namespace APPWEB.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id_UsersType,UsersTypeName")] UsersType usersType)
+        public async Task<IActionResult> Create([FromForm] UsersType uType)
         {
-            if (ModelState.IsValid)
+            try
             {
-                _context.Add(usersType);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(usersType);
-        }
+                if (ModelState.IsValid)
+                {
+                    var _uType = JsonConvert.SerializeObject(uType, Formatting.Indented);
 
+                    return RedirectToAction(nameof(Index));
+                    /*
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));*/
+                }
+                else
+                {
+                    return BadRequest(ModelState);
+                }
+            }
+            catch 
+            {
+                
+
+            };
+
+            return View(uType);
+        }
+        /*
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -164,6 +182,6 @@ namespace APPWEB.Controllers
         private bool UsersTypeExists(int id)
         {
             return _context.UsersType.Any(e => e.Id_UsersType == id);
-        }
+        }*/
     }
 }
