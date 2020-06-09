@@ -1,0 +1,85 @@
+﻿@model IEnumerable<Bussiness_Logic.Models.Lending>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">
+            <i class="fas fa-fw fa-business-time"></i>
+            <b> Préstamos </b>
+        </h1>
+    </div>
+
+    <div class="card shadow mb-4">
+        <div class="card-body">
+
+            <p>
+                <a asp-action="Create" class="btn btn-success btn-user"> <i class="fas fa-plus"></i> Nuevo Prestamo</a>
+            </p>
+
+            <div class="table-responsive">
+                <table id="table_id" class="table table-bordered table-responsive table-hover table-striped" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DateLending)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CodeEquipment)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DescriptionMantenaince)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.UserId)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Equipments)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Ubication)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    <a class="btn btn-warning fas fa-edit" title="Editar Equipo" asp-action="Edit" asp-route-id="@item.Id_Lending"></a>
+                                    <a class="btn btn-info fas fa-eye" title="Visualizar Equipo" asp-action="Details" asp-route-id="@item.Id_Lending"></a>
+                                    <a class="btn btn-danger fas fa-times-circle" title="Desactivar Equipo" asp-action="Desactive" asp-route-id="@item.Id_Lending"></a>
+                                    <a class="btn btn-dark fas fa-trash-alt" title="Eliminar Equipo" asp-action="Delete" asp-route-id="@item.Id_Lending"></a>
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DateLending)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CodeEquipment)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DescriptionMantenaince)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.UserId)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Equipments.Equipement_Internal_Code)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Ubication.UbicationName)
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>

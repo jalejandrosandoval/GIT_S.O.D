@@ -1,0 +1,73 @@
+﻿@model IEnumerable<APPWEB.Models.ProvidersViewModel>
+
+<div class="container-fluid">
+
+    <div class="d-sm-flex align-items-center justify-content-between mb-4 col-xl-4 offset-sm-5 col-md-4 mb-4 ">
+        <h1 class="h3 mb-0 text-gray-800">
+            <i class="fas fa-truck"> </i>
+            <b> Proveedores </b>
+        </h1>
+    </div>
+
+    <div class="card shadow mb-4">
+
+        <div class="card-body">
+
+            <p>
+                <a asp-action="Create" class="btn btn-success btn-user"> <i class="fas fa-plus"></i> Agregar Proveedor</a>
+            </p>
+
+            <div class="table-responsive justify-content-md-center" >
+                <table class="table table-bordered table-responsive table-hover table-striped" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>
+                                Opciones
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Identification)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.TypeIdentification)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ProviderName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.PType)
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td>
+                                @Html.ActionLink("", "Edit", new { /* id=item.PrimaryKey */ }, new { @class = "btn btn-warning fas fa-edit", @title = "Editar Proveedor" })
+                                @Html.ActionLink("", "Details", new { /* id=item.PrimaryKey */ }, new { @class = "btn btn-info fas fa-eye", @title = "Visualizar Proveedor" })
+                                @Html.ActionLink("", "Deactivate", new { /* id=item.PrimaryKey */ }, new { @class = "btn btn-danger fas fa-times-circle", @title = "Proveedor Usuario" })
+                                @Html.ActionLink("", "Delete", new { /* id=item.PrimaryKey */ }, new { @class = "btn btn-dark fas fa-trash-alt", @title = "Eliminar Proveedor" })
+                            </td>
+                            <td>
+                                980980890
+                            </td>
+                            <td>
+                                NIT
+                            </td>
+                            <td>
+                                PETROCO
+                            </td>
+                            <td>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+
+
+            </div>
+        </div>
+    </div>
+
+    </div>

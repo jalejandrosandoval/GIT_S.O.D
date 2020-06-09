@@ -1,0 +1,92 @@
+﻿@model Bussiness_Logic.Models.Equipment
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">
+            <i class="fas fa-cog"></i>
+            <b> Equipos </b>
+        </h1>
+    </div>
+
+    <div class="card shadow">
+
+        <div class="card-header py-3">
+            <h6 class="text-primary">
+                <label> <i class="fas fa-plus"> </i> <b> Creación de Equipos </b> </label>
+            </h6>
+        </div>
+
+        <div class="card-body p-0">
+            <div class="row">
+                <div class="col-lg-12">
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="Equipement_Internal_Code" class="control-label"></label>
+                            <input asp-for="Equipement_Internal_Code" class="form-control" />
+                            <span asp-validation-for="Equipement_Internal_Code" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Equipment_Name" class="control-label"></label>
+                            <input asp-for="Equipment_Name" class="form-control" />
+                            <span asp-validation-for="Equipment_Name" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Equipment_TradeMark" class="control-label"></label>
+                            <input asp-for="Equipment_TradeMark" class="form-control" />
+                            <span asp-validation-for="Equipment_TradeMark" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Equipment_Model" class="control-label"></label>
+                            <input asp-for="Equipment_Model" class="form-control" />
+                            <span asp-validation-for="Equipment_Model" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Equipment_SN" class="control-label"></label>
+                            <input asp-for="Equipment_SN" class="form-control" />
+                            <span asp-validation-for="Equipment_SN" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Equipment_Observations" class="control-label"></label>
+                            <input asp-for="Equipment_Observations" class="form-control" />
+                            <span asp-validation-for="Equipment_Observations" class="text-danger"></span>
+                        </div>
+                        <div class="form-group form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" asp-for="Equipment_Status" /> @Html.DisplayNameFor(model => model.Equipment_Status)
+                            </label>
+                        </div>
+
+                        <br />
+
+                        <div class="form-group row">
+                            <div class="col-sm-3 mb-3 mb-sm-0 offset-sm-3">
+                                <a class="btn btn-danger btn-user btn-block"
+                                   asp-action="Index">
+                                    <i class="fas fa-times-circle"></i> Cancelar
+                                </a>
+                            </div>
+                            <div class="col-sm-3 mb-3 mb-sm-0 ">
+                                <button type="submit" value="Create" class="btn btn-success btn-user btn-block">
+                                    <i class="fas fa-save"></i> Guardar
+                                </button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

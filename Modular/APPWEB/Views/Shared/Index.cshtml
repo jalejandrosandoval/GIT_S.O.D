@@ -1,0 +1,100 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+
+    <div class="d-sm-flex align-items-center justify-content-between mb-4 col-xl-4 offset-sm-5 col-md-4 mb-4 text-center">
+        
+        <h1 class="h3 mb-0 text-gray-800">
+            <i class="fas fa-chalkboard"></i>
+            <b> Menú </b>
+        </h1>
+    </div>
+
+    <div class="card shadow">
+
+        <div class="card-body">
+
+            <div class="row">
+
+                <div class="col-xl-4 col-md-6 mb-4">
+                    <div class="card bg-success shadow h-100 py-2">
+                        <div class="card-body bg-success">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="h5 mb-0 font-weight-bold text-white">
+                                        <a class="text-white text-decoration-none"
+                                           asp-area="" asp-controller="Users" asp-action="Index"> Usuarios </a>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-users fa-2x text-white"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-md-6 mb-4 ">
+                    <div class="card bg-warning shadow h-100 py-2">
+                        <div class="card-body bg-warning">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="h5 mb-0 font-weight-bold text-white">
+                                        <a class="text-white text-decoration-none"
+                                           asp-area="" asp-controller="Providers" asp-action="Index"> Proveedores </a>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-fw fa-store-alt fa-2x text-white"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-md-6 mb-4 ">
+                    <div class="card bg-danger shadow h-100 py-2">
+                        <div class="card-body bg-danger">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="h5 mb-0 font-weight-bold text-white">
+                                        <a class="text-white text-decoration-none"
+                                           asp-area="" asp-controller="Home" asp-action="ManageEquipment"> Equipos</a>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-fw fa-tools fa-2x text-white"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 offset-xl-4 col-md-6 mb-4">
+                    <div class="card bg-info shadow h-100 py-2">
+                        <div class="card-body bg-info">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="h5 mb-0 font-weight-bold text-white">
+                                        <a class="text-white text-decoration-none"
+                                           asp-area="" asp-controller="Home" asp-action="ManageComplements">Complementos</a>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-fw fa-plug fa-2x text-white"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<br />

@@ -1,0 +1,67 @@
+﻿@model Bussiness_Logic.Models.Equipment
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Equipment</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Equipement_Internal_Code)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Equipement_Internal_Code)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Equipment_Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Equipment_Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Equipment_TradeMark)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Equipment_TradeMark)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Equipment_Model)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Equipment_Model)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Equipment_SN)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Equipment_SN)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Equipment_Observations)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Equipment_Observations)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Equipment_Status)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Equipment_Status)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Equipment_Warranty)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Equipment_Warranty)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id_Equipment">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
