@@ -15,6 +15,11 @@ export class RecoveryComponent implements OnInit {
     _identificationUser: [''],
   });
 
+  get gIdentificationUser() {
+    return this.recoveryForm.get('_identificationUser');
+  }
+
+
   ngOnInit(): void {
   }
 

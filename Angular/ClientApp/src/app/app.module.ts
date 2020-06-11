@@ -25,6 +25,7 @@ import { LoginComponent } from './Components/Auth/login/login.component';
 import { AboutComponent } from './Components/about/about.component';
 import { RecoveryComponent } from './Components/Auth/recovery/recovery.component';
 import { HomeComponent } from './Components/home/home.component';
+import { UsersComponent } from './Components/users/users.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { HomeComponent } from './Components/home/home.component';
     AboutComponent,
     RecoveryComponent,
     HomeComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,

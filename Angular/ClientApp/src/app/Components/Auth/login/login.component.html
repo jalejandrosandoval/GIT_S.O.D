@@ -1,4 +1,4 @@
-<form id="form_Login" method="post" [formGroup]="loginForm" (submit)="submit">
+<form [formGroup]="loginForm" (ngSubmit)="onLogin()">
 
     <div class="container">
 
@@ -9,47 +9,74 @@
                 <div class="card o-hidden border-0 shadow-lg my-5">
 
                     <div class="card-body p-0">
+
                         <div class="row">
+
                             <div class="col-lg-6 d-none d-lg-block">
                                 <img src="../../../../assets/images/icons/Maintenance_Image.png"
                                     class="img-fluid mx-auto d-block" alt="Responsive image" />
                             </div>
-                            <div class="col-lg-6">
 
+                            <div class="col-lg-6">
                                 <div class="p-5">
+
                                     <div class="d-sm-flex align-items-center justify-content-between mb-4 ">
                                         <h3 class="h3 mb-0 text-center">
                                             <b> Petroco Mantenimiento </b>
                                         </h3>
                                     </div>
+
                                     <hr>
+
                                     <h6 class="h6 mb-0 text-center">
                                         <p class="text-center">Ingrese sus Datos de Acesso</p>
                                     </h6>
+
                                     <br>
+
                                     <div class="input-group mb-2 row">
+
                                         <div class="input-group-prepend">
                                             <div class="input-group-text bg-light">
                                                 <i class="fas fa-user fa-sm" style="color:#E74A3B"></i>
                                             </div>
                                         </div>
+
                                         <input class="form-control form-control-user" type="text"
-                                            placeholder="Usuario..." formControlName="_username" />
+                                            placeholder="Usuario..." formControlName="_username" required />
+
+                                        <span *ngIf="gUsername.invalid && (gUsername.dirty || gUsername.touched)"
+                                            class="text-center text-secondary">
+                                            <span *ngIf="gUsername.errors.required">
+                                                <b> * Campo Requerido: </b> Usuario Obligatorio!
+                                            </span>
+                                        </span>
+
                                     </div>
 
-                                    <br />
+                                    <br>
 
                                     <div class="input-group mb-2 row">
+
                                         <div class="input-group-prepend">
                                             <div class="input-group-text bg-light">
-                                                <i class="fas fa-lock  fa-sm" style="color:#E74A3B"></i>
+                                                <i class="fas fa-lock fa-sm" style="color:#E74A3B"></i>
                                             </div>
                                         </div>
+
                                         <input class="form-control form-control-user" type="password"
-                                            placeholder="Contraseña..." formControlName="_password" />
+                                            placeholder="Contraseña..." formControlName="_password" required />
+
+                                        <span *ngIf="gPassword.invalid && (gPassword.dirty || gPassword.touched)"
+                                            class="text-center text-secondary">
+                                            <span *ngIf="gPassword.errors.required">
+                                                <b> * Campo Requerido: </b> Contraseña Obligatoria!
+                                            </span>
+                                        </span>
+
                                     </div>
 
-                                    <br />
+                                    <br>
 
                                     <div class="form-group">
                                         <div class="custom-control custom-checkbox small">
@@ -63,7 +90,8 @@
                                     <hr>
 
                                     <div class="text-center">
-                                        <button type="submit" value="Login" class="btn btn-danger btn-user btn-block">
+                                        <button type="submit" value="Login" class="btn btn-danger btn-user btn-block"
+                                            [disabled]="loginForm.invalid">
                                             Ingresar
                                         </button>
                                     </div>
@@ -88,4 +116,5 @@
         </div>
 
     </div>
+
 </form>

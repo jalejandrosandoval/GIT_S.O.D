@@ -17,21 +17,26 @@
                                         <h1 class="h4 text-gray-900 mb-4">Petroco Mantenimiento</h1>
                                     </div>
                                     <hr />
-                                    <br />
                                     <div>
-                                        <h5 class="h5 text-gray-900 mb-4">¿Olvidaste tu contraseña?</h5>
+                                        <h5 class="h5 text-gray-900 mb-4 text-center">¿Olvidaste tu contraseña?</h5>
                                         <p>Proporciona el número de tú documento en el cuadro de texto...</p>
                                     </div>
                                     <div class="form-group">
-                                        <input class="form-control form-control-user" type="text"
-                                            placeholder="Número de Documento..."  formControlName="_identificationUser"/>
+                                    
+                                        <input class="form-control form-control-user" type="text" placeholder="Número de Documento..."
+                                            formControlName="_identificationUser" required />
+                                        <div *ngIf="gIdentificationUser.invalid && (gIdentificationUser.dirty || gIdentificationUser.touched)" class="text-danger">
+                                            <div *ngIf="gIdentificationUser.errors.required">
+                                                <b> * </b> El número de documento es requerido 
+                                            </div>
+                                        </div>
                                     </div>
 
                                     <hr>
 
                                     <div class="text-center">
-                                        <button type="submit" value="Login" class="btn btn-danger btn-user btn-block">
-                                            Ingresar
+                                        <button type="submit" value="Login" class="btn btn-danger btn-user btn-block" [disabled]="recoveryForm.invalid">
+                                            Recuperar Contraseña
                                         </button>
                                     </div>
 

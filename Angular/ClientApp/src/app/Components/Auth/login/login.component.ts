@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -8,19 +9,51 @@ import { FormBuilder } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private formBuilder : FormBuilder) { }
+  constructor(private formBuilder : FormBuilder, private toastr: ToastrService) { }
   
+  ngOnInit(): void {
+    }
+
   loginForm = this.formBuilder.group({
-    _username: [''],
-    _password: [''],
-    _rememberme : true
+    _username: ['', {
+      Validators: [Validators.required]
+    }],
+
+    _password: ['', {
+      Validators: [Validators.required]
+    }],
+
+    _rememberme : [true]
+
   });
 
-  ngOnInit(): void {
+  get gUsername() {
+    return this.loginForm.get('_username');
   }
 
-  submit(){
-    console.log(this.loginForm.value);
+  get gPassword() {
+    return this.loginForm.get('_password');
+  }
+
+  
+  onReset(){
+    this.loginForm.reset();
+  }
+  
+  onLogin(){
+
+    if(this.loginForm.valid){
+      
+      this.toastr.success("Campos Correctos: ", "Exito!");
+      //console.log('Form->',this.loginForm.value);
+
+    }else{
+      
+      this.toastr.error("Error","Campos Incorrectos");
+      //console.log('Form X');
+      //this.onReset();
+    }
+
   }
 
 }
