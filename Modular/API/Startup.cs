@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Text;
@@ -32,6 +33,17 @@ namespace API
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DevConection")));
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowSpecificOrigin",
+                     builder =>
+                     {
+                         builder.AllowAnyHeader()
+                         .AllowAnyMethod()
+                         .AllowAnyOrigin()
+                         ;
+                     });
+            });
 
             //Using to Identity
             /*
@@ -69,6 +81,8 @@ namespace API
             }
 
             //app.UseAuthentication(); // Autentication 
+
+            app.UseCors("AllowSpecificOrigin");
 
             app.UseHttpsRedirection();
 

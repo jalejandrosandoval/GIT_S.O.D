@@ -1,7 +1,6 @@
 import { EmailValidator } from '@angular/forms';
 
-export interface IUsersModel {
-
+export interface IUsers {
     idUsers: number;
     N_Identification: number;
     TypeDocument: string;

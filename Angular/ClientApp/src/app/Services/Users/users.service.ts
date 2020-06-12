@@ -1,15 +1,20 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { UsersModel } from '../../Models/Users/users-model';
-
+import { IUsers } from '../../Interfaces/Users/users';
 
 @Injectable()
 export class UsersService {
-
-  url = 'https://localhost:44349/API/Users/Login';
+  
+  readonly apiUrl= 'http://localhost:57764/API/Users';
+  
   constructor(private http: HttpClient) {
-
   }
+
+  getUsers(): Observable<IUsers[]>{
+
+    return this.http.get<IUsers[]>(this.apiUrl);
+  
+  }
+  
 }

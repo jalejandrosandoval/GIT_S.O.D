@@ -5,13 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
-//BOOTSTRAP
-//import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { ReactiveFormsModule } from '@angular/forms';
-
-//FONTAWESOME
-//import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 //TOASTR
 import { CommonModule } from '@angular/common';
@@ -27,6 +23,9 @@ import { RecoveryComponent } from './Components/Auth/recovery/recovery.component
 import { HomeComponent } from './Components/home/home.component';
 import { UsersComponent } from './Components/users/users.component';
 
+//SERVICES
+import { UsersService } from './Services/Users/users.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,18 +40,17 @@ import { UsersComponent } from './Components/users/users.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    //NgbModule,
     ReactiveFormsModule,
     CommonModule,
-    //FontAwesomeModule,
     BrowserAnimationsModule,
     RouterModule.forRoot([]), 
     ToastrModule.forRoot({
       closeButton: true,
       positionClass: "toast-top-right"
-    })
+    }),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [UsersService],
   bootstrap: [AppComponent]
 })
 

@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 namespace API.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
+    [ApiController] 
     //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
 
     public class UsersController : ControllerBase
