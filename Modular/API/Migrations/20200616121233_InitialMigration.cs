@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace API.Migrations
 {
-    public partial class initial_migration : Migration
+    public partial class InitialMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -65,7 +65,7 @@ namespace API.Migrations
                 {
                     Id_Equipment = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Equipement_Internal_Code = table.Column<string>(maxLength: 20, nullable: false),
+                    Equipement_Internal_Code = table.Column<string>(maxLength: 30, nullable: false),
                     Equipment_Name = table.Column<string>(maxLength: 50, nullable: false),
                     Equipment_TradeMark = table.Column<string>(maxLength: 50, nullable: false),
                     Equipment_Model = table.Column<string>(maxLength: 20, nullable: false),
@@ -121,7 +121,8 @@ namespace API.Migrations
                     Username = table.Column<string>(maxLength: 10, nullable: true),
                     UserPassword = table.Column<string>(maxLength: 18, nullable: true),
                     Status = table.Column<bool>(nullable: false),
-                    UserTypeId_UsersType = table.Column<int>(nullable: false)
+                    Id_UsersType = table.Column<int>(nullable: false),
+                    UserTypeId_UsersType = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -131,7 +132,7 @@ namespace API.Migrations
                         column: x => x.UserTypeId_UsersType,
                         principalTable: "UsersType",
                         principalColumn: "Id_UsersType",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(

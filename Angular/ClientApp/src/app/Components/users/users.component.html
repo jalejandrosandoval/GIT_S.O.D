@@ -10,14 +10,11 @@
     <p *ngIf="!(_IUsers && _IUsers.length)" class="text-center">
         No existen registros para mostrar
     </p>
-    <p *ngIf="!(_IUsers && _IUsers.length)" class="text-center">
-        No existen registros para mostrar
-    </p>
 
     <div class="card shadow mb-4" *ngIf="_IUsers && _IUsers.length">
         <div class="card-body">
             <p>
-                <a class="btn btn-success btn-user text-white" > <i class="fas fa-plus"></i> Agregar Usuario</a>
+                <a class="btn btn-success btn-user text-white" routerLink="/users/create"> <i class="fas fa-plus"></i> Agregar Usuario</a>
             </p>
 
             <div class="table-responsive">
@@ -57,7 +54,15 @@
                             <td> {{users.n_Identification}} </td>
                             <td> {{users.firstName}} </td>
                             <td> {{users.lastName}} </td>
-                            <td> {{users.UserTypeId_UsersType}} </td>
+                            <td> 
+                                <span *ngIf="(users.id_UsersType==1)">SuperAdministrador</span>
+                                <span *ngIf="(users.id_UsersType==2)">Administrativo</span>
+                                <span *ngIf="(users.id_UsersType==3)">Jefe de Mantenimiento</span>
+                                <span *ngIf="(users.id_UsersType==4)">Lider de Mantenimiento</span>
+                                <span *ngIf="(users.id_UsersType==5)">Auxiliar de Mantenimiento</span>
+                                <span *ngIf="(users.id_UsersType==6)">Operario - Planta</span>
+                                <span *ngIf="(users.id_UsersType==7)">Operario - Campo</span>
+                            </td>
                             <td>
                                 <span *ngIf="(users.status==true)" class="bg-success text-white"> &nbsp; Activo
                                     &nbsp;</span>

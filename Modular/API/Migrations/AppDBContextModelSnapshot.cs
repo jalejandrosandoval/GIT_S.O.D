@@ -15,7 +15,7 @@ namespace API.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.3")
+                .HasAnnotation("ProductVersion", "3.1.5")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -28,8 +28,8 @@ namespace API.Migrations
 
                     b.Property<string>("Equipement_Internal_Code")
                         .IsRequired()
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
+                        .HasColumnType("nvarchar(30)")
+                        .HasMaxLength(30);
 
                     b.Property<int?>("EquipmentTypeId_EquipmentType")
                         .HasColumnType("int");
@@ -303,6 +303,9 @@ namespace API.Migrations
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
 
+                    b.Property<int>("Id_UsersType")
+                        .HasColumnType("int");
+
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("nvarchar(50)")
@@ -325,7 +328,7 @@ namespace API.Migrations
                         .HasColumnType("nvarchar(18)")
                         .HasMaxLength(18);
 
-                    b.Property<int>("UserTypeId_UsersType")
+                    b.Property<int?>("UserTypeId_UsersType")
                         .HasColumnType("int");
 
                     b.Property<string>("Username")
@@ -429,10 +432,8 @@ namespace API.Migrations
             modelBuilder.Entity("Bussiness_Logic.Models.Users", b =>
                 {
                     b.HasOne("Bussiness_Logic.Models.UsersType", "UserType")
-                        .WithMany()
-                        .HasForeignKey("UserTypeId_UsersType")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .WithMany("Users")
+                        .HasForeignKey("UserTypeId_UsersType");
                 });
 #pragma warning restore 612, 618
         }

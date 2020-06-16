@@ -32,7 +32,6 @@ namespace Bussiness_Logic.Models
         [StringLength(50, ErrorMessage = "No puede exceder los 50 caracteres")]
         [RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
         [Display(Name = "Apellidos", Description = "Primer y Segundo Apellido...", Prompt = "Primer y Segundo Apellido...")]
-
         public string LastName { get; set; }
 
         [StringLength(10, ErrorMessage = "No puede exceder 10 caracteres")]
@@ -50,8 +49,10 @@ namespace Bussiness_Logic.Models
 
         [Required(ErrorMessage = "* Seleccione un Tipo...")]
         [Display(Name = "Tipo de Usuario", Description = "Tipo de Usuario", Prompt = "Tipo de Usuario...")]
-        public UsersType UserType { get; set; }
+        public int Id_UsersType { get; set; }
+        public virtual UsersType UserType { get; set; }
         public List<Lending> Lendings { get; set; }
         public List<Mantenaince> Mantenainces { get; set; }
+
     }
 }

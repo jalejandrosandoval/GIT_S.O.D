@@ -15,7 +15,6 @@ namespace API.Controllers
     [Route("api/[controller]")]
     [ApiController]
     //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-
     public class UsersController : ControllerBase
     {
         private readonly AppDBContext _ContextUsers;
@@ -29,6 +28,7 @@ namespace API.Controllers
         public async Task<ActionResult<IEnumerable<Users>>> GetUsers()
         {
             return await _ContextUsers.Users.ToListAsync();
+            //return await _ContextUsers.Users.Include(u => u.UserType).ToListAsync();
         }
 
         [HttpGet("{id}")]
