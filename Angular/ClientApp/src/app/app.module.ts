@@ -22,9 +22,11 @@ import { AboutComponent } from './Components/about/about.component';
 import { RecoveryComponent } from './Components/Auth/recovery/recovery.component';
 import { HomeComponent } from './Components/home/home.component';
 import { UsersComponent } from './Components/users/users.component';
+import { UserscreateComponent } from './Components/users/userscreate/userscreate.component';
 
 //SERVICES
 import { UsersService } from './Services/Users/users.service';
+import { UserseditComponent } from './Components/users/usersedit/usersedit.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { UsersService } from './Services/Users/users.service';
     AboutComponent,
     RecoveryComponent,
     HomeComponent,
-    UsersComponent
+    UsersComponent,
+    UserscreateComponent,
+    UserseditComponent
   ],
   imports: [
     BrowserModule,
