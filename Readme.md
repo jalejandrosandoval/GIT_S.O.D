@@ -1,4 +1,7 @@
 
+Estado del repositorio
+![Petroco .NET Core](https://github.com/wkrea/GIT_S.O.D/workflows/Petroco%20.NET%20Core/badge.svg)
+
 # FrontEnd
 
 ## Instalando nvm
