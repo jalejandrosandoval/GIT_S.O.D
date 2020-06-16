@@ -28,10 +28,18 @@ namespace API
 
             //Migrations DBContext 
 
-            services.AddDbContext<AppDBContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("DevConection")));
+            // services.AddDbContext<AppDBContext>(options =>
+            //     options.UseSqlServer(
+            //         Configuration.GetConnectionString("DevConection")));
 
+            services.AddDbContext<AppDBContext>(
+                op => op.UseInMemoryDatabase("DevConection")
+            );
+            
+            services.AddControllersWithViews()
+                .AddNewtonsoftJson(options =>
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
 
             //Using to Identity
             /*

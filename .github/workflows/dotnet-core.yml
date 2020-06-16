@@ -1,0 +1,31 @@
+
+name: Petroco .NET Core
+
+on:
+  push:
+    branches: [ master, Angular, modular]
+  pull_request:
+    branches: [ master, Angular, modular] # Eventos de Pull Request sobre el branch
+    types: [opened, synchronize, reopened]
+
+jobs:    
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        dotnet: [ '3.1.x'] #, '5.0.x' ]    
+    name: Dotnet ${{ matrix.dotnet }} Compilación
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        # https://github.com/actions/checkout
+        ref: ${{ github.event.pull_request.head.sha }}
+    - name: Instalando .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: ${{ matrix.dotnet }} #2.2.207 #3.1.101
+    - name: Restauración de dependencias
+      run: dotnet restore ./Modular/API/
+
+    - name: Build
+      run: dotnet build --configuration Release --no-restore ./Modular/API/API.csproj
