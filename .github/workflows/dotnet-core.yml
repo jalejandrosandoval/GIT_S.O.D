@@ -3,9 +3,9 @@ name: Petroco .NET Core
 
 on:
   push:
-    branches: [ master, Angular, Modular]
+    branches: [ master, Angular, modular]
   pull_request:
-    branches: [ master, Angular, Modular] # Eventos de Pull Request sobre el branch
+    branches: [ master, Angular, modular] # Eventos de Pull Request sobre el branch
     types: [opened, synchronize, reopened]
 
 jobs:    
