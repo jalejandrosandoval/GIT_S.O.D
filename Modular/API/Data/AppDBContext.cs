@@ -1,9 +1,15 @@
-﻿using Bussiness_Logic.Models;
+﻿using API.Models;
+using Bussiness_Logic.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace API.Data
 {
-    public class AppDBContext : DbContext
+    public class AppDBContext : DbContext //IdentityDbContext<ApplicationUser>
     {
         public AppDBContext()
         {
@@ -12,7 +18,7 @@ namespace API.Data
 
         public AppDBContext(DbContextOptions<AppDBContext> options) : base(options)
         {
-
+            Database.EnsureCreated();
         }
 
         public DbSet<Users> Users { get; set; }

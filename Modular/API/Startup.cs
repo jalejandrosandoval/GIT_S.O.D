@@ -27,11 +27,13 @@ namespace API
         public void ConfigureServices(IServiceCollection services)
         {
 
-            //Migrations DBContext 
+            // Migrations DBContext 
 
             services.AddDbContext<AppDBContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DevConection")));
+
+            // CORS
 
             services.AddCors(options =>
             {
@@ -44,13 +46,18 @@ namespace API
                          ;
                      });
             });
+            
+            services.AddControllersWithViews()
+               .AddNewtonsoftJson(options =>
+                   options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
 
             //Using to Identity
-            /*
-            services.AddIdentity<ApplicationUser, IdentityRole>()
+            
+            /*services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<AppDBContext>()
                 .AddDefaultTokenProviders();
-
+                */
             //JWT
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -61,14 +68,15 @@ namespace API
                         ValidateAudience = true,
                         ValidateLifetime = true,
                         ValidateIssuerSigningKey = true,
-                        ValidIssuer = "Petroco.com.co",
+                        ValidIssuer = Configuration["Jwt:Issuer"],
+                        ValidAudience = Configuration["Jwt:Issuer"],
                         IssuerSigningKey = new SymmetricSecurityKey
                             (Encoding.UTF8.GetBytes(Configuration["Key"])),
                         ClockSkew = TimeSpan.Zero
 
                     }
                 ) ;
-                */
+
             services.AddControllers();
 
         }
@@ -80,7 +88,11 @@ namespace API
                 app.UseDeveloperExceptionPage();
             }
 
-            //app.UseAuthentication(); // Autentication 
+            // Autentication 
+
+            //app.UseAuthentication(); 
+            
+            // CORS
 
             app.UseCors("AllowSpecificOrigin");
 

@@ -16,7 +16,8 @@ namespace Bussiness_Logic.Models
         [Display(Name = "Tipo Usuario", Description = "Tipo Usuario", Prompt = "Tipo Usuario...")]
         public string UsersTypeName { get; set; }
 
-        public virtual List<Users> Users { get; set; }
+        public ICollection<Users> Users { get; set; }
+
     }
 }
 

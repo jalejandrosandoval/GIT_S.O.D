@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { RouterModule, Routes } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -23,10 +23,14 @@ import { RecoveryComponent } from './Components/Auth/recovery/recovery.component
 import { HomeComponent } from './Components/home/home.component';
 import { UsersComponent } from './Components/users/users.component';
 import { UserscreateComponent } from './Components/users/userscreate/userscreate.component';
+import { UserseditComponent } from './Components/users/usersedit/usersedit.component';
+import { DefaultComponent } from './Components/default/default.component';
 
 //SERVICES
 import { UsersService } from './Services/Users/users.service';
-import { UserseditComponent } from './Components/users/usersedit/usersedit.component';
+import { AuthGuardService } from './Services/Auth/auth-guard.service';
+import { AccountService } from './Services/Account/account.service';
+import { AuthInterceptorService } from './Services/Auth/auth-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +43,8 @@ import { UserseditComponent } from './Components/users/usersedit/usersedit.compo
     HomeComponent,
     UsersComponent,
     UserscreateComponent,
-    UserseditComponent
+    UserseditComponent,
+    DefaultComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +59,16 @@ import { UserseditComponent } from './Components/users/usersedit/usersedit.compo
     }),
     HttpClientModule
   ],
-  providers: [UsersService],
+  providers: [
+    UsersService, 
+    AuthGuardService,
+    AccountService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 

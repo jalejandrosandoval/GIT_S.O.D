@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
+import { AccountService } from 'src/app/Services/Account/account.service';
+import { LoginModel } from 'src/app/Models/Login/login-model';
 
 @Component({
   selector: 'app-login',
@@ -9,11 +12,12 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class LoginComponent implements OnInit {
 
- 
-  constructor(private formBuilder : FormBuilder, private toastr: ToastrService) { }
-  
+
+  constructor(private accountservice: AccountService, private router: Router,
+    private formBuilder: FormBuilder, private toastr: ToastrService) { }
+
   ngOnInit(): void {
-    }
+  }
 
   loginForm = this.formBuilder.group({
     _username: ['', {
@@ -24,7 +28,7 @@ export class LoginComponent implements OnInit {
       Validators: [Validators.required]
     }],
 
-    _rememberme : [true]
+    _rememberme: [true]
 
   });
 
@@ -36,25 +40,37 @@ export class LoginComponent implements OnInit {
     return this.loginForm.get('_password');
   }
 
-  
-  onReset(){
+  onReset() {
     this.loginForm.reset();
   }
-  
-  onLogin(){
 
-    if(this.loginForm.valid){
-      
-      this.toastr.success("Campos Correctos: ", "Exito!");
-      //console.log('Form->',this.loginForm.value);
+  getTokenAPI(_Token) {
+    localStorage.setItem('Token', _Token.token);
+    localStorage.setItem('TokenExpiration', _Token.expiration);
+    this.router.navigate(["/Login"]);
+  }
 
-    }else{
+  onLogin() {
+
+    if (this.loginForm.valid) {
+
+      let _LoginModel: LoginModel;
       
-      this.toastr.error("Error","Campos Incorrectos");
-      //console.log('Form X');
-      //this.onReset();
+      _LoginModel = Object.assign({}, this.loginForm.value);
+
+      this.accountservice.Login(_LoginModel).subscribe(token => this.getTokenAPI(token),
+      error => this.getError(error));
+
     }
+    
+  }
 
+  getError(_Error){
+
+    if (_Error && _Error.error) {
+      this.toastr.error("Error", _Error.error[""]);
+    }
+   
   }
 
 }

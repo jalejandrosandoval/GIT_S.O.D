@@ -6,7 +6,6 @@ namespace Bussiness_Logic.Models
     {
         [Key]
         [Required(ErrorMessage = "* Correo Eléctronico Requerido")]
-        [EmailAddress]
         [Display(Name = "Nombre de Usuario", Description = "Nombre de Usuario", Prompt = "Usuario...")]
         public string Username { get; set; }
 

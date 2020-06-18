@@ -1,10 +1,15 @@
-﻿using API.Models;
+﻿using API.Data;
+using API.Models;
+using Bussiness_Logic.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,32 +19,34 @@ namespace API.Controllers
     [Route("api/[controller]")]
     [ApiController]
     public class AccountController : ControllerBase
-    {
-        
-        private readonly SignInManager<ApplicationUser> _signInManager;
+    {        
         private readonly IConfiguration _configuration;
-        
-        
+        private readonly AppDBContext _context;
 
-        public AccountController(SignInManager<ApplicationUser> signInManager,
-             IConfiguration configuration)
+        public AccountController(AppDBContext Context, IConfiguration configuration)
         {
-
-            _signInManager = signInManager;
+            _context = Context;
             _configuration = configuration;
-
         }
-        /*
+
         [HttpPost]
         [Route("Login")]
-        public async Task<IActionResult> Login([FromBody] LoginMo loginModel)
+        [AllowAnonymous]
+        public async Task<IActionResult> Login([FromBody] LoginModel loginModel)
         {
             if (ModelState.IsValid)
             {
 
-                var result = await _signInManager.PasswordSignInAsync(loginModel.Username, loginModel.UserPassword, isPersistent: false, lockoutOnFailure: false);
-                if (result.Succeeded)
+                //var result = await _signInManager.PasswordSignInAsync(loginModel.Username, loginModel.UserPassword, isPersistent: false, lockoutOnFailure: false);
+
+                var result = await _context.Users
+                                    .Where(u => u.Username == loginModel.Username && u.UserPassword == loginModel.UserPassword)
+                                    .ToListAsync();
+
+                if (result.Count != 0)
                 {
+                    //ModelState.AddModelError(string.Empty, "Res:" + " " + result.Count.ToString());
+                    //return BadRequest(ModelState);
                     return BuildToken(loginModel);
                 }
                 else
@@ -52,9 +59,47 @@ namespace API.Controllers
             else
             {
                 return BadRequest(ModelState);
-            }        
-           
+            }
+
         }
+        //*/
+        /*
+        private readonly AppDBContext Context;
+
+        public AccountController(AppDBContext _Context, IConfiguration configuration)
+        {
+            Context = _Context;
+            _configuration = configuration;
+        }
+
+        [HttpPost]
+        [Route("Login")]
+        public async Task<IActionResult> Login([FromBody] LoginModel loginModel)
+        {
+            if (ModelState.IsValid) {
+
+
+                var _user = await Context.Users
+                                    .Where(u => u.Username == loginModel.Username && u.UserPassword == loginModel.UserPassword)
+                                    .ToListAsync();
+
+                if (_user == null) //|| resultUPass == null)
+                {
+                    return NotFound(ModelState);
+                }
+                else 
+                {
+                    return BuildToken(loginModel);
+                }
+
+            }
+            else
+            {
+                return BadRequest(ModelState);
+            }
+
+        }
+        */
 
         private IActionResult BuildToken(LoginModel loginModel)
         {
@@ -84,8 +129,7 @@ namespace API.Controllers
                 _expiration = expiration
             });
 
-        }*/
-
-
+        }
+        
     }
 }

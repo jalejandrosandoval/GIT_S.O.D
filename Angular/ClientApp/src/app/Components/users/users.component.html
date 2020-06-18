@@ -55,13 +55,7 @@
                             <td> {{users.firstName}} </td>
                             <td> {{users.lastName}} </td>
                             <td> 
-                                <span *ngIf="(users.id_UsersType==1)">SuperAdministrador</span>
-                                <span *ngIf="(users.id_UsersType==2)">Administrativo</span>
-                                <span *ngIf="(users.id_UsersType==3)">Jefe de Mantenimiento</span>
-                                <span *ngIf="(users.id_UsersType==4)">Lider de Mantenimiento</span>
-                                <span *ngIf="(users.id_UsersType==5)">Auxiliar de Mantenimiento</span>
-                                <span *ngIf="(users.id_UsersType==6)">Operario - Planta</span>
-                                <span *ngIf="(users.id_UsersType==7)">Operario - Campo</span>
+                                {{users.userType.usersTypeName}}                      
                             </td>
                             <td>
                                 <span *ngIf="(users.status==true)" class="bg-success text-white"> &nbsp; Activo

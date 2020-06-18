@@ -50,9 +50,10 @@ namespace Bussiness_Logic.Models
         [Required(ErrorMessage = "* Seleccione un Tipo...")]
         [Display(Name = "Tipo de Usuario", Description = "Tipo de Usuario", Prompt = "Tipo de Usuario...")]
         public int Id_UsersType { get; set; }
-        public virtual UsersType UserType { get; set; }
+        public UsersType UserType { get; set; }
         public List<Lending> Lendings { get; set; }
         public List<Mantenaince> Mantenainces { get; set; }
 
     }
+
 }
