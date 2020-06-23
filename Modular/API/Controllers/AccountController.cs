@@ -36,10 +36,7 @@ namespace API.Controllers
         {
             if (ModelState.IsValid)
             {
-
-                //var result = await _signInManager.PasswordSignInAsync(loginModel.Username, loginModel.UserPassword, isPersistent: false, lockoutOnFailure: false);
-
-                var result = await _context.Users
+                 var result = await _context.Users
                                     .Where(u => u.Username == loginModel.Username && u.UserPassword == loginModel.UserPassword)
                                     .ToListAsync();
 
@@ -55,42 +52,6 @@ namespace API.Controllers
                     return BadRequest(ModelState);
                     //return BuildToken(loginModel);
                 }
-            }
-            else
-            {
-                return BadRequest(ModelState);
-            }
-
-        }
-        //*/
-        /*
-        private readonly AppDBContext Context;
-
-        public AccountController(AppDBContext _Context, IConfiguration configuration)
-        {
-            Context = _Context;
-            _configuration = configuration;
-        }
-
-        [HttpPost]
-        [Route("Login")]
-        public async Task<IActionResult> Login([FromBody] LoginModel loginModel)
-        {
-            if (ModelState.IsValid) {
-
-
-                var _user = await Context.Users
-                                    .Where(u => u.Username == loginModel.Username && u.UserPassword == loginModel.UserPassword)
-                                    .ToListAsync();
-
-                if (_user == null) //|| resultUPass == null)
-                {
-                    return NotFound(ModelState);
-                }
-                else 
-                {
-                    return BuildToken(loginModel);
-                }
 
             }
             else
@@ -99,7 +60,6 @@ namespace API.Controllers
             }
 
         }
-        */
 
         private IActionResult BuildToken(LoginModel loginModel)
         {
@@ -132,4 +92,4 @@ namespace API.Controllers
         }
         
     }
-}
+} 

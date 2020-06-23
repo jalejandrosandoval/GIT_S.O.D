@@ -43,7 +43,7 @@
                                         </div>
 
                                         <input class="form-control form-control-user" type="text" 
-                                            placeholder="Usuario..." formControlName="_username" required />
+                                            placeholder="Usuario..." formControlName="Username" required />
 
                                         <span *ngIf="gUsername.invalid && (gUsername.dirty || gUsername.touched)"
                                             class="text-center text-secondary">
@@ -65,7 +65,7 @@
                                         </div>
 
                                         <input class="form-control form-control-user" type="password"
-                                            placeholder="Contraseña..." formControlName="_password" required />
+                                            placeholder="Contraseña..." formControlName="UserPassword" required />
 
                                         <span *ngIf="gPassword.invalid && (gPassword.dirty || gPassword.touched)"
                                             class="text-center text-secondary">
@@ -80,8 +80,7 @@
 
                                     <div class="form-group">
                                         <div class="custom-control custom-checkbox small">
-                                            <input type="checkbox" class="custom-control-input" id="customCheck"
-                                                formControlName="_rememberme">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck">
                                             <label class="custom-control-label" for="customCheck"> Mantener Sesión
                                                 Iniciada </label>
                                         </div>

@@ -47,7 +47,7 @@
                         <a class="nav-link text-white" routerLink="/login" title="Iniciar Sesión"> <b> <i class="fas fa-sign-in-alt"></i> Ingresar </b> </a>
                     </li>
                     <li class="nav-item" *ngIf="nb_LoggedIn()">
-                        <a class="nav-link text-white" title="Terminar Sesión"> <b> <i class="fas fa-sign-out-alt"></i> Salir </b> </a>
+                        <a class="nav-link text-white" title="Terminar Sesión"> <b> <i class="fas fa-sign-out-alt" (click)="nb_Logout()"></i> Salir </b> </a>
                     </li>                    
                 </ul>
             </div>

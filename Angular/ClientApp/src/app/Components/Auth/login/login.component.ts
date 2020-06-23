@@ -17,27 +17,26 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder, private toastr: ToastrService) { }
 
   ngOnInit(): void {
+    
   }
 
   loginForm = this.formBuilder.group({
-    _username: ['', {
+    Username: ['', {
       Validators: [Validators.required]
     }],
 
-    _password: ['', {
+    UserPassword: ['', {
       Validators: [Validators.required]
-    }],
-
-    _rememberme: [true]
+    }]
 
   });
 
   get gUsername() {
-    return this.loginForm.get('_username');
+    return this.loginForm.get('Username');
   }
 
   get gPassword() {
-    return this.loginForm.get('_password');
+    return this.loginForm.get('UserPassword');
   }
 
   onReset() {
@@ -60,6 +59,8 @@ export class LoginComponent implements OnInit {
 
       this.accountservice.Login(_LoginModel).subscribe(token => this.getTokenAPI(token),
       error => this.getError(error));
+
+      this.toastr.warning("Username: ", _LoginModel.Username + " " + _LoginModel.UserPassword);
 
     }
     

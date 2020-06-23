@@ -7,13 +7,14 @@ import { LoginModel } from 'src/app/Models/Login/login-model';
   providedIn: 'root'
 })
 export class AccountService {
-  readonly apiUrl= 'http://localhost:57764/API/Account/Login';
+
+  readonly ApiPath= '/API/Account/Login' ;
   
   constructor(private http: HttpClient) {
   }
 
   Login(_LoginModel: LoginModel): Observable<any>{
-    return this.http.post<any>(this.apiUrl, _LoginModel);
+    return this.http.post<any>(this.ApiPath, _LoginModel);
   }
 
   getToken(): string{
@@ -36,6 +37,7 @@ export class AccountService {
     if(!expiration){
 
       return false;
+      this.Logout();
       
     }
 
