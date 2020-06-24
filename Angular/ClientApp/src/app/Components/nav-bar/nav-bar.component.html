@@ -40,18 +40,40 @@
                 </ul>
             </div>
 
-
             <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                 <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
                     <li class="nav-item" *ngIf="!nb_LoggedIn()">
                         <a class="nav-link text-white" routerLink="/login" title="Iniciar Sesión"> <b> <i class="fas fa-sign-in-alt"></i> Ingresar </b> </a>
                     </li>
-                    <li class="nav-item" *ngIf="nb_LoggedIn()">
-                        <a class="nav-link text-white" title="Terminar Sesión"> <b> <i class="fas fa-sign-out-alt" (click)="nb_Logout()"></i> Salir </b> </a>
-                    </li>                    
+                   <li class="nav-item dropdown no-arrow" *ngIf="nb_LoggedIn()">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="mr-2 d-none d-lg-inline text-white small"> <b> Jhon Sandoval </b> </span>
+                <img class="img-profile rounded-circle text-white" src="../assets/images/astronaut-user.png">
+              </a>
+              <!-- Dropdown - User Information -->
+              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                <a class="dropdown-item"  routerLink="/">
+                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Perfil
+                </a>
+                <a class="dropdown-item"  routerLink="/" >
+                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Configuración
+                </a>
+                <a class="dropdown-item" routerLink="/">
+                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Logs del Sistema
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" title="Terminar Sesión" (click)="nb_Logout()" href=""> 
+                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> 
+                    Salir 
+                </a>
+              </div>
+            </li>                    
                 </ul>
             </div>
-
+            
         </div>
 
     </nav>

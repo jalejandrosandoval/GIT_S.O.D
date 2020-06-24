@@ -1,4 +1,4 @@
-/*!
+background-color: #007bff/*!
  * Start Bootstrap - SB Admin 2 v4.0.7 (https://startbootstrap.com/template-overviews/sb-admin-2)
  * Copyright 2013-2019 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-sb-admin-2/blob/master/LICENSE)
@@ -2276,7 +2276,7 @@ fieldset:disabled a.btn {
 }
 
 .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
-.show > .btn-primary.dropdown-toggle {
+.show > .btn-primarya-toggle {
   color: #fff;
   background-color: #2653d4;
   border-color: #244ec9;
@@ -3097,7 +3097,7 @@ input withIcon i{
 .dropdown-item.active, .dropdown-item:active {
   color: #fff;
   text-decoration: none;
-  background-color: #4e73df;
+  background-color: #e74a3b;
 }
 
 .dropdown-item.disabled, .dropdown-item:disabled {
@@ -10125,7 +10125,7 @@ a:focus {
 }
 
 .topbar .dropdown-list .dropdown-item:active {
-  background-color: #eaecf4;
+  background-color: #e74a3b;
   color: #3a3b45;
 }
 

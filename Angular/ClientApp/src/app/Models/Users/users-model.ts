@@ -12,4 +12,5 @@ export interface IUsersModel {
     UserPassword: string;
     Status: string;
     UserType: number;
+    token?: string;
 }

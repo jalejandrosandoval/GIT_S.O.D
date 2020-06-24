@@ -58,10 +58,9 @@ export class LoginComponent implements OnInit {
       _LoginModel = Object.assign({}, this.loginForm.value);
 
       this.accountservice.Login(_LoginModel).subscribe(token => this.getTokenAPI(token),
-      error => this.getError(error));
-
-      this.toastr.warning("Username: ", _LoginModel.Username + " " + _LoginModel.UserPassword);
-
+        error => this.getError(error) 
+      );
+      
     }
     
   }
@@ -69,7 +68,11 @@ export class LoginComponent implements OnInit {
   getError(_Error){
 
     if (_Error && _Error.error) {
-      this.toastr.error("Error", _Error.error[""]);
+
+      this.loginForm.reset;
+      
+      return this.toastr.warning(_Error.error[""], "Error");
+      
     }
    
   }

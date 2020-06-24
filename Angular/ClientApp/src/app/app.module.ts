@@ -31,6 +31,8 @@ import { UsersService } from './Services/Users/users.service';
 import { AuthGuardService } from './Services/Auth/auth-guard.service';
 import { AccountService } from './Services/Account/account.service';
 import { AuthInterceptorService } from './Services/Auth/auth-interceptor.service';
+import { ErrorInterceptorService } from './Services/Auth/error-interceptor.service';
+
 
 @NgModule({
   declarations: [
@@ -63,6 +65,11 @@ import { AuthInterceptorService } from './Services/Auth/auth-interceptor.service
     UsersService, 
     AuthGuardService,
     AccountService,
+    { 
+      provide: HTTP_INTERCEPTORS, 
+      useClass: ErrorInterceptorService, 
+      multi: true 
+    },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptorService,

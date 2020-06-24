@@ -3084,13 +3084,13 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
     .dropdown-item:focus, .dropdown-item:hover {
         color: #2e2f37;
         text-decoration: none;
-        background-color: #f8f9fc
+        background-color: #e74a3b;
     }
 
     .dropdown-item.active, .dropdown-item:active {
         color: #fff;
         text-decoration: none;
-        background-color: #4e73df
+        background-color: #e74a3b;
     }
 
     .dropdown-item.disabled, .dropdown-item:disabled {
@@ -10160,7 +10160,7 @@ a:focus {
             }
 
             .topbar .dropdown-list .dropdown-item:active {
-                background-color: #eaecf4;
+                background-color: #e74a3b;
                 color: #3a3b45
             }
 

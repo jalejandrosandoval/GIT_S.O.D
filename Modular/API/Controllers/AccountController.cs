@@ -48,7 +48,7 @@ namespace API.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError(string.Empty, "Intento de inicio de sesión no válido...");
+                    ModelState.AddModelError(string.Empty, "¡Intento de inicio de sesión no válido! Verifique su Usuario y Contraseña...");
                     return BadRequest(ModelState);
                     //return BuildToken(loginModel);
                 }

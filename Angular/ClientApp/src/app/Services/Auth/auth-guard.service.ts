@@ -10,7 +10,7 @@ export class AuthGuardService implements CanActivate {
   constructor(private accountservice: AccountService, private router: Router) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-
+    
     if(this.accountservice.LoggedIn()){
       
       return true;
