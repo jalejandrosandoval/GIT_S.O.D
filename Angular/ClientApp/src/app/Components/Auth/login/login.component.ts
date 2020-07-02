@@ -12,13 +12,14 @@ import { LoginModel } from 'src/app/Models/Login/login-model';
 })
 export class LoginComponent implements OnInit {
 
-
   constructor(private accountservice: AccountService, private router: Router,
     private formBuilder: FormBuilder, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     
   }
+
+  //Initializing form fields
 
   loginForm = this.formBuilder.group({
     Username: ['', {
@@ -31,6 +32,8 @@ export class LoginComponent implements OnInit {
 
   });
 
+  //Getting Data Fields
+  
   get gUsername() {
     return this.loginForm.get('Username');
   }
@@ -39,15 +42,21 @@ export class LoginComponent implements OnInit {
     return this.loginForm.get('UserPassword');
   }
 
+  //Reset Fields
+
   onReset() {
     this.loginForm.reset();
   }
+
+  //Getting Token from API REST
 
   getTokenAPI(_Token) {
     localStorage.setItem('Token', _Token.token);
     localStorage.setItem('TokenExpiration', _Token.expiration);
     this.router.navigate(["/Login"]);
   }
+
+  //Method for Loging User 
 
   onLogin() {
 
@@ -57,13 +66,19 @@ export class LoginComponent implements OnInit {
       
       _LoginModel = Object.assign({}, this.loginForm.value);
 
+      this.accountservice.cUser = _LoginModel;
+
       this.accountservice.Login(_LoginModel).subscribe(token => this.getTokenAPI(token),
         error => this.getError(error) 
       );
-      
+    
+    }else{
+      this.router.navigate(["/Login"]);
     }
     
   }
+
+  //Getting Error from Web Api and Show the error from toastr window
 
   getError(_Error){
 

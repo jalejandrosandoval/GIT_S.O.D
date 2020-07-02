@@ -12,6 +12,8 @@ export class ErrorInterceptorService implements HttpInterceptor {
 
   constructor(private accountService: AccountService, private toastr: ToastrService) { }
 
+  // Interceptor of error in the petitions Http 
+
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     
     return next.handle(request).pipe(catchError(error => {
@@ -22,8 +24,6 @@ export class ErrorInterceptorService implements HttpInterceptor {
       }
 
       if (error.status === 504) {
-        
-        //location.reload(true);
          
         return throwError(this.toastr.warning(error.message , "Error de Conexión con el servidor: "));
       }
@@ -33,10 +33,7 @@ export class ErrorInterceptorService implements HttpInterceptor {
         return throwError(error);
 
       }
-      /*
-      this.accountService.Logout();
-      return throwError(error);*/
-      
+   
     }));
   
   }

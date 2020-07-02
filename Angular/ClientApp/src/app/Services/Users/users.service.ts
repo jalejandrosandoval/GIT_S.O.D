@@ -11,6 +11,8 @@ export class UsersService {
   constructor(private http: HttpClient) {
   }
 
+  //Getting UsersData through httpClient of Angular -> ApiPath 
+
   getUsers(): Observable<IUsers[]>{
     return this.http.get<IUsers[]>(this.ApiPath);  
   }

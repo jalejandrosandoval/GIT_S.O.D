@@ -9,6 +9,8 @@ export class AuthGuardService implements CanActivate {
 
   constructor(private accountservice: AccountService, private router: Router) { }
 
+  // Method for aplicate validations in the app from AccountSevice.LoggedIn
+
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     
     if(this.accountservice.LoggedIn()){

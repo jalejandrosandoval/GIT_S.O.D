@@ -8,11 +8,13 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System;
+using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Http.ModelBinding;
 
 namespace API.Controllers
 {
@@ -28,6 +30,16 @@ namespace API.Controllers
             _context = Context;
             _configuration = configuration;
         }
+
+        [HttpPost]
+        [Route("GetUser")]
+        public async Task<IEnumerable<Users>> GetUser([FromBody] LoginModel loginModel)
+        {
+            return await _context.Users
+                                .Where(u => u.Username == loginModel.Username && u.UserPassword == loginModel.UserPassword)
+                                .ToListAsync();   
+        }
+
 
         [HttpPost]
         [Route("Login")]
