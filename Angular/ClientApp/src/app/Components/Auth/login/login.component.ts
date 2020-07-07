@@ -69,11 +69,11 @@ export class LoginComponent implements OnInit {
       this.accountservice.cUser = _LoginModel;
 
       this.accountservice.Login(_LoginModel).subscribe(token => this.getTokenAPI(token),
-        error => this.getError(error) 
+        error => this.getError(error)
       );
-    
-    }else{
-      this.router.navigate(["/Login"]);
+      
+      this.router.navigate(['/default']); 
+
     }
     
   }
