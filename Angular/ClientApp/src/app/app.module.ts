@@ -1,13 +1,15 @@
+//MODULES
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { RouterModule, Routes } from '@angular/router';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+
+//import { DataTablesModule } from 'angular-datatables';
 
 //TOASTR
 import { CommonModule } from '@angular/common';
@@ -33,6 +35,9 @@ import { ProvidersComponent } from './Components/providers/providers.component';
 import { PageNotFoundComponent } from './Components/page-not-found/page-not-found.component';
 import { FabricationComponent } from './Components/fabrication/fabrication.component';
 import { UsersTypeComponent } from './Components/users-type/users-type.component';
+import { UsersTypeCreateComponent } from './Components/Users-Type/users-type-create/users-type-create.component';
+import { UsersTypeEditComponent } from './Components/users-type/users-type-edit/users-type-edit.component';
+import { ProvidersTypeComponent } from './Providers-Type/providers-type/providers-type.component';
 
 //SERVICES
 import { UsersService } from './Services/Users/users.service';
@@ -43,7 +48,7 @@ import { UsersTypeService } from './Services/UsersType/users-type.service';
 //INTERCEPTORS OF HTTP
 import { AuthInterceptorService } from './Services/Auth/auth-interceptor.service';
 import { ErrorInterceptorService } from './Services/Auth/error-interceptor.service';
-import { UsersTypeCreateComponent } from './Components/Users-Type/users-type-create/users-type-create.component';
+
 
 @NgModule({
   declarations: [
@@ -65,7 +70,9 @@ import { UsersTypeCreateComponent } from './Components/Users-Type/users-type-cre
     PageNotFoundComponent,
     FabricationComponent,
     UsersTypeComponent,
-    UsersTypeCreateComponent
+    UsersTypeCreateComponent,
+    ProvidersTypeComponent,
+    UsersTypeEditComponent
   ],
   imports: [
     BrowserModule,

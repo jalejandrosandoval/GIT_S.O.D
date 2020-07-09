@@ -44,6 +44,8 @@ namespace Bussiness_Logic.Models
         [DataType(DataType.Date)]
         public string Equipment_Warranty { get; set; }
 
+        public int Id_EquipmentsType { get; set; }
+
         public EquipmentType EquipmentType { get; set; }
 
         public List<Lending> Lendings{ get; set; }

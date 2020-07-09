@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,14 +8,14 @@ using Microsoft.EntityFrameworkCore;
 using API.Data;
 using Bussiness_Logic.Models;
 
-namespace API.Controllers
+namespace API.Controllers.User
 {
     [Route("api/[controller]")]
     [ApiController]
     public class UsersTypesController : ControllerBase
     {
         private readonly AppDBContext _context;
-
+            
         public UsersTypesController(AppDBContext context)
         {
             _context = context;
@@ -45,7 +45,8 @@ namespace API.Controllers
         {
             if (id != usersType.Id_UsersType)
             {
-                return BadRequest();
+                ModelState.AddModelError(string.Empty, "Error en la actualización del tipo de usuario:" + usersType.UsersTypeName +  "Verifique los Datos!");
+                return BadRequest(ModelState);
             }
 
             _context.Entry(usersType).State = EntityState.Modified;
@@ -72,10 +73,18 @@ namespace API.Controllers
         [HttpPost]
         public async Task<ActionResult<UsersType>> PostUsersType(UsersType usersType)
         {
-            _context.UsersType.Add(usersType);
-            await _context.SaveChangesAsync();
+            if (ModelState.IsValid){
 
-            return CreatedAtAction("GetUsersType", new { id = usersType.Id_UsersType }, usersType);
+                _context.UsersType.Add(usersType);
+                await _context.SaveChangesAsync();
+
+                return CreatedAtAction("GetUsersType", new { id = usersType.Id_UsersType }, usersType);
+            }
+            else
+            {
+                ModelState.AddModelError(string.Empty, "Error en la creación del tipo de usuario... Verifique los Datos!");
+                return BadRequest(ModelState);
+            }
         }
 
         [HttpDelete("{id}")]

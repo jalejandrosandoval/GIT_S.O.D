@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { AccountService } from 'src/app/Services/Account/account.service';
 import { Router } from '@angular/router';
+import { IUsers } from 'src/app/Interfaces/Users/users';
+import { Observable } from 'rxjs';
 import { IUsersModel } from 'src/app/Models/Users/users-model';
 
 @Component({
@@ -12,8 +14,8 @@ import { IUsersModel } from 'src/app/Models/Users/users-model';
 export class NavBarComponent {
 
   //Declarations Variables
-
-  _IUser: IUsersModel[];
+  
+  @Input() userCurrent : string = 'Username';
 
   //Loading Initial Data in this component
 
@@ -35,9 +37,7 @@ export class NavBarComponent {
   //Show the User Data like the username
 
   nb_UserName(){
-    this.accountservice.getCurrentUser()
-      .subscribe(User_AWS => this._IUser = User_AWS,
-          error => console.error(error));
+    this.userCurrent = this.accountservice._SUserCurrent;
   }
 
   // Service consumption "AccountService"

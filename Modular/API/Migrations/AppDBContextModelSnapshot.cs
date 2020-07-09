@@ -66,6 +66,9 @@ namespace API.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("Id_EquipmentsType")
+                        .HasColumnType("int");
+
                     b.HasKey("Id_Equipment");
 
                     b.HasIndex("EquipmentTypeId_EquipmentType");
@@ -213,6 +216,9 @@ namespace API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Id_ProvidersType")
+                        .HasColumnType("int");
 
                     b.Property<string>("Identification")
                         .IsRequired()
@@ -362,7 +368,7 @@ namespace API.Migrations
             modelBuilder.Entity("Bussiness_Logic.Models.Equipment", b =>
                 {
                     b.HasOne("Bussiness_Logic.Models.EquipmentType", "EquipmentType")
-                        .WithMany()
+                        .WithMany("Equipments")
                         .HasForeignKey("EquipmentTypeId_EquipmentType");
                 });
 
@@ -410,7 +416,7 @@ namespace API.Migrations
             modelBuilder.Entity("Bussiness_Logic.Models.Providers", b =>
                 {
                     b.HasOne("Bussiness_Logic.Models.ProviderType", "ProviderType")
-                        .WithMany()
+                        .WithMany("Providers")
                         .HasForeignKey("ProviderTypeId_ProviderType");
                 });
 

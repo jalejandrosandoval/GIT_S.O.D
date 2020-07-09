@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersTypeService } from 'src/app/Services/UsersType/users-type.service';
 import { IUsersTypesModel } from 'src/app/Models/UsersTypes/users-types-model';
+import { IUsersTypes } from 'src/app/Interfaces/Users/users-type';
 
 @Component({
   selector: 'app-users-type',
@@ -12,7 +13,7 @@ export class UsersTypeComponent implements OnInit {
   //Declarations of Variables 
 
   _IUsersTypes: IUsersTypesModel[];
-  
+ 
   constructor(private userTypeService: UsersTypeService) { }
 
   //Initializing form fields
@@ -30,4 +31,9 @@ export class UsersTypeComponent implements OnInit {
         error => console.error(error));
   }
 
+  preUpdate(_IUTypes: IUsersTypesModel[]){
+    this.userTypeService._UpdateUType = _IUTypes;
+    console.log("Name: "+ Object.values(_IUTypes));
+  }
+  
 }

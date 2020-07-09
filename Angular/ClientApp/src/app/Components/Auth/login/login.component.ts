@@ -4,6 +4,9 @@ import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { AccountService } from 'src/app/Services/Account/account.service';
 import { LoginModel } from 'src/app/Models/Login/login-model';
+import { IUsersModel } from 'src/app/Models/Users/users-model';
+import { IUsers } from 'src/app/Interfaces/Users/users';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -11,6 +14,9 @@ import { LoginModel } from 'src/app/Models/Login/login-model';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
+  _IUsers: IUsersModel[];
+  _InUserCurrent : Observable<IUsers[]>;
 
   constructor(private accountservice: AccountService, private router: Router,
     private formBuilder: FormBuilder, private toastr: ToastrService) { }
@@ -66,18 +72,28 @@ export class LoginComponent implements OnInit {
       
       _LoginModel = Object.assign({}, this.loginForm.value);
 
-      this.accountservice.cUser = _LoginModel;
-
-      this.accountservice.Login(_LoginModel).subscribe(token => this.getTokenAPI(token),
-        error => this.getError(error)
-      );
+      this.currentUser(_LoginModel);
       
-      this.router.navigate(['/default']); 
+      this.accountservice
+        .Login(_LoginModel)
+        .subscribe(
+          res => {
+            this.getTokenAPI(res)
+            this.router.navigate(['/default']);
+          },
+          error => this.getError(error), 
+      );
 
     }
     
   }
 
+  currentUser(_LoginModel: LoginModel){
+
+    //this._InUserCurrent. = this.accountservice.getCurrentUser(_LoginModel);
+    
+  }
+ 
   //Getting Error from Web Api and Show the error from toastr window
 
   getError(_Error){

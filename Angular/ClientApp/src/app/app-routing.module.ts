@@ -19,6 +19,8 @@ import { PageNotFoundComponent } from './Components/page-not-found/page-not-foun
 import { FabricationComponent } from './Components/fabrication/fabrication.component';
 import { UsersTypeComponent } from './Components/users-type/users-type.component';
 import { UsersTypeCreateComponent } from './Components/Users-Type/users-type-create/users-type-create.component';
+import { ProvidersTypeComponent } from './Providers-Type/providers-type/providers-type.component';
+import { UsersTypeEditComponent } from './Components/users-type/users-type-edit/users-type-edit.component';
 
 // SERVICE AUTHGUARD
 import { AuthGuardService } from './Services/Auth/auth-guard.service';
@@ -40,6 +42,8 @@ const routes: Routes = [
     { path: 'fabrication', component: FabricationComponent, canActivate: [AuthGuardService]}, 
     { path: 'userstypes', component: UsersTypeComponent},
     { path: 'userstypes/create', component: UsersTypeCreateComponent},
+    { path: 'userstypes/edit', component: UsersTypeEditComponent},
+    { path: 'providerstypes', component: ProvidersTypeComponent},
     { path: '**', redirectTo: ''}//component: PageNotFoundComponent }
 ];
 

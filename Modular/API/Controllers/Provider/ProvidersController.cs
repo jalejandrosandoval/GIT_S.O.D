@@ -1,14 +1,14 @@
-﻿using API.Data; 
-using Bussiness_Logic.Models;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using API.Data;
+using Bussiness_Logic.Models;
 
-namespace API.Controllers
+namespace API.Controllers.Provider
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -25,9 +25,13 @@ namespace API.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Providers>>> GetProviders()
         {
-            return await _context.Providers.ToListAsync();
+            return await _context
+                       .Providers
+                       .Include(p => p.ProviderType)
+                       .Where(p => p.ProviderType.Id_ProviderType == p.Id_ProvidersType)
+                       .ToListAsync();
         }
-
+    
         // GET: api/Providers/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Providers>> GetProviders(int id)

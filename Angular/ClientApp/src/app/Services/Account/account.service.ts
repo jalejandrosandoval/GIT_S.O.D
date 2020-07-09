@@ -1,8 +1,7 @@
-import { Injectable, ɵConsole } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, BehaviorSubject } from 'rxjs';
+import { Observable } from 'rxjs';
 import { LoginModel } from 'src/app/Models/Login/login-model';
-import { IUsersModel } from 'src/app/Models/Users/users-model';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { IUsers } from 'src/app/Interfaces/Users/users';
@@ -10,22 +9,20 @@ import { IUsers } from 'src/app/Interfaces/Users/users';
 @Injectable({
   providedIn: 'root'
 })
-export class AccountService {
+export class AccountService implements OnInit {
 
   // Declarations Variables 
 
-  readonly ApiPath= '/API/Account' ;
+  _SUserCurrent : string;
 
-  public cUser : LoginModel;
-  public currentUser: Observable<IUsersModel>;
-  private currentUserSubject: BehaviorSubject<IUsersModel>;
+  readonly ApiPath= '/API/Account' ;
   
   constructor(private http: HttpClient, private router: Router){
+    
+  }
 
-    this.currentUserSubject = new BehaviorSubject<IUsersModel>(
-                              JSON.parse(localStorage.getItem('currentUser')));
-    this.currentUser = this.currentUserSubject.asObservable();
-
+  ngOnInit(): void {
+   
   }
 
   //Getting Token from LocalStorage
@@ -42,16 +39,20 @@ export class AccountService {
 
   // CurrentUser
   
-  getCurrentUser(): Observable<any> {
+  getCurrentUser(_LoginModel: LoginModel): Observable<IUsers[]> {
+    return this.http.post<IUsers[]>(this.ApiPath + '/GetUser', _LoginModel);
+  }  
 
-    if(this.cUser == null){
+  UsernameCurentUser(){
 
-      return;
+    if(this._SUserCurrent == null){
+    
+      console.log("Account Null " + this._SUserCurrent);
+      return null;
     
     }else{
-    
-      return this.http.post<any>(this.ApiPath + '/GetUser', this.cUser);
-    
+      console.log("Account Else " + this._SUserCurrent);
+      return this._SUserCurrent;
     }
 
   }
@@ -67,13 +68,12 @@ export class AccountService {
         return user;
       }
       ));
-
+  
   }
 
   Logout(){
     localStorage.removeItem("Token");
     localStorage.removeItem("TokenExpiration");
-    this.currentUserSubject.next(null);
   }
 
   //Method for Validations loggedIn
@@ -103,6 +103,10 @@ export class AccountService {
 
     }
 
+  }
+
+  onLoginRedirect(): void {
+    this.router.navigate(['/default']);
   }
 
 }

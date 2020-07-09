@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Bussiness_Logic.Models
@@ -12,6 +13,8 @@ namespace Bussiness_Logic.Models
         [Required]
         [StringLength(50, ErrorMessage = "No puede exceder los 50 caracteres")]
         public string EquipmentTypeName { get; set; }
+
+        public ICollection<Equipment> Equipments { get; set; }
 
     }
 }

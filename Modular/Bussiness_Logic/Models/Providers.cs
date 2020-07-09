@@ -24,9 +24,12 @@ namespace Bussiness_Logic.Models
         [StringLength(50, ErrorMessage = "No puede exceder los 50 caracteres")]
         public string ProviderName { get; set; }
 
+        public int Id_ProvidersType { get; set; }
+
         public ProviderType ProviderType { get; set; }
 
         public List<Purchase> Purchases { get; set; }
 
     }
+
 }
