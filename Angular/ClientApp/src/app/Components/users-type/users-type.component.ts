@@ -3,6 +3,7 @@ import { UsersTypeService } from 'src/app/Services/UsersType/users-type.service'
 import { IUsersTypesModel } from 'src/app/Models/UsersTypes/users-types-model';
 import { IUsersTypes } from 'src/app/Interfaces/Users/users-type';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-users-type',
@@ -15,11 +16,15 @@ export class UsersTypeComponent implements OnInit {
 
   _IUsersTypes: IUsersTypesModel[];
  
-  constructor(private userTypeService: UsersTypeService, private router: Router) { }
+  constructor(
+    private userTypeService: UsersTypeService, 
+    private router: Router,
+    private toastr: ToastrService) { }
 
   //Initializing form fields
 
   ngOnInit() {
+    this.toastr.toastrConfig.preventDuplicates = false;
     this.getData();
   }
 
@@ -29,31 +34,38 @@ export class UsersTypeComponent implements OnInit {
     this.userTypeService
       .getUsersType()
       .subscribe(UsersTypes_AWS => this._IUsersTypes = UsersTypes_AWS,
-        error => console.error(error));
+        error => this.getError(error));
   }
 
   preUpdate(_IUTypes: IUsersTypesModel){
-    //this.userTypeService._UpdateUType = _IUTypes;
 
     var Id_UsersType = _IUTypes.id_UsersType;
 
     var ruta = `userstypes/edit/`;
 
-    var data =Object.values(_IUTypes);
-
-    console.log("Objeto Chingon:" + Object.values(_IUTypes));
-
-    console.log('Id CHingona: ' + data['IdUsersType']); 
-
-    this.router.navigateByUrl(ruta + `${Id_UsersType}`).then(e => {
-          if (e) {
-            console.log("Navigation is successful!");
-          } else {
-            console.log("Navigation has failed! :(");
-          }
-    });
-
-    //console.log("ID: "+ _IUTypes.IdUsersType);//Object.values(_IUTypes));
+    this.router.navigateByUrl(ruta + `${Id_UsersType}`);
   }
   
+  preDelete(_IUTypes: IUsersTypesModel){
+    this.userTypeService.deleteUsersType(_IUTypes.id_UsersType).subscribe(
+      res =>
+      {
+        location.reload(),
+        this.toastr.warning("Eliminación de Usuario")
+      }
+    );
+
+  }
+
+  getError(_Error){
+
+    if (_Error && _Error.error) {
+      
+      return this.toastr.warning(_Error.error[""], "Error en la Carga de Datos");
+      
+    }
+   
+  }
+
+
 }

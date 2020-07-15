@@ -64,7 +64,7 @@ export class UsersTypeEditComponent implements OnInit {
       
       this.userTypeService.putUsersType(this.UTypeEditForm.value).subscribe(
         res => {
-          this.toastr.show("¡Actualización Exitosa!", "Tipo de Usuarios:"),
+          this.toastr.info("¡Actualización Exitosa!", "Tipo de Usuarios:"),
           this.router.navigateByUrl("userstypes")
         },
         error => this.getError(error), 

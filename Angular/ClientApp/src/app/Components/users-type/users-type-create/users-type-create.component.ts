@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { UsersTypeService } from 'src/app/Services/UsersType/users-type.service';
-import { IUsersTypes } from 'src/app/Interfaces/Users/users-type';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,14 +11,10 @@ import { Router } from '@angular/router';
 })
 export class UsersTypeCreateComponent implements OnInit {
 
-  public _IUsersTypes : IUsersTypes;
-
   constructor(private formBuilder: FormBuilder, 
     private toastr: ToastrService,
     private userTypeService: UsersTypeService,
-    private router: Router) {
-
-    }
+    private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -39,6 +34,7 @@ export class UsersTypeCreateComponent implements OnInit {
 
     
     if(this.UTypeCreateForm.value.UTypeId == null){
+
       this.userTypeService.postUsersType(this.UTypeCreateForm.value)
         .subscribe(  
         res => {
@@ -49,7 +45,7 @@ export class UsersTypeCreateComponent implements OnInit {
         error => this.getError(error)  
         );
 
-      }
+    }
 
   }
 
@@ -64,4 +60,5 @@ export class UsersTypeCreateComponent implements OnInit {
     }
    
   }
+  
 }

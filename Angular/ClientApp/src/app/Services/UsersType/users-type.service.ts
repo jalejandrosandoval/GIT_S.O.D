@@ -21,7 +21,7 @@ export class UsersTypeService {
   }
 
   getUsersTypeById(Id: Number): Observable<IUsersTypesModel>{
-    return this.http.get<IUsersTypesModel>(this.ApiPath + '/' + Id);  
+    return this.http.get<IUsersTypesModel>(`${this.ApiPath}/${Id}`);
   }
   
   postUsersType(_IUsersTypeModel: IUsersTypesModel): Observable<IUsersTypesModel>{
@@ -34,12 +34,11 @@ export class UsersTypeService {
   }
 
   putUsersType(_IUsersTypeModel: IUsersTypesModel): Observable<IUsersTypesModel>{
-
     return this.http.put<IUsersTypesModel>(`${this.ApiPath}/${_IUsersTypeModel.id_UsersType}`,  _IUsersTypeModel);
   }
 
   deleteUsersType(IdUserDelete : number): Observable<any>{
-    return this.http.delete<any>(this.ApiPath + "/" + IdUserDelete);
+    return this.http.delete<any>(`${this.ApiPath}/${IdUserDelete}`);
   }
 
 }

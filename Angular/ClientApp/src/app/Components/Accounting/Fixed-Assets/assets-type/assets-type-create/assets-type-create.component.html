@@ -1,0 +1,94 @@
+<div class="container-fluid">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <div class="col-xl-10 col-lg-12 col-md-8">
+
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"> <a href="" routerLink="/accounting"> Contabilidad </a> </li>
+                        <li class="breadcrumb-item active"> <a href="" routerLink="/accounting/assetstypes"> Tipo ActivosFijos </a> </li>
+                        <li class="breadcrumb-item active" aria-current="page"><b> Creación </b></li>
+                    </ol>
+                </nav>
+
+                <div class="d-sm-flex align-items-center justify-content-center mb-4">
+                    <h1 class="text-center h3 mb-0 text-gray-800">
+                        <i class="fas fa-boxes"> </i>
+                        <b> Tipo Activos Fijos </b>
+                    </h1>
+                </div>
+
+                <div class="card shadow">
+
+                    <div class="card-header py-3">
+                        <h6 class="text-primary">
+                            <i class="fas fa-plus"> </i> <b> Creación de Tipo de Ativos Fijos </b>
+                        </h6>
+                    </div>
+
+                    <div class="card-body p-0">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="p-5">
+                                    <h6 class="m-0 font-weight-bold text-danger">
+                                        <i class="fas fa-info"> </i> Los campos con (*) son requeridos..
+                                    </h6>
+
+                                    <br />
+
+                                    <form [formGroup]="ATypeCreateForm" (ngSubmit)="onCreate()">
+                                        <div class="form-group row">
+                                            <label class="font-weight-bold text-dark"> Nombre(*):</label>
+                                            <input type="hidden" formControlName="ATypeId" value="ATypeId" id="ATypeId"
+                                                name="ATypeId">
+                                            <input class="form-control form-control-user"
+                                                formControlName="assetsTypeName" type="text"
+                                                placeholder="Nombre Tipo Activo Fijo..." required />
+                                            <span *ngIf="gATypeName.assetsTypeName.invalid && (gATypeName.assetsTypeName.dirty || gATypeName.assetsTypeName.touched)"
+                                                class="text-center text-danger small">
+                                                <span *ngIf="gATypeName.assetsTypeName.errors.required">
+                                                    <b> * Campo Requerido: </b> Nombre Tipo Activo Fijo Requerido!
+                                                </span>
+                                            </span>
+                                        </div>
+
+                                        <br>
+
+                                        <div class="form-group row">
+                                            <div class="col-sm-3 mb-3 mb-sm-0 offset-sm-3">
+                                                <a class="btn btn-danger btn-user btn-block text-white" title="Cancelar"
+                                                    routerLink="/accounting/assetstypes">
+                                                    <i class="fas fa-times-circle"></i> Cancelar
+                                                </a>
+                                            </div>
+                                            <div class="col-sm-3 mb-3 mb-sm-0 ">
+                                                <button type="submit" value="Create"
+                                                    class="btn btn-primary btn-user btn-block text-white"
+                                                    title="Guardar" [disabled]="ATypeCreateForm.invalid">
+                                                    <i class="fas fa-save"></i> Guardar
+                                                </button>
+                                            </div>
+
+                                        </div>
+                                    </form>
+    
+                                </div>
+    
+                            </div>
+    
+                        </div>
+    
+                    </div>
+    
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

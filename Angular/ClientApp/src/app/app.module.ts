@@ -41,7 +41,9 @@ import { ProvidersTypeComponent } from './Providers-Type/providers-type/provider
 import { FixedAssetsComponent } from './Components/Accounting/Fixed-Assets/fixed-assets/fixed-assets.component';
 import { AccountingComponent } from './Components/Accounting/accounting.component';
 import { PurchasesComponent } from './Components/purchases/purchases.component';
-
+import { AssetsTypeComponent } from './Components/Accounting/Fixed-Assets/assets-type/assets-type.component';
+import { AssetsTypeCreateComponent } from './Components/Accounting/Fixed-Assets/assets-type/assets-type-create/assets-type-create.component';
+import { AssetsTypeEditComponent } from './Components/Accounting/Fixed-Assets/assets-type/assets-type-edit/assets-type-edit.component';
 
 //SERVICES
 import { UsersService } from './Services/Users/users.service';
@@ -52,7 +54,6 @@ import { UsersTypeService } from './Services/UsersType/users-type.service';
 //INTERCEPTORS OF HTTP
 import { AuthInterceptorService } from './Services/Auth/auth-interceptor.service';
 import { ErrorInterceptorService } from './Services/Auth/error-interceptor.service';
-import { AssetsTypeComponent } from './Components/Accounting/Fixed-Assets/assets-type/assets-type.component';
 
 @NgModule({
   declarations: [
@@ -80,7 +81,9 @@ import { AssetsTypeComponent } from './Components/Accounting/Fixed-Assets/assets
     FixedAssetsComponent,
     AccountingComponent,
     PurchasesComponent,
-    AssetsTypeComponent
+    AssetsTypeComponent,
+    AssetsTypeCreateComponent,
+    AssetsTypeEditComponent
   ],
   imports: [
     BrowserModule,

@@ -57,9 +57,9 @@
 
                                         <td class="text-white align-items-center justify-content-center text-center">
                                             <button class="btn btn-warning fas fa-edit text-white" title="Editar Usuario"
-                                                routerLink="/userstypes/edit" (click)="preUpdate(UType)"></button>
-
-                                            <button class="btn btn-dark fas fa-trash-alt" title="Eliminar Usuario"></button>
+                                                (click)="preUpdate(UType)"></button>
+                                            <button class="btn btn-dark fas fa-trash-alt" title="Eliminar Usuario"
+                                                (click)="preDelete(UType)"></button>
                                         </td>
                                         <td> {{UType.usersTypeName}} </td>
                                     </tr>

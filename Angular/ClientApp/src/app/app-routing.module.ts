@@ -3,30 +3,64 @@ import { Routes, RouterModule } from '@angular/router';
 
 // COMPONENTS
 
+//import { PageNotFoundComponent } from './Components/page-not-found/page-not-found.component';
+
 import { HomeComponent } from './Components/home/home.component';
+
+// AUTH
 import { LoginComponent } from './Components/Auth/login/login.component';
 import { AboutComponent } from './Components/about/about.component';
 import { RecoveryComponent } from './Components/Auth/recovery/recovery.component';
+
+// USERS
+
+import { DefaultComponent } from './Components/default/default.component';
+
 import { UsersComponent } from './Components/users/users.component';
 import { UserscreateComponent } from './Components/users/userscreate/userscreate.component';
 import { UserseditComponent } from './Components/users/usersedit/usersedit.component';
-import { DefaultComponent } from './Components/default/default.component';
-import { ComplementsComponent } from './Components/complements/complements.component';
-import { MantenainceComponent } from './Components/mantenaince/mantenaince.component';
-import { EquipmentsComponent } from './Components/Mantenaince/equipments/equipments.component';
-import { ProvidersComponent } from './Components/providers/providers.component';
-import { PageNotFoundComponent } from './Components/page-not-found/page-not-found.component';
-import { FabricationComponent } from './Components/fabrication/fabrication.component';
+
 import { UsersTypeComponent } from './Components/users-type/users-type.component';
 import { UsersTypeCreateComponent } from './Components/Users-Type/users-type-create/users-type-create.component';
-import { ProvidersTypeComponent } from './Providers-Type/providers-type/providers-type.component';
 import { UsersTypeEditComponent } from './Components/users-type/users-type-edit/users-type-edit.component';
-import { PurchasesComponent } from './Components/purchases/purchases.component';
-import { AccountingComponent } from './Components/Accounting/accounting.component';
-import { FixedAssetsComponent } from './Components/Accounting/Fixed-Assets/fixed-assets/fixed-assets.component';
-import { AssetsTypeComponent } from './Components/Accounting/Fixed-Assets/assets-type/assets-type.component';
 
-// SERVICE AUTHGUARD
+// MANTENAICE 
+
+import { MantenainceComponent } from './Components/mantenaince/mantenaince.component';
+
+// MANTENAICE - EQUIPMENTS
+
+import { EquipmentsComponent } from './Components/Mantenaince/equipments/equipments.component';
+
+// FABRICATION
+
+import { FabricationComponent } from './Components/fabrication/fabrication.component';
+
+// PURCHASES
+
+import { PurchasesComponent } from './Components/purchases/purchases.component';
+
+// PURCHASES - PROVIDERS
+
+import { ProvidersComponent } from './Components/providers/providers.component';
+import { ProvidersTypeComponent } from './Providers-Type/providers-type/providers-type.component';
+
+// ACCOUNTING
+
+import { AccountingComponent } from './Components/Accounting/accounting.component';
+
+import { FixedAssetsComponent } from './Components/Accounting/Fixed-Assets/fixed-assets/fixed-assets.component';
+
+import { AssetsTypeComponent } from './Components/Accounting/Fixed-Assets/assets-type/assets-type.component';
+import { AssetsTypeCreateComponent } from './Components/Accounting/Fixed-Assets/assets-type/assets-type-create/assets-type-create.component';
+import { AssetsTypeEditComponent } from './Components/Accounting/Fixed-Assets/assets-type/assets-type-edit/assets-type-edit.component';
+
+// COMPLEMENTS
+
+import { ComplementsComponent } from './Components/complements/complements.component';
+
+/// SERVICE AUTHGUARD
+
 import { AuthGuardService } from './Services/Auth/auth-guard.service';
 
 const routes: Routes = [
@@ -49,9 +83,11 @@ const routes: Routes = [
     { path: 'userstypes/edit/:Id_UsersType', component: UsersTypeEditComponent},
     { path: 'providerstypes', component: ProvidersTypeComponent},
     { path: 'purchases', component: PurchasesComponent},
-    { path: 'accouting', component: AccountingComponent},
-    { path: 'accouting/fixed-assets', component: FixedAssetsComponent},
-    { path: 'accouting/assetstypes', component: AssetsTypeComponent},
+    { path: 'accounting', component: AccountingComponent},
+    { path: 'accounting/fixed-assets', component: FixedAssetsComponent},
+    { path: 'accounting/assetstypes', component: AssetsTypeComponent},
+    { path: 'accounting/assetstypes/create', component: AssetsTypeCreateComponent},
+    { path: 'accounting/assetstypes/edit', component: AssetsTypeEditComponent},
     { path: '**', redirectTo: ''}//component: PageNotFoundComponent }
 ];
 

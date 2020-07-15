@@ -8,7 +8,7 @@
 
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"> <a href="" routerLink="/accouting"> Contabilidad </a> </li>
+                        <li class="breadcrumb-item"> <a href="" routerLink="/accounting"> Contabilidad </a> </li>
                         <li class="breadcrumb-item active" aria-current="page"> <b> Tipo ActivosFijos </b> </li>
                     </ol>
                 </nav>
@@ -30,7 +30,7 @@
                     <div class="card-body">
 
                         <p>
-                            <button class="btn btn-success btn-user text-white" routerLink="/"
+                            <button class="btn btn-success btn-user text-white" routerLink="/accounting/assetstypes/create"
                                 title="Agregar Tipo Activo Fijo"> <i class="fas fa-plus"></i> Agregar Tipo Activo
                                 Fijo</button>
                         </p>
@@ -56,8 +56,8 @@
                                     <tr *ngFor="let AssetsType of _IAssetsTypes">
 
                                         <td class="text-white align-items-center justify-content-center text-center">
-                                            <button class="btn btn-warning fas fa-edit text-white"
-                                                title="Editar Activo Fijo" routerLink=""></button>
+                                            <button class="btn btn-warning fas fa-edit text-white" (click)="preUpdate(UType)" title="Editar Activo Fijo"></button>
+                                            <button class="btn btn-dark fas fa-trash-alt" title="Eliminar Activo Fijo" (click)="preDelete(UType)"></button>
                                         </td>
                                         <td> {{AssetsType.assetsTypeName}} </td>
                                     </tr>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AssetsTypesModel } from 'src/app/Models/Accouting/AssetsTypes/assets-types-model';
 import { AssetsTypesService } from 'src/app/Services/Accouting/AssetsTypes/assets-types.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-assets-type',
@@ -13,7 +14,9 @@ export class AssetsTypeComponent implements   OnInit {
 
   _IAssetsTypes: AssetsTypesModel[];
  
-  constructor(private assetstypesservice: AssetsTypesService) { }
+  constructor(
+    private assetstypesservice: AssetsTypesService,
+    private router: Router) { }
 
   //Initializing form fields
 
@@ -28,6 +31,26 @@ export class AssetsTypeComponent implements   OnInit {
       .getAssetsTypes()
       .subscribe(UsersTypes_AWS => this._IAssetsTypes = UsersTypes_AWS,
         error => console.error(error));
+  }
+
+  preUpdate(){
+
+    //var Id_UsersType = _IUTypes.id_UsersType;
+
+    var ruta = `/accounting/assetstypes/edit`;
+
+    this.router.navigateByUrl(ruta); //+ `${Id_UsersType}`);
+  }
+  
+  preDelete(){
+    /*this.userTypeService.deleteUsersType(_IUTypes.id_UsersType).subscribe(
+      res =>
+      {
+        location.reload(),
+        this.toastr.warning("Eliminación de Usuario")
+      }
+    );*/
+
   }
 
 }
