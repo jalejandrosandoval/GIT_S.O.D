@@ -20,12 +20,16 @@
                         <b> Tipo de Usuarios </b>
                     </h1>
                 </div>
+                
+                <p *ngIf="!UTypeEditForm" class="text-center">
+                    No existen registro para editar
+                </p>
 
-                <div class="card shadow">
+                <div class="card shadow" *ngIf="UTypeEditForm">
 
                     <div class="card-header py-3">
                         <h6 class="text-primary">
-                            <i class="fas fa-user-plus"> </i> <b> Edición de Tipo de Usuarios </b>
+                            <i class="fas fa-user-edit"> </i> <b> Edición de Tipo de Usuarios </b>
                         </h6>
                     </div>
 
@@ -38,18 +42,16 @@
                                     </h6>
 
                                     <br />
-
+                                    
                                     <form [formGroup]="UTypeEditForm" (ngSubmit)="onEdit()">
                                         <div class="form-group row">
                                             <label class="font-weight-bold text-dark"> Nombre(*):</label>
-                                            <input type="hidden" formControlName="Id_UsersType" value="Id_UsersType" id="Id_UsersType"
-                                                name="Id_UsersType">
                                             <input class="form-control form-control-user"
                                                 formControlName="usersTypeName" type="text"
-                                                placeholder="Nombre Tipo Usuario..." required />
-                                            <span *ngIf="gUsername.invalid && (gUsername.dirty || gUsername.touched)"
+                                                placeholder="Nombre Tipo Usuario..." required/>
+                                            <span *ngIf="UTypeEditFormData.usersTypeName.invalid && (UTypeEditFormData.usersTypeName.dirty || UTypeEditFormData.usersTypeName.touched)"
                                                 class="text-center text-danger small">
-                                                <span *ngIf="gUsername.errors.required">
+                                                <span *ngIf="UTypeEditFormData.usersTypeName.errors.required">
                                                     <b> * Campo Requerido: </b> Nombre Tipo Usuario Requerido!
                                                 </span>
                                             </span>

@@ -1,15 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { IUsersTypes } from '../../Interfaces/Users/users-type';
 import { IUsersTypesModel } from 'src/app/Models/UsersTypes/users-types-model';
 import { map } from 'rxjs/operators';
 
 @Injectable()
 export class UsersTypeService {
 
-  _IUsersTypes: IUsersTypes[];
-  _UpdateUType: IUsersTypes[];
+  _IUsersTypes: IUsersTypesModel[];
 
   readonly ApiPath= '/API/UsersTypes';
 
@@ -18,12 +16,16 @@ export class UsersTypeService {
 
   //Getting UsersData through httpClient of Angular -> ApiPath 
 
-  getUsersType(): Observable<IUsersTypes[]>{
-    return this.http.get<IUsersTypes[]>(this.ApiPath);  
+  getUsersType(): Observable<IUsersTypesModel[]>{
+    return this.http.get<IUsersTypesModel[]>(this.ApiPath);  
+  }
+
+  getUsersTypeById(Id: Number): Observable<IUsersTypesModel>{
+    return this.http.get<IUsersTypesModel>(this.ApiPath + '/' + Id);  
   }
   
-  postUsersType(_IUsersTypeModel: IUsersTypesModel): Observable<IUsersTypesModel[]>{
-    return this.http.post<IUsersTypesModel[]>(this.ApiPath, _IUsersTypeModel)
+  postUsersType(_IUsersTypeModel: IUsersTypesModel): Observable<IUsersTypesModel>{
+    return this.http.post<IUsersTypesModel>(this.ApiPath, _IUsersTypeModel)
       .pipe(
         map(user => {
           return user;
@@ -31,8 +33,13 @@ export class UsersTypeService {
       ));
   }
 
-  putUsersType(_IUsersTypeModel: IUsersTypesModel): Observable<any>{
-    return this.http.put<any>(this.ApiPath + "/",  _IUsersTypeModel);
+  putUsersType(_IUsersTypeModel: IUsersTypesModel): Observable<IUsersTypesModel>{
+
+    return this.http.put<IUsersTypesModel>(`${this.ApiPath}/${_IUsersTypeModel.id_UsersType}`,  _IUsersTypeModel);
+  }
+
+  deleteUsersType(IdUserDelete : number): Observable<any>{
+    return this.http.delete<any>(this.ApiPath + "/" + IdUserDelete);
   }
 
 }

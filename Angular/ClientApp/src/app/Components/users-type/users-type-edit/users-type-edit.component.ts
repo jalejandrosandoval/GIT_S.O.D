@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { UsersTypeService } from 'src/app/Services/UsersType/users-type.service';
 import { IUsersTypesModel } from 'src/app/Models/UsersTypes/users-types-model';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-users-type-edit',
@@ -13,39 +14,63 @@ export class UsersTypeEditComponent implements OnInit {
 
   //Declarations of Variables 
 
-  _IUsersTypes: IUsersTypesModel[];
+  _SelectedUserType: IUsersTypesModel;
+  UTypeEditForm : FormGroup;
 
   constructor(private formBuilder: FormBuilder, 
     private toastr: ToastrService,
-    private userTypeService: UsersTypeService) {
+    private userTypeService: UsersTypeService,
+    private route: ActivatedRoute,
+    private router: Router) {
 
     }
 
   ngOnInit(): void {
-    this._IUsersTypes = this.userTypeService._UpdateUType;
-    console.log("NOnInit: " + Object.values(this._IUsersTypes));
+    
+    const UTypeId = this.route.snapshot.params['Id_UsersType'];
+
+    this.setForm(UTypeId);
+   
   }
 
-  UTypeEditForm = this.formBuilder.group({
-    Id_UsersType: [''],
-    usersTypeName: ['', {
-      Validators: [Validators.required]
-    }]
-  });
-  
-  get gUsername() {
-    return this.UTypeEditForm.get('usersTypeName');
+  private setForm(_UTypeId: Number){
+
+    this.userTypeService.getUsersTypeById(_UTypeId).subscribe(
+      res => 
+      {
+        this._SelectedUserType = res,
+        this.UTypeEditForm = this.formBuilder.group({
+          id_UsersType: [this._SelectedUserType.id_UsersType],
+          usersTypeName: [this._SelectedUserType.usersTypeName, {
+            Validators: [Validators.required]
+          }]
+        })
+      }
+    );
+      
+  }
+
+  get UTypeEditFormData() { 
+    return this.UTypeEditForm.controls; 
   }
 
   onEdit(){
+
+    if (this.UTypeEditForm.invalid) {
+
+      return;
     
-    /**if(this.UTypeEditForm.value.UTypeId != null){
-      this.userTypeService.putUsersType(this.UTypeEditForm.value)
-        .subscribe(  
-        res => {this.toastr.show("¡Actualización Exitosa!", "Tipo de Usuarios:")},
-        error => this.getError(error)  
-        );
-      }*/
+    }else{
+      
+      this.userTypeService.putUsersType(this.UTypeEditForm.value).subscribe(
+        res => {
+          this.toastr.show("¡Actualización Exitosa!", "Tipo de Usuarios:"),
+          this.router.navigateByUrl("userstypes")
+        },
+        error => this.getError(error), 
+      );
+
+    }
 
   }
 
@@ -55,7 +80,7 @@ export class UsersTypeEditComponent implements OnInit {
 
       this.UTypeEditForm.reset;
       
-      return this.toastr.warning(_Error.error[""], "Error");
+      return this.toastr.warning(_Error.error[""], "Error al Actualizar Tipo de Usuarios!");
       
     }
    

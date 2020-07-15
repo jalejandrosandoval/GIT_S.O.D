@@ -1,6 +1,5 @@
 export interface IUsersTypesModel {
 
-    IdUsersType: number;
-    UsersTypeName: string;
-
+    id_UsersType: number;
+    usersTypeName: string;
 }

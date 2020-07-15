@@ -21,6 +21,10 @@ import { UsersTypeComponent } from './Components/users-type/users-type.component
 import { UsersTypeCreateComponent } from './Components/Users-Type/users-type-create/users-type-create.component';
 import { ProvidersTypeComponent } from './Providers-Type/providers-type/providers-type.component';
 import { UsersTypeEditComponent } from './Components/users-type/users-type-edit/users-type-edit.component';
+import { PurchasesComponent } from './Components/purchases/purchases.component';
+import { AccountingComponent } from './Components/Accounting/accounting.component';
+import { FixedAssetsComponent } from './Components/Accounting/Fixed-Assets/fixed-assets/fixed-assets.component';
+import { AssetsTypeComponent } from './Components/Accounting/Fixed-Assets/assets-type/assets-type.component';
 
 // SERVICE AUTHGUARD
 import { AuthGuardService } from './Services/Auth/auth-guard.service';
@@ -42,8 +46,12 @@ const routes: Routes = [
     { path: 'fabrication', component: FabricationComponent, canActivate: [AuthGuardService]}, 
     { path: 'userstypes', component: UsersTypeComponent},
     { path: 'userstypes/create', component: UsersTypeCreateComponent},
-    { path: 'userstypes/edit', component: UsersTypeEditComponent},
+    { path: 'userstypes/edit/:Id_UsersType', component: UsersTypeEditComponent},
     { path: 'providerstypes', component: ProvidersTypeComponent},
+    { path: 'purchases', component: PurchasesComponent},
+    { path: 'accouting', component: AccountingComponent},
+    { path: 'accouting/fixed-assets', component: FixedAssetsComponent},
+    { path: 'accouting/assetstypes', component: AssetsTypeComponent},
     { path: '**', redirectTo: ''}//component: PageNotFoundComponent }
 ];
 

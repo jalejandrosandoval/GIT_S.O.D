@@ -38,6 +38,10 @@ import { UsersTypeComponent } from './Components/users-type/users-type.component
 import { UsersTypeCreateComponent } from './Components/Users-Type/users-type-create/users-type-create.component';
 import { UsersTypeEditComponent } from './Components/users-type/users-type-edit/users-type-edit.component';
 import { ProvidersTypeComponent } from './Providers-Type/providers-type/providers-type.component';
+import { FixedAssetsComponent } from './Components/Accounting/Fixed-Assets/fixed-assets/fixed-assets.component';
+import { AccountingComponent } from './Components/Accounting/accounting.component';
+import { PurchasesComponent } from './Components/purchases/purchases.component';
+
 
 //SERVICES
 import { UsersService } from './Services/Users/users.service';
@@ -48,7 +52,7 @@ import { UsersTypeService } from './Services/UsersType/users-type.service';
 //INTERCEPTORS OF HTTP
 import { AuthInterceptorService } from './Services/Auth/auth-interceptor.service';
 import { ErrorInterceptorService } from './Services/Auth/error-interceptor.service';
-
+import { AssetsTypeComponent } from './Components/Accounting/Fixed-Assets/assets-type/assets-type.component';
 
 @NgModule({
   declarations: [
@@ -72,7 +76,11 @@ import { ErrorInterceptorService } from './Services/Auth/error-interceptor.servi
     UsersTypeComponent,
     UsersTypeCreateComponent,
     ProvidersTypeComponent,
-    UsersTypeEditComponent
+    UsersTypeEditComponent,
+    FixedAssetsComponent,
+    AccountingComponent,
+    PurchasesComponent,
+    AssetsTypeComponent
   ],
   imports: [
     BrowserModule,

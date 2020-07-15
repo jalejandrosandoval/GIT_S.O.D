@@ -25,7 +25,7 @@ export class UsersTypeCreateComponent implements OnInit {
   }
 
   UTypeCreateForm = this.formBuilder.group({
-    //UTypeId: [null],
+    UTypeId: [null],
     usersTypeName: ['', {
       Validators: [Validators.required]
     }]

@@ -1,0 +1,79 @@
+<div class="container-fluid">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <div class="col-xl-10 col-lg-12 col-md-8">
+
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"> <a href="" routerLink="/accouting"> Contabilidad </a> </li>
+                        <li class="breadcrumb-item active" aria-current="page"> <b> Tipo ActivosFijos </b> </li>
+                    </ol>
+                </nav>
+
+                <div class="d-sm-flex align-items-center justify-content-center mb-4">
+                    <h1 class="text-center h3 mb-0 text-gray-800">
+                        <i class="fas fa-boxes"> </i>
+                        <b> Tipo Activos Fijos </b>
+                    </h1>
+                </div>
+
+
+                <p *ngIf="!(_IAssetsTypes && _IAssetsTypes.length)" class="text-center">
+                    No existen registros para mostrar
+                </p>
+
+                <div class="card shadow mb-4" *ngIf="_IAssetsTypes && _IAssetsTypes.length">
+
+                    <div class="card-body">
+
+                        <p>
+                            <button class="btn btn-success btn-user text-white" routerLink="/"
+                                title="Agregar Tipo Activo Fijo"> <i class="fas fa-plus"></i> Agregar Tipo Activo
+                                Fijo</button>
+                        </p>
+
+                        <div class="table-responsive">
+
+                            <table id="datatable" class="table table-striped table-bordered table-condensed table-hover"
+                                width="100%" cellspacing="0">
+
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Opciones
+                                        </th>
+                                        <th>
+                                            Activo Fijo
+                                        </th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+
+                                    <tr *ngFor="let AssetsType of _IAssetsTypes">
+
+                                        <td class="text-white align-items-center justify-content-center text-center">
+                                            <button class="btn btn-warning fas fa-edit text-white"
+                                                title="Editar Activo Fijo" routerLink=""></button>
+                                        </td>
+                                        <td> {{AssetsType.assetsTypeName}} </td>
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

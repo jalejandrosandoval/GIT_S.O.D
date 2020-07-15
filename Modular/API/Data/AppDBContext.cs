@@ -32,6 +32,8 @@ namespace API.Data
         public DbSet<Providers> Providers { get; set; }
         public DbSet<ProviderType> ProvidersType { get; set; }
         public DbSet<Logs> Logs { get; set; }
+        public DbSet<AssetsType> AssetsTypes { get; set; }
+        public DbSet<Fixed_Assets> Fixed_Assets { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -47,6 +49,8 @@ namespace API.Data
             modelBuilder.Entity<Providers>().ToTable("Providers");
             modelBuilder.Entity<ProviderType>().ToTable("ProvidersType");
             modelBuilder.Entity<Logs>().ToTable("Logs");
+            modelBuilder.Entity<AssetsType>().ToTable("AssetsType");
+            modelBuilder.Entity<Fixed_Assets>().ToTable("Fixed_Assets");
         }
 
     }
