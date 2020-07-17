@@ -58,7 +58,14 @@ import { AssetsTypeEditComponent } from './Components/Accounting/Fixed-Assets/as
 // SYSTEMS
 
 import { SystemsComponent } from './Components/Systems/systems/systems.component';
-import { CVDevicesComponent } from './Components/Systems/cv-devices//cv-devices/cv-devices.component';
+import { CVDevicesComponent } from './Components/Systems/cv-devices/cv-devices/cv-devices/cv-devices.component';
+import { CvDevicesCreateComponent } from './Components/Systems/cv-devices/cv-devices/cv-devices-create/cv-devices-create.component';
+import { CvDevicesCreateCharacteristicsComponent } from './Components/Systems/cv-devices/cv-devices/cv-devices-create-characteristics/cv-devices-create-characteristics.component';
+import { CvDevicesCreateAccesoriesComponent } from './Components/Systems/cv-devices/cv-devices/cv-devices-create-accesories/cv-devices-create-accesories.component';
+
+// CELL
+
+import { CellComponent } from './Components/Cell/Cell/cell/cell.component';
 
 // COMPLEMENTS
 
@@ -95,6 +102,10 @@ const routes: Routes = [
     { path: 'accounting/assetstypes/edit', component: AssetsTypeEditComponent},
     { path: 'systems', component: SystemsComponent},
     { path: 'systems/cv-devices', component: CVDevicesComponent},
+    { path: 'systems/cv-devices/create', component: CvDevicesCreateComponent},
+    { path: 'systems/cv-devices/create/characteristics', component: CvDevicesCreateCharacteristicsComponent}, 
+    { path: 'systems/cv-devices/create/accesories', component: CvDevicesCreateAccesoriesComponent},      
+    { path: 'cell', component: CellComponent},
     { path: '**', redirectTo: ''}//component: PageNotFoundComponent }
 ];
 

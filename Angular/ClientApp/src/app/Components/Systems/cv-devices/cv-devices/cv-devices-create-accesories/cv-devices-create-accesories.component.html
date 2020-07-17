@@ -1,0 +1,82 @@
+<div class="container-fluid">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <div class="col-xs-12 col-xs-12 col-md-12">
+
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"> <a href="" routerLink="/systems"> Sistemas </a> </li>
+                        <li class="breadcrumb-item"> <a href="" routerLink="/systems/cv-devices"> HV - Dispositivos </a>
+                        </li>
+                        <li class="breadcrumb-item"> <a href="" routerLink="/systems/cv-devices/create"> Creación </a>
+                        </li>
+                        <li class="breadcrumb-item"> <a href="" routerLink="/systems/cv-devices/create/characteristics"> Descripción del Dispositivo </a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page"><b> Accesorios </b></li>
+                    </ol>
+                </nav>
+
+                <div class="d-sm-flex align-items-center justify-content-center mb-4">
+                    <h1 class="text-center h3 mb-0 text-gray-800">
+                        <i class="fas fa-code"></i>
+                        <b> Sistemas </b>
+                    </h1>
+                </div>
+
+                <div class="card shadow">
+
+                    <div class="card-header py-3">
+                        <h6 class="text-primary">
+                            <i class="fas fa-plus"> </i> <b> Creación de Dispositivos </b>
+                        </h6>
+                    </div>
+
+                    <div class="card-body p-0">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="p-5">
+                                    <h6 class="font-weight-bold text-danger">
+                                        <i class="fas fa-info"> </i> Los campos con (*) son requeridos..
+                                    </h6>
+
+                                    <br />
+
+                                    <form [formGroup]="">
+
+                                        <div>
+                                            <div class="d-sm-flex align-items-center justify-content-center mb-4">
+                                                <h6 class="text-center h5 mb-0 text-primary">
+                                                    <b> Accesorios </b>
+                                                </h6>
+                                            </div>
+
+                                            <hr>
+
+                                            <div class="form-group row">
+                                                <div class="col-sm-4 mb-3 mb-sm-0">
+                                                    <label class="font-weight-bold text-dark">Accesorios
+                                                        Otorgados(*):</label>
+                                                    <select class="form-control form-control-user custom-select"
+                                                        formControlName="" title="Seleccione..." required>
+                                                        <option selected>Seleccione...</option>
+                                                        <option value="1"> Sí </option>
+                                                        <option value="1"> No </option>
+                                                    </select>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -58,7 +58,7 @@ export class AccountService implements OnInit {
 
   Login(_LoginModel: LoginModel): Observable<any> {
     
-    return this.http.post<any>(this.ApiPath + '/Login', _LoginModel, this.httpOptions)
+    return this.http.post<any>(this.ApiPath + '/Login', _LoginModel)
       .pipe(map(user => {
         localStorage.setItem('currenteUser',
           JSON.stringify(user))

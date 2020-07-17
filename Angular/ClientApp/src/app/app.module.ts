@@ -1,12 +1,13 @@
 //MODULES
 import { BrowserModule } from '@angular/platform-browser';
+
 import { NgModule } from '@angular/core';
 import { DataTablesModule } from 'angular-datatables';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -15,6 +16,16 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+
+//SERVICES
+import { UsersService } from './Services/Users/users.service';
+import { AuthGuardService } from './Services/Auth/auth-guard.service';
+import { AccountService } from './Services/Account/account.service';
+import { UsersTypeService } from './Services/UsersType/users-type.service';
+
+//INTERCEPTORS OF HTTP
+import { AuthInterceptorService } from './Services/Auth/auth-interceptor.service';
+import { ErrorInterceptorService } from './Services/Auth/error-interceptor.service';
 
 //COMPONENTS
 
@@ -45,21 +56,14 @@ import { AssetsTypeComponent } from './Components/Accounting/Fixed-Assets/assets
 import { AssetsTypeCreateComponent } from './Components/Accounting/Fixed-Assets/assets-type/assets-type-create/assets-type-create.component';
 import { AssetsTypeEditComponent } from './Components/Accounting/Fixed-Assets/assets-type/assets-type-edit/assets-type-edit.component';
 import { SystemsComponent } from './Components/Systems/systems/systems.component';
-import { CVDevicesComponent } from './Components/Systems/cv-devices/cv-devices/cv-devices.component';
-
-//SERVICES
-import { UsersService } from './Services/Users/users.service';
-import { AuthGuardService } from './Services/Auth/auth-guard.service';
-import { AccountService } from './Services/Account/account.service';
-import { UsersTypeService } from './Services/UsersType/users-type.service';
-
-//INTERCEPTORS OF HTTP
-import { AuthInterceptorService } from './Services/Auth/auth-interceptor.service';
-import { ErrorInterceptorService } from './Services/Auth/error-interceptor.service';
+import { CVDevicesComponent } from './Components/Systems/cv-devices/cv-devices/cv-devices/cv-devices.component';
 import { DevicesTypesComponent } from './Components/Systems/CV-Devices/devices-types/devices-types.component';
 import { DevicesAccesoriesComponent } from './Components/Systems/CV-Devices/devices-accesories/devices-accesories.component';
 import { DevicesMantenainceComponent } from './Components/Systems/CV-Devices/devices-mantenaince/devices-mantenaince.component';
-
+import { CellComponent } from './Components/Cell/Cell/cell/cell.component';
+import { CvDevicesCreateComponent } from './Components/Systems/cv-devices/cv-devices/cv-devices-create/cv-devices-create.component';
+import { CvDevicesCreateCharacteristicsComponent } from './Components/Systems/cv-devices/cv-devices/cv-devices-create-characteristics/cv-devices-create-characteristics.component';
+import { CvDevicesCreateAccesoriesComponent } from './Components/Systems/cv-devices/cv-devices/cv-devices-create-accesories/cv-devices-create-accesories.component';
 
 @NgModule({
   declarations: [
@@ -94,7 +98,11 @@ import { DevicesMantenainceComponent } from './Components/Systems/CV-Devices/dev
     CVDevicesComponent,
     DevicesTypesComponent,
     DevicesAccesoriesComponent,
-    DevicesMantenainceComponent
+    DevicesMantenainceComponent,
+    CellComponent,
+    CvDevicesCreateComponent,
+    CvDevicesCreateCharacteristicsComponent,
+    CvDevicesCreateAccesoriesComponent
   ],
   imports: [
     BrowserModule,

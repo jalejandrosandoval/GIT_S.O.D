@@ -1,43 +1,21 @@
 <header>
     
-    <nav class="navbar navbar-expand-sm  navbar-light bg-danger border-bottom box-shadow mb-3">
+    <nav class="navbar navbar-expand-sm navbar-light bg-danger border-bottom box-shadow mb-3" *ngIf="nb_LoggedIn()">
 
-        <div class="collapse navbar-collapse">
-            <a *ngIf="!nb_LoggedIn()"class="navbar-brand" routerLink="/" >
-                <img src="../assets/images/Logo.png" width="100" height="50" title="Petroco Mantenimiento" />
-            </a>
-
-            <a *ngIf="nb_LoggedIn()"class="navbar-brand" routerLink="/default" >
-                <img src="../assets/images/Logo.png" width="100" height="50" title="Petroco Mantenimiento" />
-            </a>
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
+        <button class="btn btn-link d-md-none rounded-circle mr-3 text-white" type="button" data-toggle="collapse" data-target=".navbar-collapse"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <i class="fa fa-bars"></i>
             </button>
 
-            <!--Menu for User without validataions logging in the app-->
+        <div class="collapse navbar-collapse">
 
-            <div *ngIf="!nb_LoggedIn()" class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                
-                <ul class="navbar-nav flex-grow-1 dropdown-menu-sm-left mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link text-white" title="Menú Principal" routerLink="/"> <b> <i
-                                    class="fas fa-home"></i> </b> </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white"> <b> | </b> </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" title="Acerca De" routerLink="/about"> <b> Acerca De </b> </a>
-                    </li>
-                </ul>
-            
-            </div>
+            <a class="navbar-brand" routerLink="/default" >
+                <img src="../assets/images/Logo.png" width="100" height="50" title="Petroco Mantenimiento" />
+            </a>
 
             <!--User menu loging check from API-->
 
-            <div *ngIf="nb_LoggedIn()" class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+            <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
             
                 <ul class="navbar-nav flex-grow-1 dropdown-menu-sm-left mr-auto">
                     <li class="nav-item">
@@ -80,7 +58,7 @@
                         <a class="nav-link text-white"> <b> | </b> </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" title="Complementos" routerLink="/systems"> <b> Sistemas </b> </a>
+                        <a class="nav-link text-white" title="Sistemas" routerLink="/systems"> <b> Sistemas </b> </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white"> <b> | </b> </a>
@@ -88,24 +66,23 @@
                     <li class="nav-item">
                         <a class="nav-link text-white" title="Complementos" routerLink="/complements"> <b> Complementos </b> </a>
                     </li>
-                    
+                    <li class="nav-item">
+                        <a class="nav-link text-white"> <b> | </b> </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" title="Bodega" routerLink="/cell"> <b> Bodega </b> </a>
+                    </li>
                 </ul>
             
             </div>
 
-            
             <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-            
+                
                 <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
 
-                    <!--Btn for Loggin-->
-                    
-                    <li class="nav-item" *ngIf="!nb_LoggedIn()">
-                        <a class="nav-link text-white" routerLink="/login" title="Iniciar Sesión"> <b> <i
-                                    class="fas fa-sign-in-alt"></i> Ingresar </b> </a>
-                    </li>
-
                     <!--Dropdowm for the User LoggedIn in the app-->
+
+                    <div class="topbar-divider d-none d-sm-block text-white"></div>
 
                     <li class="nav-item dropdown no-arrow" *ngIf="nb_LoggedIn()">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"

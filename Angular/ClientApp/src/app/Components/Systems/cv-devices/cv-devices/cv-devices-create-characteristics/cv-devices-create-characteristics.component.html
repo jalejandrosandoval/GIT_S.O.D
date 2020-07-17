@@ -1,0 +1,269 @@
+<div class="container-fluid">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <div class="col-xs-12 col-xs-12 col-md-12">
+
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"> <a href="" routerLink="/systems"> Sistemas </a> </li>
+                        <li class="breadcrumb-item"> <a href="" routerLink="/systems/cv-devices"> HV - Dispositivos </a>
+                        </li>
+                        <li class="breadcrumb-item"> <a href="" routerLink="/systems/cv-devices/create"> Creación </a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page"><b> Descripción del Dispositivo </b></li>
+                    </ol>
+                </nav>
+
+                <div class="d-sm-flex align-items-center justify-content-center mb-4">
+                    <h1 class="text-center h3 mb-0 text-gray-800">
+                        <i class="fas fa-code"></i>
+                        <b> Sistemas </b>
+                    </h1>
+                </div>
+
+                <div class="card shadow">
+
+                    <div class="card-header py-3">
+                        <h6 class="text-primary">
+                            <i class="fas fa-plus"> </i> <b> Creación de Dispositivos </b>
+                        </h6>
+                    </div>
+
+                    <div class="card-body p-0">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="p-5">
+                                    <h6 class="font-weight-bold text-danger">
+                                        <i class="fas fa-info"> </i> Los campos con (*) son requeridos..
+                                    </h6>
+
+                                    <br />
+
+                                    <form [formGroup]="">
+                                        <div>
+                                            <div class="d-sm-flex align-items-center justify-content-center mb-4">
+                                                <h6 class="text-center h5 mb-0 text-primary">
+                                                    <b> Descripción del Dispositivo</b>
+                                                </h6>
+                                            </div>
+
+                                            <hr>
+
+                                            <div class="form-group row">
+                                                <div class="col-sm-4 mb-3 mb-sm-0">
+                                                    <label class="font-weight-bold text-dark">Tipo de
+                                                        Dispositivo(*):</label>
+                                                    <select class="form-control form-control-user custom-select"
+                                                        formControlName="" title="Seleccione..." required>
+                                                        <option selected>Seleccione...</option>
+                                                        <option *ngFor="let user of options">{{ user }}</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="col-sm-4">
+                                                    <label class="font-weight-bold text-dark"> Marca(*):</label>
+                                                    <input class="form-control form-control-user" formControlName=""
+                                                        type="text" placeholder="Marca..." title="Marca" required />
+                                                    <span *ngIf="" class="text-center text-danger small">
+                                                        <span *ngIf="">
+                                                            <b> * Campo Requerido: </b> Nombre Tipo Usuario Requerido!
+                                                        </span>
+                                                    </span>
+                                                </div>
+
+                                                <div class="col-sm-4">
+                                                    <label class="font-weight-bold text-dark"> Modelo(*):</label>
+                                                    <input class="form-control form-control-user" formControlName=""
+                                                        type="text" placeholder="Modelo..." title="Modelo" required />
+                                                    <span *ngIf="" class="text-center text-danger small">
+                                                        <span *ngIf="">
+                                                            <b> * Campo Requerido: </b> Nombre Tipo Usuario Requerido!
+                                                        </span>
+                                                    </span>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <div class="col-sm-4 mb-3 mb-sm-0">
+                                                    <label class="font-weight-bold text-dark"> S/N(*):</label>
+                                                    <input class="form-control form-control-user" formControlName=""
+                                                        type="text" placeholder="S/N..." title="S/N" required />
+                                                    <span *ngIf="" class="text-center text-danger small">
+                                                        <span *ngIf="">
+                                                            <b> * Campo Requerido: </b> Nombre Tipo Usuario Requerido!
+                                                        </span>
+                                                    </span>
+                                                </div>
+
+                                                <div class="col-sm-4">
+                                                    <label class="font-weight-bold text-dark"> Product ID(*):</label>
+                                                    <input class="form-control form-control-user" formControlName=""
+                                                        type="text" placeholder="Product ID..." title="Product ID"
+                                                        required />
+                                                    <span *ngIf="" class="text-center text-danger small">
+                                                        <span *ngIf="">
+                                                            <b> * Campo Requerido: </b> Nombre Tipo Usuario Requerido!
+                                                        </span>
+                                                    </span>
+                                                </div>
+
+                                                <div class="col-sm-4">
+                                                    <label class="font-weight-bold text-dark"> MAC(*):</label>
+                                                    <input class="form-control form-control-user" formControlName=""
+                                                        type="text" placeholder="00:00:00:00:00:00" title="MAC"
+                                                        required />
+                                                    <span *ngIf="" class="text-center text-danger small">
+                                                        <span *ngIf="">
+                                                            <b> * Campo Requerido: </b> Nombre Tipo Usuario Requerido!
+                                                        </span>
+                                                    </span>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <div class="col-sm-4 mb-3 mb-sm-0">
+                                                    <label class="font-weight-bold text-dark"> IP(*):</label>
+                                                    <input class="form-control form-control-user" formControlName=""
+                                                        type="text" placeholder="192.168.2.1" title="IP" required />
+                                                    <span *ngIf="" class="text-center text-danger small">
+                                                        <span *ngIf="">
+                                                            <b> * Campo Requerido: </b> Nombre Tipo Usuario Requerido!
+                                                        </span>
+                                                    </span>
+                                                </div>
+
+                                                <div class="col-sm-4">
+                                                    <label class="font-weight-bold text-dark">Tipo de S.O(*):</label>
+                                                    <select class="form-control form-control-user custom-select"
+                                                        formControlName="" title="Tipo de Sistema Operativo" required>
+                                                        <option selected>Seleccione...</option>
+                                                        <option *ngFor="let user of options">{{ user }}</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="col-sm-4 mb-3 mb-sm-0">
+                                                    <label class="font-weight-bold text-dark">Tipo de Memoria
+                                                        RAM(*):</label>
+                                                    <select class="form-control form-control-user custom-select"
+                                                        formControlName="" title="Memoria RAM" required>
+                                                        <option selected>Seleccione...</option>
+                                                        <option *ngFor="let user of options">{{ user }}</option>
+                                                    </select>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <div class="col-sm-4 mb-3 mb-sm-0">
+                                                    <label class="font-weight-bold text-dark">Tipo de
+                                                        Procesador(*):</label>
+                                                    <select class="form-control form-control-user custom-select"
+                                                        formControlName="" title="Tipo de Procesador" required>
+                                                        <option selected>Seleccione...</option>
+                                                        <option *ngFor="let user of options">{{ user }}</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="col-sm-4">
+                                                    <label class="font-weight-bold text-dark">Tipo de
+                                                        Almacenamiento(*):</label>
+                                                    <select class="form-control form-control-user custom-select"
+                                                        formControlName="" title="Tipo de Almacenamiento" required>
+                                                        <option selected>Seleccione...</option>
+                                                        <option value='1'> HDD </option>
+                                                        <option value='2'> SDD </option>
+                                                        <option value='3'> Hibrido </option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="col-sm-4">
+                                                    <label class="font-weight-bold text-dark">Tamaño de
+                                                        Almacenamiento(*):</label>
+                                                    <select class="form-control form-control-user custom-select"
+                                                        formControlName="" title="Tamaño de Almacenamiento" required>
+                                                        <option selected>Seleccione...</option>
+                                                        <option *ngFor="let user of options">{{ user }}</option>
+                                                    </select>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                                    <label class="font-weight-bold text-dark">Tarjeta
+                                                        Gráfica(*):</label>
+                                                    <select class="form-control form-control-user custom-select"
+                                                        formControlName="" title="Tipo de Almacenamiento" required>
+                                                        <option selected>Seleccione...</option>
+                                                        <option value='1'> N/A </option>
+                                                        <option value='2'> Sí </option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="col-sm-6">
+                                                    <label class="font-weight-bold text-dark"> Pantalla -
+                                                        Resolución(*):</label>
+                                                    <input class="form-control form-control-user" formControlName=""
+                                                        type="text" placeholder="Tamaño (Pulgadas) - Resolución"
+                                                        title="IP" required />
+                                                    <span *ngIf="" class="text-center text-danger small">
+                                                        <span *ngIf="">
+                                                            <b> * Campo Requerido: </b> Nombre Tipo Usuario Requerido!
+                                                        </span>
+                                                    </span>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <div
+                                                    class="col-sm-12 mb-3 mb-sm-0 align-items-center justify-content-center">
+                                                    <label class="font-weight-bold text-dark" for="TxTareaObs">
+                                                        Observaciones(*):</label>
+                                                    <textarea id="TxTareaObs" class="form-control form-control-user"
+                                                        formControlName="" type="text" placeholder="Observaciones"
+                                                        title="IP" required> </textarea>
+                                                    <span *ngIf="" class="text-center text-danger small">
+                                                        <span *ngIf="">
+                                                            <b> * Campo Requerido: </b> Nombre Tipo Usuario Requerido!
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <br>
+
+                                        <div class="form-group row">
+                                            <div class="col-sm-4 mb-3 mb-sm-0 offset-sm-4">
+                                                <a class="btn btn-danger btn-user btn-block text-white" title="Cancelar"
+                                                    routerLink="/systems/cv-devices">
+                                                    <i class="fas fa-times-circle"></i> Cancelar
+                                                </a>
+                                            </div>
+                                            <div class="col-sm-4 mb-3 mb-sm-0 ">
+                                                <button type="submit" value="Create"
+                                                    class="btn btn-warning btn-user btn-block text-white"
+                                                    title="Siguiente" [disabled]=""
+                                                    routerLink="/systems/cv-devices/create/accesories">
+                                                    <i class="fas fa-"></i> Siguiente
+                                                </button>
+                                            </div>
+
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
