@@ -16,17 +16,17 @@ import { RecoveryComponent } from './Components/Auth/recovery/recovery.component
 
 import { DefaultComponent } from './Components/default/default.component';
 
-import { UsersComponent } from './Components/users/users.component';
-import { UserscreateComponent } from './Components/users/userscreate/userscreate.component';
-import { UserseditComponent } from './Components/users/usersedit/usersedit.component';
+import { UsersComponent } from './Components/users/users/users/users.component';
+import { UserscreateComponent } from './Components/users/users/userscreate/userscreate.component';
+import { UserseditComponent } from './Components/users/users/usersedit/usersedit.component';
 
-import { UsersTypeComponent } from './Components/users-type/users-type.component';
-import { UsersTypeCreateComponent } from './Components/Users-Type/users-type-create/users-type-create.component';
-import { UsersTypeEditComponent } from './Components/users-type/users-type-edit/users-type-edit.component';
+import { UsersTypeComponent } from './Components/users/users-type/users-type/users-type.component';
+import { UsersTypeCreateComponent } from './Components/users/Users-Type/users-type-create/users-type-create.component';
+import { UsersTypeEditComponent } from './Components/users/users-type/users-type-edit/users-type-edit.component';
 
 // MANTENAICE 
 
-import { MantenainceComponent } from './Components/mantenaince/mantenaince.component';
+import { MantenainceComponent } from './Components/mantenaince/mantenaince/mantenaince.component';
 
 // MANTENAICE - EQUIPMENTS
 
@@ -42,18 +42,23 @@ import { PurchasesComponent } from './Components/purchases/purchases.component';
 
 // PURCHASES - PROVIDERS
 
-import { ProvidersComponent } from './Components/providers/providers.component';
-import { ProvidersTypeComponent } from './Providers-Type/providers-type/providers-type.component';
+import { ProvidersComponent } from './Components/providers/providers/providers.component';
+import { ProvidersTypeComponent } from './Components/providers/providers-type/providers-type.component';
 
 // ACCOUNTING
 
-import { AccountingComponent } from './Components/Accounting/accounting.component';
+import { AccountingComponent } from './Components/Accounting/Accounting/accounting.component';
 
 import { FixedAssetsComponent } from './Components/Accounting/Fixed-Assets/fixed-assets/fixed-assets.component';
 
 import { AssetsTypeComponent } from './Components/Accounting/Fixed-Assets/assets-type/assets-type.component';
 import { AssetsTypeCreateComponent } from './Components/Accounting/Fixed-Assets/assets-type/assets-type-create/assets-type-create.component';
 import { AssetsTypeEditComponent } from './Components/Accounting/Fixed-Assets/assets-type/assets-type-edit/assets-type-edit.component';
+
+// SYSTEMS
+
+import { SystemsComponent } from './Components/Systems/systems/systems.component';
+import { CVDevicesComponent } from './Components/Systems/cv-devices//cv-devices/cv-devices.component';
 
 // COMPLEMENTS
 
@@ -88,6 +93,8 @@ const routes: Routes = [
     { path: 'accounting/assetstypes', component: AssetsTypeComponent},
     { path: 'accounting/assetstypes/create', component: AssetsTypeCreateComponent},
     { path: 'accounting/assetstypes/edit', component: AssetsTypeEditComponent},
+    { path: 'systems', component: SystemsComponent},
+    { path: 'systems/cv-devices', component: CVDevicesComponent},
     { path: '**', redirectTo: ''}//component: PageNotFoundComponent }
 ];
 

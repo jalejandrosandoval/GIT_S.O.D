@@ -11,6 +11,7 @@ export class UsersComponent implements OnInit {
 
   //Declarations of Variables 
 
+  //dtOptions: any = {};
   _IUsers: IUsersModel[];
   
   constructor(private userService: UsersService) { }

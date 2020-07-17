@@ -47,9 +47,9 @@
                                             <input class="form-control form-control-user"
                                                 formControlName="assetsTypeName" type="text"
                                                 placeholder="Nombre Tipo Activo Fijo..." required />
-                                            <span *ngIf="gATypeName.assetsTypeName.invalid && (gATypeName.assetsTypeName.dirty || gATypeName.assetsTypeName.touched)"
+                                            <span *ngIf="gATypeName.invalid && (gATypeName.dirty || gATypeName.touched)"
                                                 class="text-center text-danger small">
-                                                <span *ngIf="gATypeName.assetsTypeName.errors.required">
+                                                <span *ngIf="gATypeName.errors.required">
                                                     <b> * Campo Requerido: </b> Nombre Tipo Activo Fijo Requerido!
                                                 </span>
                                             </span>

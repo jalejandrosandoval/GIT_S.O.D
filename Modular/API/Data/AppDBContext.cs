@@ -34,6 +34,14 @@ namespace API.Data
         public DbSet<Logs> Logs { get; set; }
         public DbSet<AssetsType> AssetsTypes { get; set; }
         public DbSet<Fixed_Assets> Fixed_Assets { get; set; }
+        public DbSet<CV_Devices> CV_Devices { get; set; }
+        public DbSet<Departments> Departments { get; set; }
+        public DbSet<Positions> Positions { get; set; }
+        public DbSet<DevicesTypes> DevicesTypes { get; set; }
+        public DbSet<CharacteristicsDevices> CharacteristicsDevices { get; set; }
+        public DbSet<Devices_Accessories> Devices_Accessories { get; set; }
+        public DbSet<Devices_Mantenaince> Devices_Mantenaince { get; set; }
+    
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -51,6 +59,13 @@ namespace API.Data
             modelBuilder.Entity<Logs>().ToTable("Logs");
             modelBuilder.Entity<AssetsType>().ToTable("AssetsType");
             modelBuilder.Entity<Fixed_Assets>().ToTable("Fixed_Assets");
+            modelBuilder.Entity<CV_Devices>().ToTable("CV_Devices");
+            modelBuilder.Entity<Departments>().ToTable("Departments");
+            modelBuilder.Entity<Positions>().ToTable("Positions");
+            modelBuilder.Entity<DevicesTypes>().ToTable("DevicesTypes");
+            modelBuilder.Entity<CharacteristicsDevices>().ToTable("CharacteristicsDevices");
+            modelBuilder.Entity<Devices_Accessories>().ToTable("Devices_Accessories");
+            modelBuilder.Entity<Devices_Mantenaince>().ToTable("Devices_Mantenaince");
         }
 
     }

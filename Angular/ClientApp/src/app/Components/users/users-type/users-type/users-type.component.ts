@@ -14,6 +14,7 @@ export class UsersTypeComponent implements OnInit {
 
   //Declarations of Variables 
 
+  
   _IUsersTypes: IUsersTypesModel[];
  
   constructor(

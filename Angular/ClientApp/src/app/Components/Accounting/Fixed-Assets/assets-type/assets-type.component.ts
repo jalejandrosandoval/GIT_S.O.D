@@ -33,16 +33,16 @@ export class AssetsTypeComponent implements   OnInit {
         error => console.error(error));
   }
 
-  preUpdate(){
+  preUpdate(_IAssetsTypes: AssetsTypesModel){
 
     //var Id_UsersType = _IUTypes.id_UsersType;
 
-    var ruta = `/accounting/assetstypes/edit`;
+    var ruta = `/accounting/assetstypes/`;
 
     this.router.navigateByUrl(ruta); //+ `${Id_UsersType}`);
   }
   
-  preDelete(){
+  preDelete(_IAssetsTypes: AssetsTypesModel){
     /*this.userTypeService.deleteUsersType(_IUTypes.id_UsersType).subscribe(
       res =>
       {

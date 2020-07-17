@@ -1,10 +1,11 @@
 import { Injectable, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { LoginModel } from 'src/app/Models/Login/login-model';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { IUsers } from 'src/app/Interfaces/Users/users';
+import { IUsersModel } from 'src/app/Models/Users/users-model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,12 @@ export class AccountService implements OnInit {
 
   // Declarations Variables 
 
-  _SUserCurrent : string;
+  private currentUserSubject: BehaviorSubject<IUsersModel>;
+  currentUser: Observable<IUsersModel>;
+
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json; charset=utf-8' })
+  };
 
   readonly ApiPath= '/API/Account' ;
   
@@ -23,6 +29,10 @@ export class AccountService implements OnInit {
 
   ngOnInit(): void {
    
+  }
+
+  public get currentUserObject(): IUsersModel {
+    return this.currentUserSubject.value;
   }
 
   //Getting Token from LocalStorage
@@ -40,28 +50,15 @@ export class AccountService implements OnInit {
   // CurrentUser
   
   getCurrentUser(_LoginModel: LoginModel): Observable<IUsers[]> {
-    return this.http.post<IUsers[]>(this.ApiPath + '/GetUser', _LoginModel);
+    return this.http.post<IUsers[]>(this.ApiPath + '/GetUser', _LoginModel, this.httpOptions);
   }  
 
-  UsernameCurentUser(){
-
-    if(this._SUserCurrent == null){
-    
-      console.log("Account Null " + this._SUserCurrent);
-      return null;
-    
-    }else{
-      console.log("Account Else " + this._SUserCurrent);
-      return this._SUserCurrent;
-    }
-
-  }
-
+ 
   //Request through httpClient of Angular -> ApiPath 
 
   Login(_LoginModel: LoginModel): Observable<any> {
     
-    return this.http.post<any>(this.ApiPath + '/Login', _LoginModel)
+    return this.http.post<any>(this.ApiPath + '/Login', _LoginModel, this.httpOptions)
       .pipe(map(user => {
         localStorage.setItem('currenteUser',
           JSON.stringify(user))

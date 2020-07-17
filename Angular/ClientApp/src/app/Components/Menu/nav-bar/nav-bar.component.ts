@@ -37,7 +37,7 @@ export class NavBarComponent {
   //Show the User Data like the username
 
   nb_UserName(){
-    this.userCurrent = this.accountservice._SUserCurrent;
+    
   }
 
   // Service consumption "AccountService"
