@@ -18,17 +18,23 @@ export class ErrorInterceptorService implements HttpInterceptor {
     
     return next.handle(request).pipe(catchError(error => {
 
-      if (error.status === 401) {
+      
+      if (error.status == 405) {
+
+        return throwError(this.toastr.error(error.message || error.statusText, "Error de Conexión"));
+      }
+      
+      if (error.status == 401) {
 
         return throwError(this.toastr.error(error.message || error.statusText, "Error de Conexión"));
       }
 
-      if (error.status === 504) {
+      if (error.status == 504) {
          
         return throwError(this.toastr.warning(error.message , "Error de Conexión con el servidor: "));
       }
       
-      if (error.status === 400) {
+      if (error.status == 400) {
 
         return throwError(error);
 

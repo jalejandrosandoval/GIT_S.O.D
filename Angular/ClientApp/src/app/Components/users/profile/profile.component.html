@@ -1,0 +1,106 @@
+<div class="container-fluid">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <div class="col-xl-12 col-lg-12 col-md-12">
+
+                <div class="d-sm-flex align-items-center justify-content-center mb-4">
+                    <h1 class="text-center h3 mb-0 text-gray-800">
+                        <i class="fas fa-user-circle"></i>
+                        <b> Perfil </b>
+                    </h1>
+                </div>
+
+                <div class="card shadow">
+
+                    <div class="card-header py-3">
+                        <h6 class="text-primary">
+                            <i class="fas fa-id-card"></i> <b> Editar Información </b>
+                        </h6>
+                    </div>
+
+                    <div class="card-body p-0">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="p-5">
+                                    <h6 class="m-0 font-weight-bold text-danger">
+                                        <i class="fas fa-info-circle"> </i> Los campos con (*) son requeridos...
+                                    </h6>
+
+                                    <br />
+
+                                    <form [formGroup]="UProfileForm">
+                                        <div class="d-sm-flex align-items-center justify-content-center mb-4">
+                                            <h6 class="text-center h5 mb-0 text-primary">
+                                                <b> Datos Personales </b>
+                                            </h6>
+                                        </div>
+                                        <hr>
+                                        <div class="form-group row">
+                                            <div class="col-sm-6 mb-3 mb-sm-0">
+                                                <label class="font-weight-bold text-dark"> Primer Nombre:</label>
+                                                <input class="form-control form-control-user"
+                                                    formControlName="firstName" title="Primer Nombre" type="text"
+                                                    placeholder="Primer Nombre..." />
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label class="font-weight-bold text-dark"> Segundo Nombre:</label>
+                                                <input class="form-control form-control-user" formControlName="lastName"
+                                                    title="Segundo Nombre" type="text"
+                                                    placeholder="Segundo Nombre..." />
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <div class="col-sm-6 mb-3 mb-sm-0">
+                                                <label class="font-weight-bold text-dark"> Número de
+                                                    Identificación:</label>
+                                                <input class="form-control form-control-user"
+                                                    formControlName="n_Identification" title="Número de Identificación"
+                                                    type="text" placeholder="Número de Identificación..." />
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label class="font-weight-bold text-dark"> Tipo de Documento:</label>
+                                                <input class="form-control form-control-user"
+                                                    formControlName="typeDocument" title="Tipo de Documento" type="text"
+                                                    placeholder="Tipo de Documento..." />
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-sm-4">
+                                                <label class="font-weight-bold text-dark"> Usuario:</label>
+                                                <input class="form-control form-control-user" formControlName="username"
+                                                    title="Usuario" type="text" placeholder="Usuario..." />
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label class="font-weight-bold text-dark"> Contraseña:</label>
+                                                <input class="form-control form-control-user"
+                                                    formControlName="userPassword" title="Contraseña" type="password"
+                                                    placeholder="Contraseña..." />
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label class="font-weight-bold text-dark"> Estado:</label>
+                                                <input class="form-control form-control-user" formControlName="status"
+                                                    title="Estado" type="text" placeholder="Estado...">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-sm-6 mb-3 mb-sm-0">
+                                                <label class="font-weight-bold text-dark"> Tipo Usuario:</label>
+                                                <input class="form-control form-control-user" formControlName="userType"
+                                                    type="text" placeholder="Nombre Tipo Usuario..." />
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -5,7 +5,6 @@ import { Router } from '@angular/router';
 import { AccountService } from 'src/app/Services/Account/account.service';
 import { LoginModel } from 'src/app/Models/Login/login-model';
 import { IUsersModel } from 'src/app/Models/Users/users-model';
-import { IUsers } from 'src/app/Interfaces/Users/users';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -16,7 +15,7 @@ import { Observable } from 'rxjs';
 export class LoginComponent implements OnInit {
 
   _IUsers: IUsersModel[];
-  _InUserCurrent : Observable<IUsers[]>;
+  _InUserCurrent : Observable<IUsersModel[]>;
 
   constructor(private accountservice: AccountService, private router: Router,
     private formBuilder: FormBuilder, private toastr: ToastrService) { }

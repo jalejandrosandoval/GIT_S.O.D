@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AccountService } from 'src/app/Services/Account/account.service';
 import { Router } from '@angular/router';
-import { IUsers } from 'src/app/Interfaces/Users/users';
 import { Observable } from 'rxjs';
 import { IUsersModel } from 'src/app/Models/Users/users-model';
 

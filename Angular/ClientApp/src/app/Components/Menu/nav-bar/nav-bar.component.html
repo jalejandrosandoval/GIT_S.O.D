@@ -1,22 +1,23 @@
 <header>
-    
+
     <nav class="navbar navbar-expand-sm navbar-light bg-danger border-bottom box-shadow mb-3" *ngIf="nb_LoggedIn()">
 
-        <button class="btn btn-link d-md-none rounded-circle mr-3 text-white" type="button" data-toggle="collapse" data-target=".navbar-collapse"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fa fa-bars"></i>
-            </button>
+        <button class="btn btn-link d-md-none rounded-circle mr-3 text-white" type="button" data-toggle="collapse"
+            data-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="fa fa-bars"></i>
+        </button>
 
         <div class="collapse navbar-collapse">
 
-            <a class="navbar-brand" routerLink="/default" >
+            <a class="navbar-brand" routerLink="/default">
                 <img src="../assets/images/Logo.png" width="100" height="50" title="Petroco Mantenimiento" />
             </a>
 
             <!--User menu loging check from API-->
 
             <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-            
+
                 <ul class="navbar-nav flex-grow-1 dropdown-menu-sm-left mr-auto">
                     <li class="nav-item">
                         <a class="nav-link text-white" title="Menú Principal" routerLink="/default"> <b>
@@ -32,16 +33,17 @@
                         <a class="nav-link text-white"> <b> | </b> </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" title="Mantenimiento" routerLink="/mantenaince"> <b> Mantenimiento </b> </a>
+                        <a class="nav-link text-white" title="Mantenimiento" routerLink="/mantenaince"> <b>
+                                Mantenimiento </b> </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white"> <b> | </b> </a>
-                    </li>                    
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" title="Fabricación UMV" routerLink="/fabrication">
                             <b> Fabricación </b>
-                        </a>                       
-                    </li>                    
+                        </a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link text-white"> <b> | </b> </a>
                     </li>
@@ -52,7 +54,8 @@
                         <a class="nav-link text-white"> <b> | </b> </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" title="Contabilidad" routerLink="/accounting"> <b> Contabilidad </b> </a>
+                        <a class="nav-link text-white" title="Contabilidad" routerLink="/accounting"> <b> Contabilidad
+                            </b> </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white"> <b> | </b> </a>
@@ -64,7 +67,8 @@
                         <a class="nav-link text-white"> <b> | </b> </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" title="Complementos" routerLink="/complements"> <b> Complementos </b> </a>
+                        <a class="nav-link text-white" title="Complementos" routerLink="/complements"> <b> Complementos
+                            </b> </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white"> <b> | </b> </a>
@@ -72,12 +76,28 @@
                     <li class="nav-item">
                         <a class="nav-link text-white" title="Bodega" routerLink="/cell"> <b> Bodega </b> </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white"> <b> | </b> </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" title="Configuraciones del Sistema" routerLink="/configuration">
+                            <b> <i class="fas fa-cog"></i> </b> </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white"> <b> | </b> </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" title="Ayuda | PDF"
+                            href="../../../../assets/documents/Petroco SA .pdf" target="_blank">
+                            <b> <i class="fas fa-question-circle"></i> </b>
+                        </a>
+                    </li>
                 </ul>
-            
+
             </div>
 
             <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                
+
                 <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
 
                     <!--Dropdowm for the User LoggedIn in the app-->
@@ -91,33 +111,25 @@
                                     Bienvenido: </b> {{ userCurrent }} </label>
                             <img class="img-profile rounded-circle text-white"
                                 src="../assets/images/astronaut-user.png">
-                        </a>                        
+                        </a>
 
                         <!-- Dropdown - User Information -->
-                        
+
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                             aria-labelledby="userDropdown">
-         
-                            <a class="dropdown-item" routerLink="/">
+
+                            <a class="dropdown-item" routerLink="/profile" title="Ver Perfil">
                                 <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Perfil
-                            </a>
-                            <a class="dropdown-item" routerLink="/">
-                                <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Configuración
-                            </a>
-                            <a class="dropdown-item" routerLink="/">
-                                <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Logs del Sistema
                             </a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" title="Terminar Sesión" (click)="nb_Logout()" href="">
                                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Salir
                             </a>
-         
+
                         </div>
-         
+
                     </li>
                 </ul>
 

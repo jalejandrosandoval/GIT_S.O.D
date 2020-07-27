@@ -16,14 +16,14 @@
         <div class="card-body">
 
             <p>
-                <button class="btn btn-success btn-user text-white" routerLink="/users/create" title="Agregar Nuevo Usuario"> 
+                <button class="btn btn-success btn-user text-white" routerLink="/users/create"
+                    title="Agregar Nuevo Usuario">
                     <i class="fas fa-plus"></i> Agregar Usuario</button>
             </p>
 
             <div class="table-responsive">
 
-                <table datatable class="table table-striped table-condensed table-hover"
-                    width="100%" cellspacing="0">
+                <table datatable class="table table-striped table-condensed table-hover" width="100%" cellspacing="0">
 
                     <thead>
                         <tr>
@@ -52,16 +52,20 @@
                         <tr *ngFor="let users of _IUsers">
 
                             <td class="text-white">
-                                <a class="btn btn-warning fas fa-edit text-white" title="Editar Usuario" routerLink="/users/edit"></a>
-                                <a class="btn btn-info fas fa-eye" title="Visualizar Usuario"></a>
-                                <a class="btn btn-danger fas fa-times-circle" title="Desactivar Usuario"></a>
-                                <a class="btn btn-dark fas fa-trash-alt" title="Eliminar Usuario"></a>
+                                <button class="btn btn-warning fas fa-edit text-white" title="Editar Usuario"
+                                    (click)="preUpdate(users)"></button>
+                                <button class="btn btn-info fas fa-eye" title="Visualizar Usuario"
+                                    (click)="getDataByIdModal(users)" data-toggle="modal"
+                                    data-target=".bd-example-modal-lg"></button>
+                                <button class="btn btn-danger fas fa-times-circle" title="Desactivar Usuario" 
+                                    (click)="deactivateUser(users)"></button>
+                                <button class="btn btn-dark fas fa-trash-alt" title="Eliminar Usuario"></button>
                             </td>
                             <td> {{users.n_Identification}} </td>
                             <td> {{users.firstName}} </td>
                             <td> {{users.lastName}} </td>
-                            <td> 
-                                {{users.userType.usersTypeName}}                      
+                            <td>
+                                {{users.userType.usersTypeName}}
                             </td>
                             <td>
                                 <span *ngIf="(users.status==true)" class="bg-success text-white"> &nbsp; Activo
@@ -72,13 +76,105 @@
                         </tr>
 
                     </tbody>
-  
+
                 </table>
-  
+
             </div>
-  
+
         </div>
-  
+
+    </div>
+
+</div>
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="d-sm-flex align-items-center justify-content-center modal-header">
+                <h5 class="text-center modal-title" id="exampleModalLabel"> <i class="fas fa-eye"></i> <b> Visualización
+                        de Usuarios </b></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="p-4">
+                            <form [formGroup]="UViewForm">
+                                <div class="d-sm-flex align-items-center justify-content-center mb-4">
+                                    <h6 class="text-center h5 mb-0 text-primary">
+                                        <b> Datos Personales </b>
+                                    </h6>
+                                </div>
+                                <hr>
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <label class="font-weight-bold text-dark"> Primer Nombre:</label>
+                                        <input class="form-control form-control-user" formControlName="firstName" title="Primer Nombre"
+                                            type="text" placeholder="Primer Nombre..." disabled />
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label class="font-weight-bold text-dark"> Segundo Nombre:</label>
+                                        <input class="form-control form-control-user" formControlName="lastName" title="Segundo Nombre"
+                                            type="text" placeholder="Segundo Nombre..." disabled />
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <label class="font-weight-bold text-dark"> Número de Identificación:</label>
+                                        <input class="form-control form-control-user" formControlName="n_Identification" title="Número de Identificación"
+                                            type="text" placeholder="Número de Identificación..." disabled />
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label class="font-weight-bold text-dark"> Tipo de Documento:</label>
+                                        <input class="form-control form-control-user" formControlName="typeDocument" title="Tipo de Documento"
+                                            type="text" placeholder="Tipo de Documento..." disabled />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-4">
+                                        <label class="font-weight-bold text-dark"> Usuario:</label>
+                                        <input class="form-control form-control-user" formControlName="username" title="Usuario"
+                                            type="text" placeholder="Usuario..." disabled />
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <label class="font-weight-bold text-dark"> Contraseña:</label>
+                                        <input class="form-control form-control-user" formControlName="userPassword" title="Contraseña"
+                                            type="password" placeholder="Contraseña..." disabled />
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <label class="font-weight-bold text-dark"> Estado:</label>
+                                        <input class="form-control form-control-user" formControlName="status" title="Estado"
+                                            type="text" placeholder="Estado..." disabled>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <label class="font-weight-bold text-dark"> Tipo Usuario:</label>
+                                        <input class="form-control form-control-user" formControlName="userType"
+                                            type="text" placeholder="Nombre Tipo Usuario..." disabled />                                    
+                                    </div>
+                                </div>
+
+                                <div class="d-sm-flex align-items-center justify-content-center mb-4">
+                                    <h6 class="text-center h5 mb-0 text-primary">
+                                        <b> Datos Básicos </b>
+                                    </h6>
+                                </div>
+                                <hr>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+
     </div>
 
 </div>

@@ -1,0 +1,94 @@
+<div class="container-fluid">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <div class="col-xl-10 col-lg-12 col-md-8">
+
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"> <a href="" routerLink="/complements"> Complementos </a> </li>
+                        <li class="breadcrumb-item"> <a href="" routerLink="/departments"> Departamentos </a> </li>
+                        <li class="breadcrumb-item active" aria-current="page"><b> Creación </b></li>
+                    </ol>
+                </nav>
+
+                <div class="d-sm-flex align-items-center justify-content-center mb-4">
+                    <h1 class="text-center h3 mb-0 text-gray-800">
+                        <i class="fas fa-low-vision"></i>
+                        <b> Departamentos </b>
+                    </h1>
+                </div>
+
+                <div class="card shadow">
+
+                    <div class="card-header py-3">
+                        <h6 class="text-primary">
+                            <i class="fas fa-plus"> </i> <b> Creación de Departamentos </b>
+                        </h6>
+                    </div>
+
+                    <div class="card-body p-0">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="p-5">
+                                    <h6 class="m-0 font-weight-bold text-danger">
+                                        <i class="fas fa-info-circle"> </i> Los campos con (*) son requeridos...
+                                    </h6>
+
+                                    <br />
+
+                                    <form [formGroup]="DepartmentsCreateForm" (ngSubmit)="onCreate()">
+                                        <div class="form-group row">
+                                            <label class="font-weight-bold text-dark"> Nombre Deparamento(*):</label>
+                                            <input type="hidden" formControlName="DeparmentsId" value="DeparmentsId" id="DeparmentsId"
+                                                name="DeparmentsId">
+                                            <input class="form-control form-control-user"
+                                                formControlName="DepartmentsName" type="text" titlle="Nombre Departamento"
+                                                placeholder="Nombre Departmamento..." required />
+                                            <span *ngIf="gDepartmentsName.invalid && (gDepartmentsName.dirty || gDepartmentsName.touched)"
+                                                class="text-center text-danger small">
+                                                <span *ngIf="gDepartmentsName.errors.required">
+                                                    <b> * Campo Requerido: </b> Nombre Departmaneto Requerido!
+                                                </span>
+                                            </span>
+                                        </div>
+
+                                        <br>
+
+                                        <div class="form-group row">
+                                            <div class="col-lg-3 mb-3 mb-lg-0 offset-lg-3">
+                                                <a class="btn btn-danger btn-user btn-block text-white" title="Cancelar"
+                                                    routerLink="/departments">
+                                                    <i class="fas fa-times-circle"></i> Cancelar
+                                                </a>
+                                            </div>
+                                            <div class="col-lg-3 mb-3 mb-lg-0 ">
+                                                <button type="submit" value="Create"
+                                                    class="btn btn-primary btn-user btn-block text-white"
+                                                    title="Guardar" [disabled]="DepartmentsCreateForm.invalid">
+                                                    <i class="fas fa-save"></i> Guardar
+                                                </button>
+                                            </div>
+
+                                        </div>
+                                    </form>
+    
+                                </div>
+    
+                            </div>
+    
+                        </div>
+    
+                    </div>
+    
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

@@ -19,7 +19,7 @@
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
                                     <div class="h5 mb-0 font-weight-bold text-white">
-                                        <a class="text-white text-decoration-none" routerLink="/mantenaince/equipments" > Equipos </a>
+                                        <a class="text-white text-decoration-none" routerLink="/mantenaince/equipments" title="Equipos"> Equipos </a>
                                     </div>
                                 </div>
                                 <div class="col-auto">
@@ -36,8 +36,7 @@
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
                                     <div class="h5 mb-0 font-weight-bold text-white">
-                                        <a class="text-white text-decoration-none"
-                                           asp-area="" asp-controller="Lendings" asp-action="Index"> Préstamos </a>
+                                        <a class="text-white text-decoration-none" routerLink="/mantenaince/lendings" title="Préstamo de Equipos" > Préstamos </a>
                                     </div>
                                 </div>
                                 <div class="col-auto">
@@ -54,8 +53,7 @@
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
                                     <div class="h5 mb-0 font-weight-bold text-white">
-                                        <a class="text-white text-decoration-none"
-                                           asp-area="" asp-controller="Mantenaince" asp-action="Index"> Mantenimientos </a>
+                                        <a class="text-white text-decoration-none" routerLink="/mantenaince/mantenainces" title="Mantenimientos de Equipos"> Mantenimientos </a>
                                     </div>
                                 </div>
                                 <div class="col-auto">
@@ -65,6 +63,25 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="col-xl-4 offset-xl-2 col-md-6 mb-4 ">
+                    <div class="card bg-warning shadow h-100 py-2">
+                        <div class="card-body bg-warning">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="h5 mb-0 font-weight-bold text-white">
+                                        <a class="text-white text-decoration-none" 
+                                        routerLink=""> Facturas de Compra </a>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-file-invoice fa-2x text-white"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
 
             </div>
 

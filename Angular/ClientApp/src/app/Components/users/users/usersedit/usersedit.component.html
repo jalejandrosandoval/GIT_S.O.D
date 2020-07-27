@@ -1,1 +1,146 @@
-<p>usersedit works!</p>
+<div class="container-fluid">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <div class="col-xl-10 col-lg-12 col-md-8">
+
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"> <a href="" routerLink="/users"> Usuarios </a> </li>
+                        <li class="breadcrumb-item active" aria-current="page"><b> Edición </b></li>
+                    </ol>
+                </nav>
+
+                <div class="d-sm-flex align-items-center justify-content-center mb-4">
+                    <h1 class="text-center h3 mb-0 text-gray-800">
+                        <i class="fas fa-users-cog"></i>
+                        <b> Usuarios </b>
+                    </h1>
+                </div>
+                
+                <p *ngIf="!UserEditForm" class="text-center">
+                    No existen registros para editar
+                </p>
+
+                <div class="card shadow" *ngIf="UserEditForm">
+
+                    <div class="card-header py-3">
+                        <h6 class="text-primary">
+                            <i class="fas fa-user-edit"> </i> <b> Edición de Tipo de Usuarios </b>
+                        </h6>
+                    </div>
+
+                    <div class="card-body p-0">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="p-5">
+                                    <h6 class="m-0 font-weight-bold text-danger">
+                                        <i class="fas fa-info-circle"> </i> Los campos con (*) son requeridos...
+                                    </h6>
+
+                                    <br />
+
+                                    <form [formGroup]="UserEditForm" (ngSubmit)="onEdit()">
+                                        <div class="d-sm-flex align-items-center justify-content-center mb-4">
+                                            <h6 class="text-center h5 mb-0 text-primary">
+                                                <b> Datos Personales </b>
+                                            </h6>
+                                        </div>
+                                        <hr>
+                                        <div class="form-group row">
+                                            <div class="col-sm-6 mb-3 mb-sm-0">
+                                                <label class="font-weight-bold text-dark"> Primer Nombre:</label>
+                                                <input class="form-control form-control-user" formControlName="firstName" title="Primer Nombre"
+                                                    type="text" placeholder="Primer Nombre..." />
+                                                    <span *ngIf="UserEditFormData.firstName.invalid && (UserEditFormData.firstName.dirty || UserEditFormData.firstName.touched)"
+                                                    class="text-center text-danger small">
+                                                    <span *ngIf="UserEditFormData.firstName.errors.required">
+                                                        <b> * Campo Requerido: </b> Primer Nombre Requerido!
+                                                    </span>
+                                                </span>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label class="font-weight-bold text-dark"> Segundo Nombre:</label>
+                                                <input class="form-control form-control-user" formControlName="lastName" title="Segundo Nombre"
+                                                    type="text" placeholder="Segundo Nombre..." />
+                                            </div>
+                                        </div>
+        
+                                        <div class="form-group row">
+                                            <div class="col-sm-6 mb-3 mb-sm-0">
+                                                <label class="font-weight-bold text-dark"> Número de Identificación:</label>
+                                                <input class="form-control form-control-user" formControlName="n_Identification" title="Número de Identificación"
+                                                    type="text" placeholder="Número de Identificación..." />
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label class="font-weight-bold text-dark"> Tipo de Documento:</label>
+                                                <input class="form-control form-control-user" formControlName="typeDocument" title="Tipo de Documento"
+                                                    type="text" placeholder="Tipo de Documento..."  />
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-sm-4">
+                                                <label class="font-weight-bold text-dark"> Usuario:</label>
+                                                <input class="form-control form-control-user" formControlName="username" title="Usuario"
+                                                    type="text" placeholder="Usuario..." />
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label class="font-weight-bold text-dark"> Contraseña:</label>
+                                                <input class="form-control form-control-user" formControlName="userPassword" title="Contraseña"
+                                                    type="password" placeholder="Contraseña..."  />
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label class="font-weight-bold text-dark"> Estado:</label>
+                                                <select class="form-control form-control-user" formControlName="status" title="Estado"
+                                                    type="text" placeholder="Seleccione..." >
+                                                    <option value=true> Activo </option>
+                                                    <option value=false> Inactivo </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-sm-6 mb-3 mb-sm-0">
+                                                <label class="font-weight-bold text-dark"> Tipo Usuario:</label>
+                                                <input class="form-control form-control-user" formControlName="id_UsersType"
+                                                    type="text" placeholder="Nombre Tipo Usuario..." disabled />                                    
+                                            </div>
+                                        </div>
+
+                                        <br>
+
+                                        <div class="form-group row">
+                                            <div class="col-lg-3 mb-3 mb-lg-0 offset-lg-3">
+                                                <a class="btn btn-danger btn-user btn-block text-white" title="Cancelar"
+                                                    routerLink="/users">
+                                                    <i class="fas fa-times-circle"></i> Cancelar
+                                                </a>
+                                            </div>
+
+                                            <div class="col-lg-3 mb-3 mb-lg-0 ">
+                                                <button type="submit" value="Create"
+                                                    class="btn btn-primary btn-user btn-block text-white"
+                                                    title="Guardar" [disabled]="UserEditForm.invalid">
+                                                    <i class="fas fa-save"></i> Guardar
+                                                </button>
+                                            </div>
+
+                                        </div>
+
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

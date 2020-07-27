@@ -1,16 +1,17 @@
 import { EmailValidator } from '@angular/forms';
+import { IUsersTypesModel } from '../UsersTypes/users-types-model';
 
 export interface IUsersModel {
 
-    idUsers: number;
-    N_Identification: number;
-    TypeDocument: string;
-    FirstName: string;
-    LastName: string;
-    UserEmail: EmailValidator;
-    Username: string;
-    UserPassword: string;
-    Status: string;
-    UserType: number;
+    id_Users: number;
+    n_Identification: number;
+    typeDocument: string;
+    firstName: string;
+    lastName: string;
+    username: string;
+    userPassword: string;
+    status: boolean;
+    id_UsersType: number;
+    userType: IUsersTypesModel[];
 
 }

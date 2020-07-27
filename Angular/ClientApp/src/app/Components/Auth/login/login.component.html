@@ -21,9 +21,9 @@
 
                                 <div class="p-5">
 
-                                    <div class="d-sm-flex align-items-center justify-content-between mb-4 ">
-                                        <h3 class="h3 mb-0 text-center">
-                                            <b> Petroco Mantenimiento </b>
+                                    <div class="d-sm-flex align-items-center justify-content-center mb-4">
+                                        <h3 class="text-center h3 mb-0 text-gray-800">
+                                            <b> Petroco S.A</b>
                                         </h3>
                                     </div>
 
@@ -43,11 +43,11 @@
                                             </div>
                                         </div>
 
-                                        <input class="form-control form-control-user" type="text" 
-                                            placeholder="Usuario..." formControlName="Username" required />
-
+                                        <input class="form-control form-control-user" type="text"
+                                            placeholder="Usuario..." title="Usuario" formControlName="Username"
+                                            required />                                    
                                         <span *ngIf="gUsername.invalid && (gUsername.dirty || gUsername.touched)"
-                                            class="text-center text-secondary">
+                                            class="text-center text-danger">
                                             <span *ngIf="gUsername.errors.required">
                                                 <b> * Campo Requerido: </b> Usuario Obligatorio!
                                             </span>
@@ -66,10 +66,11 @@
                                         </div>
 
                                         <input class="form-control form-control-user" type="password"
-                                            placeholder="Contraseña..." formControlName="UserPassword" required />
+                                            placeholder="Contraseña..." title="Contraseña"
+                                            formControlName="UserPassword" required />
 
                                         <span *ngIf="gPassword.invalid && (gPassword.dirty || gPassword.touched)"
-                                            class="text-center text-secondary">
+                                            class="text-center text-danger">
                                             <span *ngIf="gPassword.errors.required">
                                                 <b> * Campo Requerido: </b> Contraseña Obligatoria!
                                             </span>
@@ -81,7 +82,7 @@
 
                                     <div class="form-group">
                                         <div class="custom-control custom-checkbox small">
-                                            <input type="checkbox" class="custom-control-input" id="customCheck">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck" title="Mantener Sesión Iniciada">
                                             <label class="custom-control-label" for="customCheck"> Mantener Sesión
                                                 Iniciada </label>
                                         </div>
@@ -91,7 +92,7 @@
 
                                     <div class="text-center">
                                         <button type="submit" value="Login" class="btn btn-danger btn-user btn-block"
-                                            [disabled]="loginForm.invalid">
+                                            [disabled]="loginForm.invalid" title="Ingresar al Sistema">
                                             Ingresar
                                         </button>
                                     </div>
@@ -100,10 +101,10 @@
 
                                     <div class="text-center">
 
-                                        <a class="btn btn-link btn-user btn-block" style="text-decoration:none"
-                                            routerLink="/recovery">
+                                        <button class="btn btn-link btn-user btn-block" style="text-decoration:none"
+                                            routerLink="/recovery"  title="Recordar Contraseña">
                                             <b> Recordar Contraseña </b>
-                                        </a>
+                                        </button>
 
                                     </div>
 

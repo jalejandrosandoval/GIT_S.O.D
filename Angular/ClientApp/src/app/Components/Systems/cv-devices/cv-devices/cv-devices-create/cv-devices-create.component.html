@@ -35,13 +35,13 @@
                             <div class="col-lg-12">
                                 <div class="p-5">
                                     <h6 class="font-weight-bold text-danger">
-                                        <i class="fas fa-info"> </i> Los campos con (*) son requeridos..
+                                        <i class="fas fa-info-circle"> </i> Los campos con (*) son requeridos...
                                     </h6>
 
                                     <br />
 
-                                    <form [formGroup]="">
-                                        <input type="hidden" formControlName="" value="" id="" name="">
+                                    <form [formGroup]="CVDevicesCreateForm">
+                                        <!-- <input type="hidden" formControlName="" value="" id="" name=""> -->
                                         <div class="d-sm-flex align-items-center justify-content-center mb-4">
                                             <h6 class="text-center h5 mb-0 text-primary">
                                                 <b> Datos Generales </b>
@@ -51,22 +51,35 @@
                                         <div class="form-group row">
                                             <div class="col-sm-4 mb-3 mb-sm-0">
                                                 <label class="font-weight-bold text-dark">Fecha(*):</label>
-                                                <input class="form-control form-control-user" formControlName=""
+                                                <input class="form-control form-control-user" formControlName="Date"
                                                     type="date" placeholder="Fecha..." title="Fecha" required />
+                                                <span *ngIf="gCVDevicesForm.Date.invalid  && (gCVDevicesForm.Date.dirty || gCVDevicesForm.Date.touched)" class="text-center text-danger small">
+                                                    <span *ngIf="gCVDevicesForm.Date.errors.required">
+                                                        <b> * Campo Requerido: </b> Seleccione una Fecha!
+                                                    </span>
+                                                </span>
                                             </div>
                                             <div class="col-sm-4">
                                                 <label class="font-weight-bold text-dark">Departamento(*):</label>
                                                 <select class="form-control form-control-user custom-select"
-                                                    formControlName="" title="Departamento..." required>
-                                                    <option selected>Seleccione...</option>
-                                                    <option *ngFor="let user of options">{{ user }}</option>
+                                                    formControlName="Departments" title="Departamento..." required> 
+                                                    <option *ngFor="let deparments of _IDepartments" [value]="deparments.id"> 
+                                                        {{ deparments.departmentsName }}
+                                                    </option>
                                                 </select>
+                                                <span *ngIf="gCVDevicesForm.Departments.invalid && (gCVDevicesForm.Departments.dirty || gCVDevicesForm.Departments.touched)"
+                                                    class="text-center text-danger small">
+                                                    <span *ngIf="gCVDevicesForm.Departments.errors.required">
+                                                        <b> * Campo Requerido: </b> Seleccione un Departamento!
+                                                    </span>
+                                                </span>
+                                                
                                             </div>
-                                            <div class="col-sm-4">
-                                                <label class="font-weight-bold text-dark">Cargo(*):</label>
+                                            <!-- <div class="col-sm-4">
+                                                <label class="font-weight-bold text-dark">Cargo(*):</label>  
                                                 <select class="form-control form-control-user custom-select"
                                                     formControlName="" title="Cargo" required>
-                                                    <option selected>Seleccione...</option>
+                                                    <option value="" selected>Seleccione...</option>
                                                     <option *ngFor="let user of options">{{ user }}</option>
                                                 </select>
                                             </div>
@@ -76,7 +89,7 @@
                                                 <label class="font-weight-bold text-dark">Responsable(*):</label>
                                                 <select class="form-control form-control-user custom-select"
                                                     formControlName="" title="Responsable" required>
-                                                    <option selected>Seleccione...</option>
+                                                    <option selected>Seleccione...</option>                                                    
                                                     <option *ngFor="let user of options">{{ user }}</option>
                                                 </select>
                                             </div>
@@ -90,7 +103,7 @@
                                                         <b> * Campo Requerido: </b> Nombre Tipo Usuario Requerido!
                                                     </span>
                                                 </span>
-                                            </div>
+                                            </div>-->
 
                                         </div>
                                         <br>
@@ -107,12 +120,12 @@
                                             <div class="col-sm-4 mb-3 mb-sm-0 ">
                                                 <button type="submit" value="Create"
                                                     class="btn btn-warning btn-user btn-block text-white"
-                                                    title="Siguiente" [disabled]="" routerLink="/systems/cv-devices/create/characteristics">
-                                                    <i class="fas fa-save"></i> Siguiente
+                                                    title="Siguiente" [disabled]="CVDevicesCreateForm.invalid" routerLink="/systems/cv-devices/create/characteristics">
+                                                    <i class="fas fa-arrow-alt-circle-right"></i> Siguiente
                                                 </button>
                                             </div>
 
-                                        </div>
+                                        </div> 
                                     </form>
 
 

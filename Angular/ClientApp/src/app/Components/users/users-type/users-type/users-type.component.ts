@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersTypeService } from 'src/app/Services/UsersType/users-type.service';
 import { IUsersTypesModel } from 'src/app/Models/UsersTypes/users-types-model';
-import { IUsersTypes } from 'src/app/Interfaces/Users/users-type';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-users-type',
@@ -13,11 +13,11 @@ import { ToastrService } from 'ngx-toastr';
 export class UsersTypeComponent implements OnInit {
 
   //Declarations of Variables 
-
   
   _IUsersTypes: IUsersTypesModel[];
+  _SelectedUserType: IUsersTypesModel;
  
-  constructor(
+  constructor(private formBuilder: FormBuilder, 
     private userTypeService: UsersTypeService, 
     private router: Router,
     private toastr: ToastrService) { }
@@ -36,6 +36,28 @@ export class UsersTypeComponent implements OnInit {
       .getUsersType()
       .subscribe(UsersTypes_AWS => this._IUsersTypes = UsersTypes_AWS,
         error => this.getError(error));
+  }
+
+  UViewForm = this.formBuilder.group({
+    id_UsersType: [''],
+    usersTypeName: ['']
+  });
+
+  getDataByIdModal(_IUTypes: IUsersTypesModel){
+
+    var Id_UsersType = _IUTypes.id_UsersType;
+    console.log(" ID chingon" + Id_UsersType);
+    this.userTypeService.getUsersTypeById(Id_UsersType).subscribe(
+      res => 
+      {
+        this._SelectedUserType =  res,
+        this.UViewForm = this.formBuilder.group({
+          id_UsersType: [this._SelectedUserType.id_UsersType],
+          usersTypeName: [this._SelectedUserType.usersTypeName]
+        })
+      }
+    );   
+
   }
 
   preUpdate(_IUTypes: IUsersTypesModel){

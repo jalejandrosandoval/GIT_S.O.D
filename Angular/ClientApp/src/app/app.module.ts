@@ -39,12 +39,12 @@ import { UsersComponent } from './Components/users/users/users/users.component';
 import { UserscreateComponent } from './Components/users/users/userscreate/userscreate.component';
 import { UserseditComponent } from './Components/users/users/usersedit/usersedit.component';
 import { DefaultComponent } from './Components/default/default.component';
-import { ComplementsComponent } from './Components/complements/complements.component';
+import { ComplementsComponent } from './Components/complements/complements/complements.component';
 import { MantenainceComponent } from './Components/mantenaince/mantenaince/mantenaince.component';
 import { EquipmentsComponent } from './Components/Mantenaince/equipments/equipments.component';
 import { ProvidersComponent } from './Components/providers/providers/providers.component';
 import { PageNotFoundComponent } from './Components/page-not-found/page-not-found.component';
-import { FabricationComponent } from './Components/fabrication/fabrication.component';
+import { FabricationComponent } from './Components/fabrication/fabrication/fabrication.component';
 import { UsersTypeComponent } from './Components/users/users-type/users-type/users-type.component';
 import { UsersTypeCreateComponent } from './Components/users/Users-Type/users-type-create/users-type-create.component';
 import { UsersTypeEditComponent } from './Components/users/users-type/users-type-edit/users-type-edit.component';
@@ -64,6 +64,19 @@ import { CellComponent } from './Components/Cell/Cell/cell/cell.component';
 import { CvDevicesCreateComponent } from './Components/Systems/cv-devices/cv-devices/cv-devices-create/cv-devices-create.component';
 import { CvDevicesCreateCharacteristicsComponent } from './Components/Systems/cv-devices/cv-devices/cv-devices-create-characteristics/cv-devices-create-characteristics.component';
 import { CvDevicesCreateAccesoriesComponent } from './Components/Systems/cv-devices/cv-devices/cv-devices-create-accesories/cv-devices-create-accesories.component';
+import { ConfigurationComponent } from './Components/configuration/configuration/configuration.component';
+import { ProfileComponent } from './Components/users/profile/profile.component';
+import { DatabaseComponent } from './Components/configuration/database/database.component';
+import { MigrationsComponent } from './Components/configuration/migrations/migrations.component';
+import { LogsComponent } from './Components/configuration/logs/logs.component';
+import { LendingsComponent } from './Components/mantenaince/lendings/lendings.component';
+import { MantenaincesComponent } from './Components/mantenaince/mantenainces/mantenainces.component';
+import { ScheduleComponent } from './Components/fabrication/schedule/schedule.component';
+import { OrdersproductionComponent } from './Components/fabrication/ordersproduction/ordersproduction.component';
+import { RegistersComponent } from './Components/fabrication/registers/registers.component';
+import { TracingsComponent } from './Components/fabrication/tracings/tracings.component';
+import { DepartmentsComponent } from './Components/complements/departments/departments/departments.component';
+import { DepartmentsCreateComponent } from './Components/complements/departments/departments-create/departments-create.component';
 
 @NgModule({
   declarations: [
@@ -102,7 +115,20 @@ import { CvDevicesCreateAccesoriesComponent } from './Components/Systems/cv-devi
     CellComponent,
     CvDevicesCreateComponent,
     CvDevicesCreateCharacteristicsComponent,
-    CvDevicesCreateAccesoriesComponent
+    CvDevicesCreateAccesoriesComponent,
+    ConfigurationComponent,
+    ProfileComponent,
+    DatabaseComponent,
+    MigrationsComponent,
+    LogsComponent,
+    LendingsComponent,
+    MantenaincesComponent,
+    ScheduleComponent,
+    OrdersproductionComponent,
+    RegistersComponent,
+    TracingsComponent,
+    DepartmentsComponent,
+    DepartmentsCreateComponent
   ],
   imports: [
     BrowserModule,

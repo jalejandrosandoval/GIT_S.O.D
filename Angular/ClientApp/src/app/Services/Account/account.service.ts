@@ -4,7 +4,6 @@ import { Observable, BehaviorSubject } from 'rxjs';
 import { LoginModel } from 'src/app/Models/Login/login-model';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
-import { IUsers } from 'src/app/Interfaces/Users/users';
 import { IUsersModel } from 'src/app/Models/Users/users-model';
 
 @Injectable({
@@ -49,8 +48,8 @@ export class AccountService implements OnInit {
 
   // CurrentUser
   
-  getCurrentUser(_LoginModel: LoginModel): Observable<IUsers[]> {
-    return this.http.post<IUsers[]>(this.ApiPath + '/GetUser', _LoginModel, this.httpOptions);
+  getCurrentUser(_LoginModel: LoginModel): Observable<IUsersModel[]> {
+    return this.http.post<IUsersModel[]>(this.ApiPath + '/GetUser', _LoginModel, this.httpOptions);
   }  
 
  
