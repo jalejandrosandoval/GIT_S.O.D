@@ -9,8 +9,7 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"> <a href="" routerLink="/systems"> Sistemas </a> </li>
-                        <li class="breadcrumb-item"> <a href="" routerLink="/systems/cv-devices"> HV - Dispositivos </a>
-                        </li>
+                        <li class="breadcrumb-item"> <a href="" routerLink="/systems/cv-devices"> HV - Dispositivos </a> </li>
                         <li class="breadcrumb-item active" aria-current="page"><b> Creación </b></li>
                     </ol>
                 </nav>
@@ -53,7 +52,9 @@
                                                 <label class="font-weight-bold text-dark">Fecha(*):</label>
                                                 <input class="form-control form-control-user" formControlName="Date"
                                                     type="date" placeholder="Fecha..." title="Fecha" required />
-                                                <span *ngIf="gCVDevicesForm.Date.invalid  && (gCVDevicesForm.Date.dirty || gCVDevicesForm.Date.touched)" class="text-center text-danger small">
+                                                <span
+                                                    *ngIf="gCVDevicesForm.Date.invalid  && (gCVDevicesForm.Date.dirty || gCVDevicesForm.Date.touched)"
+                                                    class="text-center text-danger small">
                                                     <span *ngIf="gCVDevicesForm.Date.errors.required">
                                                         <b> * Campo Requerido: </b> Seleccione una Fecha!
                                                     </span>
@@ -62,18 +63,20 @@
                                             <div class="col-sm-4">
                                                 <label class="font-weight-bold text-dark">Departamento(*):</label>
                                                 <select class="form-control form-control-user custom-select"
-                                                    formControlName="Departments" title="Departamento..." required> 
-                                                    <option *ngFor="let deparments of _IDepartments" [value]="deparments.id"> 
+                                                    formControlName="Departments" title="Departamento..." required>
+                                                    <option *ngFor="let deparments of _IDepartments"
+                                                        [value]="deparments.id">
                                                         {{ deparments.departmentsName }}
                                                     </option>
                                                 </select>
-                                                <span *ngIf="gCVDevicesForm.Departments.invalid && (gCVDevicesForm.Departments.dirty || gCVDevicesForm.Departments.touched)"
+                                                <span
+                                                    *ngIf="gCVDevicesForm.Departments.invalid && (gCVDevicesForm.Departments.dirty || gCVDevicesForm.Departments.touched)"
                                                     class="text-center text-danger small">
                                                     <span *ngIf="gCVDevicesForm.Departments.errors.required">
                                                         <b> * Campo Requerido: </b> Seleccione un Departamento!
                                                     </span>
                                                 </span>
-                                                
+
                                             </div>
                                             <!-- <div class="col-sm-4">
                                                 <label class="font-weight-bold text-dark">Cargo(*):</label>  
@@ -120,12 +123,13 @@
                                             <div class="col-sm-4 mb-3 mb-sm-0 ">
                                                 <button type="submit" value="Create"
                                                     class="btn btn-warning btn-user btn-block text-white"
-                                                    title="Siguiente" [disabled]="CVDevicesCreateForm.invalid" routerLink="/systems/cv-devices/create/characteristics">
+                                                    title="Siguiente" [disabled]="CVDevicesCreateForm.invalid"
+                                                    routerLink="/systems/cv-devices/create/characteristics">
                                                     <i class="fas fa-arrow-alt-circle-right"></i> Siguiente
                                                 </button>
                                             </div>
 
-                                        </div> 
+                                        </div>
                                     </form>
 
 

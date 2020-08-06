@@ -33,7 +33,9 @@ import { MantenainceComponent } from './Components/mantenaince/mantenaince/mante
 
 // MANTENAICE - EQUIPMENTS
 
-import { EquipmentsComponent } from './Components/Mantenaince/equipments/equipments.component';
+import { EquipmentsComponent } from './Components/Mantenaince/equipments/equipments/equipments.component';
+import { EquipmentsCreateComponent } from './Components/mantenaince/equipments/equipments-create/equipments-create.component';
+import { EquipmentsEditComponent } from './Components/mantenaince/equipments/equipments-edit/equipments-edit.component';
 
 // FABRICATION
 
@@ -56,7 +58,8 @@ import { ProvidersTypeComponent } from './Components/providers/providers-type/pr
 
 import { AccountingComponent } from './Components/Accounting/Accounting/accounting.component';
 
-import { FixedAssetsComponent } from './Components/Accounting/Fixed-Assets/fixed-assets/fixed-assets.component';
+import { FixedAssetsComponent } from './Components/Accounting/Fixed-Assets/fixed-assets/fixed-assets/fixed-assets.component';
+import { FixedAssetsCreateComponent } from './Components/Accounting/Fixed-Assets/fixed-assets/fixed-assets-create/fixed-assets-create.component';
 
 import { AssetsTypeComponent } from './Components/Accounting/Fixed-Assets/assets-type/assets-type.component';
 import { AssetsTypeCreateComponent } from './Components/Accounting/Fixed-Assets/assets-type/assets-type-create/assets-type-create.component';
@@ -84,13 +87,12 @@ import { ComplementsComponent } from './Components/complements/complements/compl
 import { DepartmentsComponent } from './Components/complements/departments/departments/departments.component';
 import { DepartmentsCreateComponent } from './Components/complements/departments/departments-create/departments-create.component';
 
-
 /// SERVICE AUTHGUARD
 
 import { AuthGuardService } from './Services/Auth/auth-guard.service';
 import { MigrationsComponent } from './Components/configuration/migrations/migrations.component';
 import { LogsComponent } from './Components/configuration/logs/logs.component';
-import { LendingsComponent } from './Components/mantenaince/lendings/lendings.component';
+import { LendingsComponent } from './Components/mantenaince/lendings/lendings/lendings.component';
 import { MantenaincesComponent } from './Components/mantenaince/mantenainces/mantenainces.component';
 
 const routes: Routes = [
@@ -122,7 +124,10 @@ const routes: Routes = [
     { path: 'mantenaince', component: MantenainceComponent, canActivate: [AuthGuardService]},
     { path: 'mantenaince/lendings', component: LendingsComponent, canActivate: [AuthGuardService]},
     { path: 'mantenaince/mantenainces', component: MantenaincesComponent , canActivate: [AuthGuardService]},
+
     { path: 'mantenaince/equipments', component: EquipmentsComponent, canActivate: [AuthGuardService]},
+    { path: 'mantenaince/equipments/create', component: EquipmentsCreateComponent, canActivate: [AuthGuardService]},
+    { path: 'mantenaince/equipments/edit', component: EquipmentsEditComponent, canActivate: [AuthGuardService]},
 
     { path: 'fabrication', component: FabricationComponent, canActivate: [AuthGuardService]}, 
     { path: 'fabrication/schedule', component: ScheduleComponent, canActivate: [AuthGuardService]}, 
@@ -136,10 +141,11 @@ const routes: Routes = [
 
     { path: 'accounting', component: AccountingComponent, canActivate: [AuthGuardService]},
     { path: 'accounting/fixed-assets', component: FixedAssetsComponent, canActivate: [AuthGuardService]},
+    { path: 'accounting/fixed-assets/create', component: FixedAssetsCreateComponent, canActivate: [AuthGuardService]},
     { path: 'accounting/assetstypes', component: AssetsTypeComponent, canActivate: [AuthGuardService]},
     { path: 'accounting/assetstypes/create', component: AssetsTypeCreateComponent, canActivate: [AuthGuardService] },
     { path: 'accounting/assetstypes/edit', component: AssetsTypeEditComponent, canActivate: [AuthGuardService]},
-
+    
     { path: 'systems', component: SystemsComponent, canActivate: [AuthGuardService]},
     { path: 'systems/cv-devices', component: CVDevicesComponent, canActivate: [AuthGuardService]},
     { path: 'systems/cv-devices/create', component: CvDevicesCreateComponent, canActivate: [AuthGuardService]},

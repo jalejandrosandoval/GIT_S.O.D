@@ -41,7 +41,7 @@ import { UserseditComponent } from './Components/users/users/usersedit/usersedit
 import { DefaultComponent } from './Components/default/default.component';
 import { ComplementsComponent } from './Components/complements/complements/complements.component';
 import { MantenainceComponent } from './Components/mantenaince/mantenaince/mantenaince.component';
-import { EquipmentsComponent } from './Components/Mantenaince/equipments/equipments.component';
+import { EquipmentsComponent } from './Components/Mantenaince/equipments/equipments/equipments.component';
 import { ProvidersComponent } from './Components/providers/providers/providers.component';
 import { PageNotFoundComponent } from './Components/page-not-found/page-not-found.component';
 import { FabricationComponent } from './Components/fabrication/fabrication/fabrication.component';
@@ -49,7 +49,7 @@ import { UsersTypeComponent } from './Components/users/users-type/users-type/use
 import { UsersTypeCreateComponent } from './Components/users/Users-Type/users-type-create/users-type-create.component';
 import { UsersTypeEditComponent } from './Components/users/users-type/users-type-edit/users-type-edit.component';
 import { ProvidersTypeComponent } from './Components/providers/providers-type/providers-type.component';
-import { FixedAssetsComponent } from './Components/Accounting/Fixed-Assets/fixed-assets/fixed-assets.component';
+import { FixedAssetsComponent } from './Components/Accounting/Fixed-Assets/fixed-assets/fixed-assets/fixed-assets.component';
 import { AccountingComponent } from './Components/Accounting/Accounting/accounting.component';
 import { PurchasesComponent } from './Components/purchases/purchases.component';
 import { AssetsTypeComponent } from './Components/Accounting/Fixed-Assets/assets-type/assets-type.component';
@@ -69,7 +69,7 @@ import { ProfileComponent } from './Components/users/profile/profile.component';
 import { DatabaseComponent } from './Components/configuration/database/database.component';
 import { MigrationsComponent } from './Components/configuration/migrations/migrations.component';
 import { LogsComponent } from './Components/configuration/logs/logs.component';
-import { LendingsComponent } from './Components/mantenaince/lendings/lendings.component';
+import { LendingsComponent } from './Components/mantenaince/lendings/lendings/lendings.component';
 import { MantenaincesComponent } from './Components/mantenaince/mantenainces/mantenainces.component';
 import { ScheduleComponent } from './Components/fabrication/schedule/schedule.component';
 import { OrdersproductionComponent } from './Components/fabrication/ordersproduction/ordersproduction.component';
@@ -77,6 +77,12 @@ import { RegistersComponent } from './Components/fabrication/registers/registers
 import { TracingsComponent } from './Components/fabrication/tracings/tracings.component';
 import { DepartmentsComponent } from './Components/complements/departments/departments/departments.component';
 import { DepartmentsCreateComponent } from './Components/complements/departments/departments-create/departments-create.component';
+import { FixedAssetsCreateComponent } from './Components/Accounting/Fixed-Assets/fixed-assets/fixed-assets-create/fixed-assets-create.component';
+import { FixedAssetsEditComponent } from './Components/Accounting/Fixed-Assets/fixed-assets/fixed-assets-edit/fixed-assets-edit.component';
+import { EquipmentsCreateComponent } from './Components/mantenaince/equipments/equipments-create/equipments-create.component';
+import { EquipmentsEditComponent } from './Components/mantenaince/equipments/equipments-edit/equipments-edit.component';
+import { LendingsCreateComponent } from './Components/mantenaince/lendings/lendings-create/lendings-create.component';
+import { LendingsEditComponent } from './Components/mantenaince/lendings/lendings-edit/lendings-edit.component';
 
 @NgModule({
   declarations: [
@@ -128,7 +134,13 @@ import { DepartmentsCreateComponent } from './Components/complements/departments
     RegistersComponent,
     TracingsComponent,
     DepartmentsComponent,
-    DepartmentsCreateComponent
+    DepartmentsCreateComponent,
+    FixedAssetsCreateComponent,
+    FixedAssetsEditComponent,
+    EquipmentsCreateComponent,
+    EquipmentsEditComponent,
+    LendingsCreateComponent,
+    LendingsEditComponent
   ],
   imports: [
     BrowserModule,

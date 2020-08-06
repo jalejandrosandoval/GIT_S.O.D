@@ -1,0 +1,312 @@
+<div class="container-fluid">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <div class="col-xl-12 col-lg-12 col-md-8">
+
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"> <a href="" routerLink="/accounting"> Contabilidad </a> </li>
+                        <li class="breadcrumb-item"> <a href="" routerLink="/accounting/fixed-assets"> ActivosFijos </a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page"> <b> Creación </b> </li>
+                    </ol>
+                </nav>
+
+                <div class="d-sm-flex align-items-center justify-content-center mb-4">
+                    <h1 class="text-center h3 mb-0 text-gray-800">
+                        <i class="fas fa-pallet"> </i>
+                        <b> Activos Fijos </b>
+                    </h1>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="card shadow mb-4">
+
+            <div class="card-header py-3">
+                <h6 class="text-primary">
+                    <i class="fas fa-plus"> </i> <b> Creación de Activos Fijos </b>
+                </h6>
+            </div>
+
+            <div class="card-body p-0">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="p-5">
+                            <h6 class="m-0 font-weight-bold text-danger">
+                                <i class="fas fa-info-circle"> </i> Los campos con (*) son requeridos...
+                            </h6>
+
+                            <br />
+
+                            <form [formGroup]="">
+
+                                <div>
+                                    <div class="d-sm-flex align-items-center justify-content-center mb-4">
+                                        <h6 class="text-center h5 mb-0 text-primary">
+                                            <b> Datos Generales </b>
+                                        </h6>
+                                    </div>
+                                    <hr>
+                                    <div class="form-group row">
+                                        <div class="col-sm-3 mb-3 mb-sm-0">
+                                            <label class="font-weight-bold text-dark"> Nombre del Artículo(*):</label>
+                                            <input class="form-control form-control-user" formControlName=""
+                                                title="Nombre del Artículo" type="text"
+                                                placeholder="Nombre del Artículo..." />
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <label class="font-weight-bold text-dark"> Descripción del Artículo(*):
+                                            </label>
+                                            <input class="form-control form-control-user" formControlName=""
+                                                title="Descripción del Artículo" type="text"
+                                                placeholder="Descripción del Artículo..." />
+                                        </div>  
+
+                                        <div class="col-sm-3">
+                                            <label class="font-weight-bold text-dark"> S/N Interno(*): </label>
+                                            <input class="form-control form-control-user" formControlName=""
+                                                title="Número Serial Interno" type="text"
+                                                placeholder="Número Serial Interno..." />
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <label class="font-weight-bold text-dark"> Tipo de Activo Fijo(*):</label>
+                                            <select class="form-control form-control-user" formControlName=""
+                                                title="Tipo de Activo Fijo" type="text" placeholder="Seleccione...">
+                                                <option value=''> Seleccione... </option>
+                                                <option value='1'> Dotación UMV </option>
+                                                <option value='2'> Dispositivos de TI </option>
+                                                <option value='3'> Dispositivos Electronicos </option>
+                                                <option value='4'> Equipos de Oficina - Planta Petroco </option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div>
+
+                                    <div class="d-sm-flex align-items-center justify-content-center mb-4">
+                                        <h6 class="text-center h5 mb-0 text-primary">
+                                            <b> Ubicación </b>
+                                        </h6>
+                                    </div>
+                                    <hr>
+                                    <div class="form-group row">
+                                        <div class="col-sm-3 mb-3 mb-sm-0">
+                                            <label class="font-weight-bold text-dark"> Departamento(*): </label>
+                                            <select class="form-control form-control-user" formControlName=""
+                                                title=" Departamento" type="text" placeholder="Seleccione...">
+                                                <option value=''> Seleccione... </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <label class="font-weight-bold text-dark"> Municipio(*): </label>
+                                            <select class="form-control form-control-user" formControlName=""
+                                                title=" Municipio" type="text" placeholder="Seleccione...">
+                                                <option value=''> Seleccione... </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <label class="font-weight-bold text-dark"> Ubicación (*):</label>
+                                            <select class="form-control form-control-user" formControlName=""
+                                                title="Ubicación" type="text" placeholder="Seleccione...">
+                                                <option value=''> Seleccione... </option>
+                                                <option value='1'> Campo </option>
+                                                <option value='2'> Planta </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <label class="font-weight-bold text-dark"> Área o Pozo (*):</label>
+                                            <select class="form-control form-control-user" formControlName=""
+                                                title="Ubicación" type="text" placeholder="Seleccione...">
+                                                <option value=''> Seleccione... </option>
+                                                <option value='1'> CPE6 </option>
+                                                <option value='2'> Mi Llanura </option>
+                                                <option value='2'> Rubiales </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-4 mb-3 mb-sm-0">
+                                        <label class="font-weight-bold text-dark"> No. de Contenedor(*): </label>
+                                        <select class="form-control form-control-user" formControlName=""
+                                            title="No. de Contenedor" type="text" placeholder="Seleccione...">
+                                            <option value=''> Seleccione... </option>
+                                            <option value='1'> 22 </option>
+                                            <option value='2'> 28 </option>
+                                            <option value='3'> A5 </option>
+                                            <option value='4'> Triple </option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div>
+
+                                    <div class="d-sm-flex align-items-center justify-content-center mb-4">
+                                        <h6 class="text-center h5 mb-0 text-primary">
+                                            <b> Datos Especificos </b>
+                                        </h6>
+                                    </div>
+                                    <hr>
+
+                                    <div class="form-group row">
+                                        <div class="col-sm-4 mb-3 mb-sm-0">
+                                            <label class="font-weight-bold text-dark"> Cantidad(*): </label>
+                                            <input class="form-control form-control-user" formControlName="" title="Cantidad" type="text"
+                                                placeholder="Cantidad..." />
+                                        </div>
+                                        <div class="col-sm-4 mb-3 mb-sm-0">
+                                            <label class="font-weight-bold text-dark"> Unidad(*): </label>
+                                            <select class="form-control form-control-user" formControlName="" title="Unidad" type="text"
+                                                placeholder="Seleccione...">
+                                                <option value=''> Seleccione... </option>
+                                                <option value='1'> KG </option>
+                                                <option value='2'> Toneladas </option>
+                                                <option value='3'> Unidades </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <label class="font-weight-bold text-dark"> Estado(*): </label>
+                                            <select class="form-control form-control-user" formControlName="" title="Estado" type="text"
+                                                placeholder="Seleccione...">
+                                                <option value=''> Seleccione... </option>
+                                                <option value='1'> Bueno </option>
+                                                <option value='2'> Para Reparar </option>
+                                                <option value='3'> Usado </option>
+                                                <option value='4'> Nuevo </option>
+                                                <option value='5'> Dado de Baja </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="d-sm-flex mb-4">
+                                            <h6 class="h6 mb-0 text-warning">
+                                                <b> Vida Útil </b>
+                                            </h6>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-sm-4 mb-3 mb-sm-0">
+                                                <label class="font-weight-bold text-dark"> Fecha de Compra(*): </label>
+                                                <input class="form-control form-control-user" formControlName=""
+                                                    type="date" placeholder="Fecha Compra..." title="Fecha Compra" required />
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label class="font-weight-bold text-dark"> Meses de Garantía(*): </label>
+                                                <input class="form-control form-control-user" formControlName=""
+                                                    type="number" placeholder="Meses de Garantía..." title="Meses de Garantía" required />
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label class="font-weight-bold text-dark"> Fecha de Garantía(*): </label>
+                                                <input class="form-control form-control-user" formControlName=""
+                                                    type="date" placeholder="Fecha de Grantía..." title="Fecha de Grantía" disabled />
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-sm-4 mb-3 mb-sm-0">
+                                                <label class="font-weight-bold text-dark"> Fecha de Operación(*): </label>
+                                                <input class="form-control form-control-user" formControlName=""
+                                                    type="date" placeholder="Fecha Operación..." title="Fecha Operación" required />
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label class="font-weight-bold text-dark"> Meses de Uso(*): </label>
+                                                <input class="form-control form-control-user" formControlName=""
+                                                    type="number" placeholder="Meses de Uso..." title="Meses de Uso" required />
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label class="font-weight-bold text-dark"> Meses Restantes(*): </label>
+                                                <input class="form-control form-control-user" formControlName=""
+                                                    type="number" placeholder="Meses Restantes..." title="Meses Restantes" disabled />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="d-sm-flex mb-4">
+                                            <h6 class="h6 mb-0 text-warning">
+                                               <b>Seguimiento (Entrada/Salida)</b>
+                                            </h6>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-sm-6 mb-3 mb-sm-0">
+                                                <label class="font-weight-bold text-dark"> Fecha de Ingreso(*): </label>
+                                                <input class="form-control form-control-user" formControlName=""
+                                                    type="date" placeholder="Fecha..." title="Fecha" required />
+                                            </div>
+                                            <div class="col-sm-6 mb-3 mb-sm-0">
+                                                <label class="font-weight-bold text-dark"> Fecha de Salida(*): </label>
+                                                <input class="form-control form-control-user" formControlName=""
+                                                    type="date" placeholder="Fecha..." title="Fecha" required />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="d-sm-flex mb-4">
+                                            <h6 class="h6 mb-0 text-warning">
+                                               <b>Soportes</b>
+                                            </h6>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-sm-6 mb-3 mb-sm-0">
+                                                <label for="FormControlFile1" class="font-weight-bold text-dark">Soportes(*):</label>
+                                                <input type="file" multiple class="form-control-file" id="FormControlFile1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="d-sm-flex mb-4">
+                                            <h6 class="h6 mb-0 text-warning">
+                                                Otros
+                                            </h6>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-sm-12 mb-3 mb-sm-0 align-items-center justify-content-center">
+                                                <label class="font-weight-bold text-dark" for="TxTareaObs">
+                                                    Observaciones(*):</label>
+                                                <textarea id="TxTareaObs" class="form-control form-control-user" formControlName="" type="text"
+                                                    placeholder="Observaciones" title="Observaciones" required> </textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <br>
+
+                                <div class="form-group row">
+                                    <div class="col-lg-3 mb-3 mb-lg-0 offset-lg-3">
+                                        <a class="btn btn-danger btn-user btn-block text-white" title="Cancelar"
+                                            routerLink="/accounting/fixed-assets">
+                                            <i class="fas fa-times-circle"></i> Cancelar
+                                        </a>
+                                    </div>
+
+                                    <div class="col-lg-3 mb-3 mb-lg-0 ">
+                                        <button type="submit" value="Create"
+                                            class="btn btn-primary btn-user btn-block text-white" title="Guardar"
+                                            [disabled]="">
+                                            <i class="fas fa-save"></i> Guardar
+                                        </button>
+                                    </div>
+
+                                </div>
+
+
+                            </form>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>

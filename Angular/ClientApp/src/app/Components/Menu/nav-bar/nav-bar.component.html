@@ -34,7 +34,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" title="Mantenimiento" routerLink="/mantenaince"> <b>
-                                Mantenimiento </b> </a>
+                                Mtto </b> </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white"> <b> | </b> </a>
@@ -75,64 +75,62 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" title="Bodega" routerLink="/cell"> <b> Bodega </b> </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white"> <b> | </b> </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" title="Configuraciones del Sistema" routerLink="/configuration">
-                            <b> <i class="fas fa-cog"></i> </b> </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white"> <b> | </b> </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" title="Ayuda | PDF"
-                            href="../../../../assets/documents/Petroco SA .pdf" target="_blank">
-                            <b> <i class="fas fa-question-circle"></i> </b>
-                        </a>
-                    </li>
+                    </li>                    
                 </ul>
 
             </div>
 
             <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-
-                <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
-
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown no-arrow mx-1">
+                        <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-bell fa-fw text-white"></i>
+                            <span class="badge badge-danger badge-counter"><b>3+</b></span>
+                        </a>                
+            
                     <!--Dropdowm for the User LoggedIn in the app-->
-
+            
                     <div class="topbar-divider d-none d-sm-block text-white"></div>
-
+            
                     <li class="nav-item dropdown no-arrow" *ngIf="nb_LoggedIn()">
-                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
                             <label class="mr-2 d-none d-lg-inline text-white small"> <b>
                                     Bienvenido: </b> {{ userCurrent }} </label>
-                            <img class="img-profile rounded-circle text-white"
-                                src="../assets/images/astronaut-user.png">
+                            <img class="img-profile rounded-circle text-white" src="../assets/images/astronaut-user.png">
                         </a>
-
+            
                         <!-- Dropdown - User Information -->
-
-                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                            aria-labelledby="userDropdown">
-
+            
+                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+            
                             <a class="dropdown-item" routerLink="/profile" title="Ver Perfil">
                                 <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Perfil
                             </a>
                             <div class="dropdown-divider"></div>
+
+                            <a class="dropdown-item" title="Configuraciones del Sistema" routerLink="/configuration">
+                                <b> <i class="fas fa-cog"></i> </b> Configuraciones del Sistema</a>
+                       
+                     
+                            <a class="dropdown-item" title="Ayuda | PDF"
+                                href="../../../../assets/documents/Petroco SA .pdf" target="_blank">
+                                <b> <i class="fas fa-question-circle"></i> </b> Ayuda
+                            </a>
+                     
+                            <div class="dropdown-divider"></div>
                             <a class="dropdown-item" title="Terminar Sesión" (click)="nb_Logout()" href="">
                                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Salir
                             </a>
-
+            
                         </div>
-
+            
                     </li>
                 </ul>
-
+            
             </div>
 
         </div>

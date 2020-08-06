@@ -1,0 +1,194 @@
+<div class="container-fluid">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <div class="col-xl-12 col-lg-12 col-md-8">
+
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"> <a href="" routerLink="/mantenaince"> Mantenimiento </a> </li>
+                        <li class="breadcrumb-item"> <a href="" routerLink="/mantenaince/equipments"> Equipos </a> </li>
+                        <li class="breadcrumb-item active" aria-current="page"> <b> Creación </b> </li>
+                    </ol>
+                </nav>
+
+                <div class="d-sm-flex align-items-center justify-content-center mb-4">
+                    <h1 class="text-center h3 mb-0 text-gray-800">
+                        <i class="fas fa-toolbox"> </i>
+                        <b> Equipos </b>
+                    </h1>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="card shadow mb-4">
+
+            <div class="card-header py-3">
+                <h6 class="text-primary">
+                    <i class="fas fa-plus"> </i> <b> Creación de Equipos </b>
+                </h6>
+            </div>
+
+            <div class="card-body p-0">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="p-5">
+                            <h6 class="m-0 font-weight-bold text-danger">
+                                <i class="fas fa-info-circle"> </i> Los campos con (*) son requeridos...
+                            </h6>
+
+                            <br />
+
+                            <form [formGroup]="">
+
+                                <div class="d-sm-flex align-items-center justify-content-center mb-4">
+                                    <h6 class="text-center h5 mb-0 text-primary">
+                                        <b> Datos Generales </b>
+                                    </h6>
+                                </div>
+
+                                <hr>
+
+                                <div class="form-group row">
+                                    <div class="col-sm-4 mb-3 mb-sm-0">
+                                        <label class="font-weight-bold text-dark"> Tipo de Equipo(*):</label>
+                                        <select class="form-control form-control-user" formControlName=""
+                                            title="Tipo de Equipo" type="text" placeholder="Tipo de Equipo...">
+                                            <option selected> Seleccione... </option>
+                                            <option value="1"> Eléctrica </option>
+                                            <option value="2"> Manual </option>
+                                            <option value="3"> Neumatica </option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <label class="font-weight-bold text-dark"> Codigo Interno(*):</label>
+                                        <input class="form-control form-control-user" formControlName=""
+                                            title="Codigo Interno" type="text" placeholder="Codigo Interno..." />
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <label class="font-weight-bold text-dark"> Nombre del Equipo(*):</label>
+                                        <input class="form-control form-control-user" formControlName=""
+                                            title="Nombre del Equipo" type="text" placeholder="Nombre del Equipo..." />
+                                    </div>
+                                </div>
+                                <div class="form-group row">                                    
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <label class="font-weight-bold text-dark"> Características del Equipo(*): </label>
+                                        <input class="form-control form-control-user" formControlName=""
+                                            title="características del Equipo" type="text" placeholder="Características del Equipo..." />
+                                    </div>
+                                </div>
+                                <br>
+                                <div>
+
+                                    <div class="d-sm-flex align-items-center justify-content-center mb-4">
+                                        <h6 class="text-center h5 mb-0 text-primary">
+                                            <b> Datos Especificos </b>
+                                        </h6>
+                                    </div>
+
+                                    <hr>
+
+                                    <div class="form-group row">
+                                        <div class="col-sm-4 mb-3 mb-sm-0">
+                                            <label class="font-weight-bold text-dark"> Marca(*):</label>
+                                            <input class="form-control form-control-user" formControlName=""
+                                                title="Marca" type="text" placeholder="Marca..." />
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <label class="font-weight-bold text-dark"> Modelo(*):</label>
+                                            <input class="form-control form-control-user" formControlName=""
+                                                title="Modelo" type="text" placeholder="Modelo..." />
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <label class="font-weight-bold text-dark"> S/N(*):</label>
+                                            <input class="form-control form-control-user" formControlName=""
+                                                title="Número Serial" type="text" placeholder="S/N..." />
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <br>
+                                <div>
+                                    <div class="d-sm-flex align-items-center justify-content-center mb-4">
+                                        <h6 class="text-center h5 mb-0 text-primary">
+                                            <b> Información Adicional </b>
+                                        </h6>
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <div class="d-sm-flex mb-4">
+                                            <h6 class="h6 mb-0 text-warning">
+                                                <b>Garantía</b>
+                                            </h6>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-sm-6 mb-3 mb-sm-0">
+                                                <label class="font-weight-bold text-dark"> Fecha de Compra(*):</label>
+                                                <input class="form-control form-control-user" formControlName=""
+                                                    title="Fecha de Compra" type="date" />
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label class="font-weight-bold text-dark"> Fecha Vencimiento(*):</label>
+                                                <input class="form-control form-control-user" formControlName=""
+                                                    title="Fecha de Vencimiento" type="date" />
+                                            </div>
+                                        </div>
+                                        <div class="d-sm-flex mb-4">
+                                            <h6 class="h6 mb-0 text-warning">
+                                                <b>Factura de Compra</b>
+                                             </h6>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-sm-6 mb-3 mb-sm-0">
+                                                <label for="FormControlFile1" class="font-weight-bold text-dark">Factura de Compra(*):</label>
+                                                <input type="file" class="form-control-file" id="FormControlFile1">
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label class="font-weight-bold text-dark" for="TxTareaObs">
+                                                    Observaciones(*):</label>
+                                                <textarea id="TxTareaObs" class="form-control form-control-user" formControlName="" type="text"
+                                                    placeholder="Observaciones" title="Observaciones" required> </textarea>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <br>
+
+                                    <div class="form-group row">
+                                        <div class="col-lg-3 mb-3 mb-lg-0 offset-lg-3">
+                                            <a class="btn btn-danger btn-user btn-block text-white" title="Cancelar"
+                                                routerLink="/mantenaince/equipments">
+                                                <i class="fas fa-times-circle"></i> Cancelar
+                                            </a>
+                                        </div>
+
+                                        <div class="col-lg-3 mb-3 mb-lg-0 ">
+                                            <button type="submit" value="Create"
+                                                class="btn btn-primary btn-user btn-block text-white"
+                                                title="Guardar" [disabled]="">
+                                                <i class="fas fa-save"></i> Guardar
+                                            </button>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </form>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
