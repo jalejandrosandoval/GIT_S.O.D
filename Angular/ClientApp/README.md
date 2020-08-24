@@ -1,27 +1,151 @@
-# ClientApp
+<p>
+    <h1 align="center"> Proyecto Angular </h1>
+</p>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
+## Estructura de Archivos del Proyecto
 
-## Development server
+```bash
+└─ Front-Angular
+    ├─e2e
+    ├─node_modules 
+    └─src 
+      ├─app
+      ├─assets
+      └─enviroments
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Requisitos Previos Para Angular
 
-## Code scaffolding
+### Instalar NodeJs
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* Descargar el instalador de [NodeJS](https://nodejs.org/es/).
+* Ejecutar el instalador.
 
-## Build
+### Instalar Angular
+Una vez instalado NodeJS, se procede a abrir la consola de NodeJS <b>(Node.js command prompt)</b>, esto es con el fin de ejecutar los comandos para instalar angular y sus dependencias.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+* Instalar Angular en su ultima versión:
+```bash
+npm i -g @angular/cli
+```
 
-## Running unit tests
+* Si se desea, instalar angular en una versión especifica se debe utilizar el siguiente comando:
+```bash
+npm i -g @angular/cli@'N°. Version'
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+* Para verificar la versión de angular instalada:
 
-## Running end-to-end tests
+```bash
+ng --version
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### Crear Proyecto
 
-## Further help
+Para la creación del proyecto desde 0, se realiza por medio de nodejs:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```bash
+ng new NombreDelProyecto
+```
+
+### NodeModules
+
+* Para instalar los nodemodules de proyecto se debe utilizar el siguiente comando:
+
+```bash
+npm i
+```
+
+### Instalar Otras Dependencias
+
+Si se desea realizar desde 0 con la instalación del proyecto desde 0, se deben instalar uno a uno cada uno de los modules a utilizar; en este caso, se utilizará boostrap y algunos otros paquetes; Sin embargo, hay que tener en cuenta que al instalar cada dependencia se debe hacer su respectiva importación y/o llamado en el Archivo "Angular.JSON".
+
+* #### Instalación de Boostrap -> Estilos
+Para instalar boostrap se requieren las dependencias de JQUERY y de PopperJS:
+
+```bash
+npm i boostrap jquery @popperjs/core --save
+```
+
+* #### Instalación de FontAwesome -> Iconos
+Para instalar fontawesome basta con la siguiente linea de comando:
+
+```bash
+npm install --save @fortawesome/fontawesome-free
+```
+
+* #### Instalación de NGX-TOASTR -> Notificaciones
+Para instalar Toastr, se requiere de la siguiente linea de comando:
+
+```bash
+npm i ngx-toastr --save
+```
+Junto con la instalación del siguiente paquete, el cual ayuda a la funcionalidad del TOASTR.
+
+```bash
+npm i @angular/animations --save
+```
+
+* #### Instalación de Datatables -> Visualizar en tablas info
+
+```bash
+npm install datatables.net --save
+npm install datatables.net-dt --save
+npm install angular-datatables --save
+npm install @types/jquery --save-dev
+npm install @types/datatables.net --save-dev
+```
+
+### Llamar o Vincular las dependencias instaladas en el proyecto
+
+Para hacer el llamado, la vinculación o la importanción de las depencias instaladas se debe modificar el archivo <b> angular.json </b>, más exactamente se deben agregar estas lineas:
+
+```bash
+"styles": [
+    "src/styles.css",
+    "node_modules/datatables.net-dt/css/jquery.dataTables.css"              
+    ],
+"scripts": [
+    "node_modules/jquery/dist/jquery.min.js",
+    "node_modules/@popperjs/core/dist/umd/popper.min.js",
+    "node_modules/bootstrap/dist/js/bootstrap.min.js",
+    "node_modules/datatables.net/js/jquery.dataTables.js"
+    ]
+```
+
+## Configuración de Proxy
+
+Se debe crear un archivo de tipo <b> config.proxy </b> para establecer una comunicación directa con el APIREST creada en .NETCORE esto se realiza de la siguiente manera:
+
+* Se debe crear el archivo y llamarlo de la siguiente forma así:
+
+```bash
+proxy.conf.json
+```
+
+* Seguido a ello se debe reajustar el inicio del proyecto en el archivo <b> package.json </b> más exactamente se modfican la linea de ng serve:
+
+```bash
+"scripts": {
+    ...
+    "start": "ng serve"
+    ...
+  }
+```
+
+Y se agrega <b> --proxy-config proxy.conf.json </b>, con el fin de que exista una comunicación con la API:
+
+```bash
+"scripts": {
+    ...
+    "start": "ng serve --proxy-config proxy.conf.json"
+    ...
+  }
+```
+
+* Por ultimo para iniciar el proyecto se debe tener en cuenta que se iniciar el proyecto de la API y a su vez el de angular con la siguiente linea: 
+
+```bash
+npm start
+```
+
