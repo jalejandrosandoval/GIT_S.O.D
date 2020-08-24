@@ -8,8 +8,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.AspNetCore.Cors;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using System;
 using System.Text;
 
@@ -77,6 +77,17 @@ namespace API
                     }
                 ) ;
 
+            //Configuration the Swagger Docs
+
+            services.AddSwaggerGen(config =>
+              config.SwaggerDoc("V1.0", new OpenApiInfo
+              {
+                  Title = "PetManAPP - API V1.0",
+                  Version = "V1.0",
+                  Description = "PetManAPP APP - WEB API"
+              })
+              );
+
             services.AddControllers();
 
         }
@@ -91,7 +102,14 @@ namespace API
             // Autentication 
 
             //app.UseAuthentication(); 
-            
+
+            //SWAGGER
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/V1.0/swagger.json", "PetManAPP - API V1.0");
+            });
+
             // CORS
 
             app.UseCors("AllowSpecificOrigin");
