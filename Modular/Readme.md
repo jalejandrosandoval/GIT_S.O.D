@@ -1,5 +1,5 @@
 <p>
-    <h2 align="center"> SOCCERAPP - WEB API</h2>
+    <h2 align="center"> PETMAN - WEB API</h2>
 </p>
 
 ## Instalar Paquetes
@@ -35,9 +35,9 @@ public void ConfigureServices(IServiceCollection services)
   services.AddSwaggerGen(config =>
     config.SwaggerDoc("V1.0", new OpenApiInfo
       {
-        Title = "SoccerAPP - API V1.0",
+        Title = "PETMAN - API V1.0",
         Version = "V1.0",
-        Description = "Soccer APP - WEB API"
+        Description = "PETMAN - WEB API"
       })
     );
 
@@ -57,7 +57,7 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
   app.UseSwagger();
   app.UseSwaggerUI(c =>
     {
-      c.SwaggerEndpoint("/swagger/V1.0/swagger.json", "SoccerAPP - API V1.0");
+      c.SwaggerEndpoint("/swagger/V1.0/swagger.json", "PETMAN - API V1.0");
   });
 
   ...
@@ -69,7 +69,7 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 <b> NOTA #2: </b> Para consultar la vista de swagger basta con poner en la ruta del proyecto en el navegador la palabra <b> /swagger </b>
 
 ```bash
-http://localhost:51060/swagger
+http://localhost:57764/swagger
 ```
 
 ## Conection Database
