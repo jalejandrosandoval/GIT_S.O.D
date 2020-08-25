@@ -153,6 +153,8 @@ Para ello se debe:
 * Verificar que se encuentre en el Proyecto donde esta <DbContext>.
 * Dar un nombre a la migración.
 
+<b> NOTA: </b> Antes de hacer la migración se debe tener en cuenta que no exista ningún error de codificación en ninguna parte del código, debido a que si existe algún error, automáticamente la migración se verá afectada y no podrá realizarce. 
+
 ```bash
 PM> Add-Migration 'NameMigration'
 ```
