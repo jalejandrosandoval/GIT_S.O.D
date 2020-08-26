@@ -1,10 +1,19 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
-namespace Bussiness_Logic.Models
+namespace Bussiness_Logic.Models.Auth
 {
+    /// <summary>
+    /// Model of LoginModel with various properties, like:
+    /// * Username: String.
+    /// * UserPassword: String.
+    /// * RememberMe: Bool
+    /// </summary>
+
+    [Serializable]
     public class LoginModel
     {
-        [Key]
+
         [Required(ErrorMessage = "* Correo Eléctronico Requerido")]
         [Display(Name = "Nombre de Usuario", Description = "Nombre de Usuario", Prompt = "Usuario...")]
         public string Username { get; set; }

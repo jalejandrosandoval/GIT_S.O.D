@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using Bussiness_Logic.Models.Providers;
 
 namespace Bussiness_Logic.Models
 {
@@ -28,7 +29,7 @@ namespace Bussiness_Logic.Models
 
         public Equipment Equipments { get; set; }
 
-        public Providers Providers { get; set; }
+        //public Providers Providers { get; set; }
 
     }
 }

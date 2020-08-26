@@ -2,8 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Bussiness_Logic.Models
+namespace Bussiness_Logic.Models.Users
 {
+    /// <summary>
+    /// Model of UsersType with various properties, like:
+    /// * Id_UsersType: Int.
+    /// * UsersTypeName: String.
+    /// </summary>
 
     [Serializable]
     public class UsersType
@@ -16,8 +21,5 @@ namespace Bussiness_Logic.Models
         [Display(Name = "Tipo Usuario", Description = "Tipo Usuario", Prompt = "Tipo Usuario...")]
         public string UsersTypeName { get; set; }
 
-        public ICollection<Users> Users { get; set; }
-
     }
 }
-

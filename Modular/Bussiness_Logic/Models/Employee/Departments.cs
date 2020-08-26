@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Bussiness_Logic.Models
+namespace Bussiness_Logic.Models.Employee
 {
 
     [Serializable]
@@ -16,9 +16,7 @@ namespace Bussiness_Logic.Models
         [Display(Name = "Tipo Departamento", Description = "Tipo Departamento", Prompt = "Tipo Departamento...")]
         public string DepartmentsName { get; set; }
 
-        public ICollection<CV_Devices> CV_Devices { get; set; }
-
-        public ICollection<Users> Users { get; set; }
+        public ICollection<Employees> Employees { get; set; }
 
     }
 

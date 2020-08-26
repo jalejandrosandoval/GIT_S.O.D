@@ -14,7 +14,7 @@ namespace Bussiness_Logic.Models
         [Display(Name = "Estado", Description = "Estado", Prompt = "Estado...")]
         public bool StatusDevices { get; set; }
 
-        public ICollection<CV_Devices> CV_Devices { get; set; }
+        //public ICollection<CV_Devices> CV_Devices { get; set; }
 
     }
 }

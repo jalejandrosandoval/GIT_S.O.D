@@ -53,7 +53,7 @@ namespace Bussiness_Logic.Models
 
         [Required(ErrorMessage = "* Seleccione un Tipo...")]
         [Display(Name = "Tipo de Activo Fijo", Description = "Tipo de Activo Fijo", Prompt = "Tipo de Activo Fijo...")]
-        public int Id_AssestsType { get; set; }
+        public int IdAssetsType { get; set; }
         public AssetsType AssetsType { get; set; }
     }
 }

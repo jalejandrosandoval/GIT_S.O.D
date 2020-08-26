@@ -17,7 +17,7 @@ namespace Bussiness_Logic.Models
         [Display(Name = "Tipo Dispositivo", Description = "Tipo Dispositivo", Prompt = "Tipo Dispositivo...")]
         public string DevicesTypesName { get; set; }
 
-        public ICollection<CV_Devices> CV_Devices { get; set; }
+        //public ICollection<CV_Devices> CV_Devices { get; set; }
 
     }
 }

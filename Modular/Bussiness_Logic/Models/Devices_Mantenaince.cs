@@ -27,7 +27,7 @@ namespace Bussiness_Logic.Models
         [DataType(DataType.Text)]
         public string Observartions_Mantenaince { get; set; }
 
-        public ICollection<CV_Devices> CV_Devices { get; set; }
+        //public ICollection<CV_Devices> CV_Devices { get; set; }
 
     }
 }

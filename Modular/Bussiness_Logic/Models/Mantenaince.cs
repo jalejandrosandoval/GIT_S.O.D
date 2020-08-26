@@ -30,7 +30,7 @@ namespace Bussiness_Logic.Models
         [Required]
         public int EquipmentId { get; set; }
 
-        public Users Users { get; set; }
+        //public Users Users { get; set; }
 
         public Equipment Equipments { get; set; }
 

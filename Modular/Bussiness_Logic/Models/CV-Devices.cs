@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Bussiness_Logic.Models.Employee;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Bussiness_Logic.Models
+namespace Bussiness_Logic.Models.Col
 {
     [Serializable]
 
@@ -20,7 +21,7 @@ namespace Bussiness_Logic.Models
         [Display(Name = "Usuario", Description = "Usuario", Prompt = "Usuario...")]
         public int Id_User { get; set; }
 
-        public Users Users { get; set; }
+        //public Users Users { get; set; }
 
         [Required(ErrorMessage = "* Seleccione un Departamento...")]
         [Display(Name = "Tipo de Departamento", Description = "Tipo de Departamento", Prompt = "Tipo de Departamento...")]
@@ -30,9 +31,9 @@ namespace Bussiness_Logic.Models
 
         [Required(ErrorMessage = "* Seleccione un Cargo...")]
         [Display(Name = "Cargo", Description = "Tipo de Cargo", Prompt = "Tipo de Cargo...")]
-        public int Id_Positions { get; set; }
+        public int IdEmployeeType { get; set; }
 
-        public Positions Positions { get; set; }
+        public EmployeeType EmployeeType { get; set; }
 
         [Required(ErrorMessage = "* Seleccione un Tipo...")]
         [Display(Name = "Tipo de Dispositivo", Description = "Tipo de Dispositivo", Prompt = "Tipo de Dispositivo...")]

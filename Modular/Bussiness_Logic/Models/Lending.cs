@@ -23,13 +23,13 @@ namespace Bussiness_Logic.Models
         [DataType(DataType.Text)]
         public string DescriptionMantenaince { get; set; }  
 
-        public int UserId { get; set; }
+        public int EmployeeId { get; set; }
 
         public int EquipmentId { get; set; }
 
         public int UbicationId { get; set; }
 
-        public Users Users { get; set; }
+        //public Users Users { get; set; }
 
         public Equipment Equipments { get; set; }
 

@@ -2,8 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Bussiness_Logic.Models
+namespace Bussiness_Logic.Models.Users
 {
+    /// <summary>
+    /// Model of Users with various properties, like:
+    /// * Id_Users: Int.
+    /// * UsersTypeName: String.
+    /// </summary>
 
     [Serializable]
     public class Users
@@ -52,10 +57,6 @@ namespace Bussiness_Logic.Models
         public int Id_UsersType { get; set; }
 
         public UsersType UserType { get; set; }
-        public List<Lending> Lendings { get; set; }
-        public List<Mantenaince> Mantenainces { get; set; }
-
-        public ICollection<CV_Devices> CV_Devices { get; set; }
 
     }
 
