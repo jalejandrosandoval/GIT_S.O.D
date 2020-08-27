@@ -30,7 +30,7 @@ import { ErrorInterceptorService } from './Services/Auth/error-interceptor.servi
 //COMPONENTS
 
 import { NavBarComponent } from './Components/Menu/nav-bar/nav-bar.component';
-import { FooterComponent } from './Components/footer/footer.component';
+import { FooterComponent } from './Components/Menu/footer/footer.component';
 import { LoginComponent } from './Components/Auth/login/login.component';
 import { AboutComponent } from './Components/about/about.component';
 import { RecoveryComponent } from './Components/Auth/recovery/recovery.component';
@@ -42,7 +42,7 @@ import { DefaultComponent } from './Components/default/default.component';
 import { ComplementsComponent } from './Components/complements/complements/complements.component';
 import { MantenainceComponent } from './Components/mantenaince/mantenaince/mantenaince.component';
 import { EquipmentsComponent } from './Components/Mantenaince/equipments/equipments/equipments.component';
-import { ProvidersComponent } from './Components/providers/providers/providers.component';
+import { ProvidersComponent } from './Components/providers/providers/providers/providers.component';
 import { PageNotFoundComponent } from './Components/page-not-found/page-not-found.component';
 import { FabricationComponent } from './Components/fabrication/fabrication/fabrication.component';
 import { UsersTypeComponent } from './Components/users/users-type/users-type/users-type.component';
@@ -51,7 +51,7 @@ import { UsersTypeEditComponent } from './Components/users/users-type/users-type
 import { ProvidersTypeComponent } from './Components/providers/providers-type/providers-type.component';
 import { FixedAssetsComponent } from './Components/Accounting/Fixed-Assets/fixed-assets/fixed-assets/fixed-assets.component';
 import { AccountingComponent } from './Components/Accounting/Accounting/accounting.component';
-import { PurchasesComponent } from './Components/purchases/purchases.component';
+import { PurchasesComponent } from './Components/purchases/purchases/purchases.component';
 import { AssetsTypeComponent } from './Components/Accounting/Fixed-Assets/assets-type/assets-type.component';
 import { AssetsTypeCreateComponent } from './Components/Accounting/Fixed-Assets/assets-type/assets-type-create/assets-type-create.component';
 import { AssetsTypeEditComponent } from './Components/Accounting/Fixed-Assets/assets-type/assets-type-edit/assets-type-edit.component';
@@ -83,6 +83,13 @@ import { EquipmentsCreateComponent } from './Components/mantenaince/equipments/e
 import { EquipmentsEditComponent } from './Components/mantenaince/equipments/equipments-edit/equipments-edit.component';
 import { LendingsCreateComponent } from './Components/mantenaince/lendings/lendings-create/lendings-create.component';
 import { LendingsEditComponent } from './Components/mantenaince/lendings/lendings-edit/lendings-edit.component';
+import { THumanComponent } from './Components/Thuman/thuman/thuman.component';
+import { SidebarComponent } from './Components/Menu/sidebar/sidebar.component';
+import { HelpComponent } from './Components/menu/help/help.component';
+import { OrdersPurchasesComponent } from './Components/purchases/OrdersPurchases/orders-purchases/orders-purchases.component';
+import { OrdersPurchasesCreateComponent } from './Components/purchases/OrdersPurchases/orders-purchases-create/orders-purchases-create.component';
+import { ProvidersCreateComponent } from './Components/providers/providers/providers-create/providers-create.component';
+import { ProvidersEditComponent } from './Components/providers/providers/providers-edit/providers-edit.component';
 
 @NgModule({
   declarations: [
@@ -140,7 +147,14 @@ import { LendingsEditComponent } from './Components/mantenaince/lendings/lending
     EquipmentsCreateComponent,
     EquipmentsEditComponent,
     LendingsCreateComponent,
-    LendingsEditComponent
+    LendingsEditComponent,
+    THumanComponent,
+    SidebarComponent,
+    HelpComponent,
+    OrdersPurchasesComponent,
+    OrdersPurchasesCreateComponent,
+    ProvidersCreateComponent,
+    ProvidersEditComponent
   ],
   imports: [
     BrowserModule,

@@ -1,11 +1,28 @@
-<navbar> </navbar>
 
-<div class="container">
-  <main role="main" class="pb-3">
+ <div id="wrapper">
 
-    <router-outlet></router-outlet>
+   <app-sidebar></app-sidebar>
 
-  </main>
+   <div id="content-wrapper" class="d-flex flex-column">
+
+    <div id="content">
+
+      <navbar> </navbar>
+
+      <div class="container-fluid">
+
+          <main role="main" class="pb-3">
+        
+            <router-outlet></router-outlet>
+        
+          </main>
+
+      </div>
+
+    </div>
+
+    <app-footer></app-footer>
+
+  </div>
+
 </div>
-
-<app-footer> </app-footer>

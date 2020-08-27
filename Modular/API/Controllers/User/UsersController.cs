@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using API.Data;
-using Bussiness_Logic.Models;
+using Bussiness_Logic.Models.Users;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 
@@ -14,6 +14,7 @@ namespace API.Controllers.User
 {
     [Route("api/[controller]")]
     [ApiController]
+
     //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class UsersController : ControllerBase
     {
@@ -23,6 +24,7 @@ namespace API.Controllers.User
         {
             _ContextUsers = context;
         }
+
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Users>>> GetUsers()

@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using API.Data;
-using Bussiness_Logic.Models;
+using Bussiness_Logic.Models.Providers;
 
 namespace API.Controllers.Provider
 {
@@ -27,8 +27,8 @@ namespace API.Controllers.Provider
         {
             return await _context
                        .Providers
-                       .Include(p => p.ProviderType)
-                       .Where(p => p.ProviderType.Id_ProviderType == p.Id_ProvidersType)
+                       .Include(p => p.ProvidersType)
+                       .Where(p => p.ProvidersType.Id_ProviderType == p.Id_ProvidersType)
                        .ToListAsync();
         }
     

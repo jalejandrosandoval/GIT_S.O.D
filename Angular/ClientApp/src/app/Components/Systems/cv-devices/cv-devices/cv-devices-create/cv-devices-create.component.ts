@@ -11,8 +11,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./cv-devices-create.component.css']
 })
 export class CvDevicesCreateComponent implements OnInit {
-
-  options: any;
+  
   _IDepartments: IDepartmentsModel[];
   
   constructor(

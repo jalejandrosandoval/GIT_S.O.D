@@ -15,7 +15,7 @@ export class NavBarComponent {
   //Declarations Variables
   
   @Input() userCurrent : string = 'Username';
-
+  
   //Loading Initial Data in this component
 
   ngOnInit() {

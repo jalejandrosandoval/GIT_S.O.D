@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using API.Data;
-using Bussiness_Logic.Models;
+using Bussiness_Logic.Models.Users;
 
 namespace API.Controllers.User
 {

@@ -1,80 +1,58 @@
 <header>
 
-    <nav class="navbar navbar-expand-sm navbar-light bg-danger border-bottom box-shadow mb-3" *ngIf="nb_LoggedIn()">
+    <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom box-shadow mb-3" *ngIf="nb_LoggedIn()">
 
-        <button class="btn btn-link d-md-none rounded-circle mr-3 text-white" type="button" data-toggle="collapse"
+        <button class="btn btn-link d-md-none rounded-circle mr-3 text-dark" type="button" data-toggle="collapse"
             data-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false"
             aria-label="Toggle navigation">
             <i class="fa fa-bars"></i>
         </button>
 
         <div class="collapse navbar-collapse">
-
-            <a class="navbar-brand" routerLink="/default">
-                <img src="../assets/images/Logo.png" width="100" height="50" title="Petroco Mantenimiento" />
-            </a>
-
             <!--User menu loging check from API-->
 
             <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
 
                 <ul class="navbar-nav flex-grow-1 dropdown-menu-sm-left mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link text-white" title="Menú Principal" routerLink="/default"> <b>
+                        <a class="nav-link text-dark" title="Menú Principal" routerLink="/default"> <b>
                                 <i class="fas fa-home"></i> </b> </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white"> <b> | </b> </a>
+                        <a class="nav-link text-dark" title="Talento Humano" routerLink="/users"> <b> THumano </b> </a>
                     </li>
+                    
                     <li class="nav-item">
-                        <a class="nav-link text-white" title="Talento Humano" routerLink="/users"> <b> THumano </b> </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white"> <b> | </b> </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" title="Mantenimiento" routerLink="/mantenaince"> <b>
+                        <a class="nav-link text-dark" title="Mantenimiento" routerLink="/mantenaince"> <b>
                                 Mtto </b> </a>
                     </li>
+                    
                     <li class="nav-item">
-                        <a class="nav-link text-white"> <b> | </b> </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" title="Fabricación UMV" routerLink="/fabrication">
+                        <a class="nav-link text-dark" title="Fabricación UMV" routerLink="/fabrication">
                             <b> Fabricación </b>
                         </a>
                     </li>
+                    
                     <li class="nav-item">
-                        <a class="nav-link text-white"> <b> | </b> </a>
+                        <a class="nav-link text-dark" title="Compras" routerLink="/purchases"> <b> Compras </b> </a>
                     </li>
+                    
                     <li class="nav-item">
-                        <a class="nav-link text-white" title="Compras" routerLink="/purchases"> <b> Compras </b> </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white"> <b> | </b> </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" title="Contabilidad" routerLink="/accounting"> <b> Contabilidad
+                        <a class="nav-link text-dark" title="Contabilidad" routerLink="/accounting"> <b> Contabilidad
                             </b> </a>
                     </li>
+                    
                     <li class="nav-item">
-                        <a class="nav-link text-white"> <b> | </b> </a>
+                        <a class="nav-link text-dark" title="Sistemas" routerLink="/systems"> <b> Sistemas </b> </a>
                     </li>
+                    
                     <li class="nav-item">
-                        <a class="nav-link text-white" title="Sistemas" routerLink="/systems"> <b> Sistemas </b> </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white"> <b> | </b> </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" title="Complementos" routerLink="/complements"> <b> Complementos
+                        <a class="nav-link text-dark" title="Complementos" routerLink="/complements"> <b> Complementos
                             </b> </a>
                     </li>
+                    
                     <li class="nav-item">
-                        <a class="nav-link text-white"> <b> | </b> </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" title="Bodega" routerLink="/cell"> <b> Bodega </b> </a>
+                        <a class="nav-link text-dark" title="Bodega" routerLink="/cell"> <b> Bodega </b> </a>
                     </li>                    
                 </ul>
 
@@ -85,20 +63,59 @@
                     <li class="nav-item dropdown no-arrow mx-1">
                         <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-bell fa-fw text-white"></i>
-                            <span class="badge badge-danger badge-counter"><b>3+</b></span>
-                        </a>                
-            
+                            <i class="fas fa-bell fa-fw text-dark"></i>
+                            <span class="badge badge-danger badge-counter"><b>3+</b></span>                                                        
+                        </a>
+                        <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+                            <h6 class="dropdown-header">
+                              Alerts Center
+                            </h6>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                              <div class="mr-3">
+                                <div class="icon-circle bg-primary">
+                                  <i class="fas fa-file-alt text-white"></i>
+                                </div>
+                              </div>
+                              <div>
+                                <div class="small text-gray-500">December 12, 2019</div>
+                                <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                              </div>
+                            </a>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                              <div class="mr-3">
+                                <div class="icon-circle bg-success">
+                                  <i class="fas fa-donate text-white"></i>
+                                </div>
+                              </div>
+                              <div>
+                                <div class="small text-gray-500">December 7, 2019</div>
+                                $290.29 has been deposited into your account!
+                              </div>
+                            </a>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                              <div class="mr-3">
+                                <div class="icon-circle bg-warning">
+                                  <i class="fas fa-exclamation-triangle text-white"></i>
+                                </div>
+                              </div>
+                              <div>
+                                <div class="small text-gray-500">December 2, 2019</div>
+                                Spending Alert: We've noticed unusually high spending for your account.
+                              </div>
+                            </a>
+                            <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                          </div>                
+                    </li>
                     <!--Dropdowm for the User LoggedIn in the app-->
             
-                    <div class="topbar-divider d-none d-sm-block text-white"></div>
+                    <div class="topbar-divider d-none d-sm-block text-dark"></div>
             
                     <li class="nav-item dropdown no-arrow" *ngIf="nb_LoggedIn()">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
-                            <label class="mr-2 d-none d-lg-inline text-white small"> <b>
+                            <label class="mr-2 d-none d-lg-inline text-dark small"> <b>
                                     Bienvenido: </b> {{ userCurrent }} </label>
-                            <img class="img-profile rounded-circle text-white" src="../assets/images/astronaut-user.png">
+                            <img class="img-profile rounded-circle text-dark" src="../assets/images/astronaut-user.png">
                         </a>
             
                         <!-- Dropdown - User Information -->
@@ -115,9 +132,8 @@
                                 <b> <i class="fas fa-cog"></i> </b> Configuraciones del Sistema</a>
                        
                      
-                            <a class="dropdown-item" title="Ayuda | PDF"
-                                href="../../../../assets/documents/Petroco SA .pdf" target="_blank">
-                                <b> <i class="fas fa-question-circle"></i> </b> Ayuda
+                            <a class="dropdown-item" title="Ayuda | PDF" routerLink="/help">
+                                <b> <i class="fas fa-question-circle"></i> </b> Ayuda <span class="small bg-success text-white"> &nbsp; <b> PDF </b> &nbsp;</span> 
                             </a>
                      
                             <div class="dropdown-divider"></div>

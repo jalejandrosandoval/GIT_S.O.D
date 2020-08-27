@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using API.Data;
-using Bussiness_Logic.Models;
+using Bussiness_Logic.Models.Providers;
 
 namespace API.Controllers.Provider
 {
@@ -23,14 +23,14 @@ namespace API.Controllers.Provider
 
         // GET: api/ProviderTypes
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ProviderType>>> GetProvidersType()
+        public async Task<ActionResult<IEnumerable<ProvidersType>>> GetProvidersType()
         {
             return await _context.ProvidersType.ToListAsync();
         }
 
         // GET: api/ProviderTypes/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<ProviderType>> GetProviderType(int id)
+        public async Task<ActionResult<ProvidersType>> GetProviderType(int id)
         {
             var providerType = await _context.ProvidersType.FindAsync(id);
 
@@ -46,7 +46,7 @@ namespace API.Controllers.Provider
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutProviderType(int id, ProviderType providerType)
+        public async Task<IActionResult> PutProviderType(int id, ProvidersType providerType)
         {
             if (id != providerType.Id_ProviderType)
             {
@@ -78,7 +78,7 @@ namespace API.Controllers.Provider
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<ProviderType>> PostProviderType(ProviderType providerType)
+        public async Task<ActionResult<ProvidersType>> PostProviderType(ProvidersType providerType)
         {
             _context.ProvidersType.Add(providerType);
             await _context.SaveChangesAsync();
@@ -88,7 +88,7 @@ namespace API.Controllers.Provider
 
         // DELETE: api/ProviderTypes/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<ProviderType>> DeleteProviderType(int id)
+        public async Task<ActionResult<ProvidersType>> DeleteProviderType(int id)
         {
             var providerType = await _context.ProvidersType.FindAsync(id);
             if (providerType == null)

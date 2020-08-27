@@ -1,9 +1,7 @@
 export class IProvidersModel {
-
-    idProviders: number;
-    Identification: string;
-    TypeIdentification: string;
-    ProviderName: string;
+    id_Providers: number;
+    identification: string;
+    typeIdentification: string;
+    providerName: string;
     ProviderType: string;
-
 }

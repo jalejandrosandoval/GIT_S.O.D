@@ -19,4 +19,8 @@ export class ProvidersService {
     return this.http.get<IProvidersModel[]>(this.ApiPath);  
   }
 
+  getProvidersById(Id: Number): Observable<IProvidersModel>{
+    return this.http.get<IProvidersModel>(`${this.ApiPath}/${Id}`);
+  }
+
 }

@@ -238,6 +238,8 @@ C:\Users\AlejandroSandoval\Desktop\GIT_S.O.D\Modular\APPWEB\bin\Debug\netcoreapp
 C:\Users\AlejandroSandoval\Desktop\GIT_S.O.D\Modular\APPWEB\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V3.dll
 C:\Users\AlejandroSandoval\Desktop\GIT_S.O.D\Modular\APPWEB\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V4.dll
 C:\Users\AlejandroSandoval\Desktop\GIT_S.O.D\Modular\APPWEB\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.dll
+C:\Users\AlejandroSandoval\Desktop\GIT_S.O.D\Modular\APPWEB\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\AlejandroSandoval\Desktop\GIT_S.O.D\Modular\APPWEB\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\AlejandroSandoval\Desktop\GIT_S.O.D\Modular\APPWEB\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
 C:\Users\AlejandroSandoval\Desktop\GIT_S.O.D\Modular\APPWEB\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\AlejandroSandoval\Desktop\GIT_S.O.D\Modular\APPWEB\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
@@ -433,5 +435,3 @@ C:\Users\AlejandroSandoval\Desktop\GIT_S.O.D\Modular\APPWEB\obj\Debug\netcoreapp
 C:\Users\AlejandroSandoval\Desktop\GIT_S.O.D\Modular\APPWEB\obj\Debug\netcoreapp3.1\APPWEB.dll
 C:\Users\AlejandroSandoval\Desktop\GIT_S.O.D\Modular\APPWEB\obj\Debug\netcoreapp3.1\APPWEB.pdb
 C:\Users\AlejandroSandoval\Desktop\GIT_S.O.D\Modular\APPWEB\obj\Debug\netcoreapp3.1\APPWEB.genruntimeconfig.cache
-C:\Users\AlejandroSandoval\Desktop\GIT_S.O.D\Modular\APPWEB\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
-C:\Users\AlejandroSandoval\Desktop\GIT_S.O.D\Modular\APPWEB\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll

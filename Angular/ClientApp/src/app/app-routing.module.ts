@@ -47,11 +47,13 @@ import { RegistersComponent } from './Components/fabrication/registers/registers
 
 // PURCHASES
 
-import { PurchasesComponent } from './Components/purchases/purchases.component';
+import { PurchasesComponent } from './Components/purchases/purchases/purchases.component';
+import { OrdersPurchasesComponent } from './Components/purchases/OrdersPurchases/orders-purchases/orders-purchases.component';
+import { OrdersPurchasesCreateComponent } from './Components/purchases/OrdersPurchases/orders-purchases-create/orders-purchases-create.component';
 
 // PURCHASES - PROVIDERS
 
-import { ProvidersComponent } from './Components/providers/providers/providers.component';
+import { ProvidersComponent } from './Components/providers/providers/providers/providers.component';
 import { ProvidersTypeComponent } from './Components/providers/providers-type/providers-type.component';
 
 // ACCOUNTING
@@ -95,6 +97,8 @@ import { LogsComponent } from './Components/configuration/logs/logs.component';
 import { LendingsComponent } from './Components/mantenaince/lendings/lendings/lendings.component';
 import { MantenaincesComponent } from './Components/mantenaince/mantenainces/mantenainces.component';
 
+import { HelpComponent } from './Components/menu/help/help.component';
+
 const routes: Routes = [
   
     { path: '',  component: HomeComponent },
@@ -102,6 +106,7 @@ const routes: Routes = [
     { path: 'about', component: AboutComponent },
     { path: 'recovery', component: RecoveryComponent },
     { path: 'default', component: DefaultComponent, canActivate: [AuthGuardService]},
+    { path: 'help', component: HelpComponent, canActivate: [AuthGuardService]},
     { path: 'configuration', component: ConfigurationComponent, canActivate: [AuthGuardService]},
 
     { path: 'configuration/database', component: DatabaseComponent, canActivate: [AuthGuardService]},
@@ -138,7 +143,9 @@ const routes: Routes = [
     { path: 'providers', component: ProvidersComponent, canActivate: [AuthGuardService]},
     { path: 'providerstypes', component: ProvidersTypeComponent, canActivate: [AuthGuardService]},
     { path: 'purchases', component: PurchasesComponent, canActivate: [AuthGuardService]},
-
+    { path: 'orderspurchases', component:OrdersPurchasesComponent, canActivate: [AuthGuardService]},
+    { path: 'orderspurchases/create', component:OrdersPurchasesCreateComponent, canActivate: [AuthGuardService]},
+    
     { path: 'accounting', component: AccountingComponent, canActivate: [AuthGuardService]},
     { path: 'accounting/fixed-assets', component: FixedAssetsComponent, canActivate: [AuthGuardService]},
     { path: 'accounting/fixed-assets/create', component: FixedAssetsCreateComponent, canActivate: [AuthGuardService]},
