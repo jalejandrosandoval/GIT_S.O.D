@@ -148,4 +148,3 @@ Y se agrega <b> --proxy-config proxy.conf.json </b>, con el fin de que exista un
 ```bash
 npm start
 ```
-
