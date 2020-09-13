@@ -34,7 +34,6 @@ import { FooterComponent } from './Components/Menu/footer/footer.component';
 import { LoginComponent } from './Components/Auth/login/login.component';
 import { AboutComponent } from './Components/about/about.component';
 import { RecoveryComponent } from './Components/Auth/recovery/recovery.component';
-import { HomeComponent } from './Components/home/home.component';
 import { UsersComponent } from './Components/configuration/users/users/users/users.component';
 import { UserscreateComponent } from './Components/configuration/users/users/userscreate/userscreate.component';
 import { UserseditComponent } from './Components/configuration/users/users/usersedit/usersedit.component';
@@ -99,6 +98,7 @@ import { EmployeeEditComponent } from './Components/THuman/Employees/Employees/e
 import { EmployeeTypeComponent } from './Components/THuman/Employees/Employees-Type/employee-type/employee-type.component';
 import { EmployeeTypeCreateComponent } from './Components/THuman/Employees/Employees-Type/employee-type-create/employee-type-create.component';
 import { EmployeeTypeEditComponent } from './Components/THuman/Employees/Employees-Type/employee-type-edit/employee-type-edit.component';
+import { HomeComponent } from './Components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -108,7 +108,6 @@ import { EmployeeTypeEditComponent } from './Components/THuman/Employees/Employe
     LoginComponent,
     AboutComponent,
     RecoveryComponent,
-    HomeComponent,
     UsersComponent,
     UserscreateComponent,
     UserseditComponent,
@@ -171,6 +170,7 @@ import { EmployeeTypeEditComponent } from './Components/THuman/Employees/Employe
     EmployeeTypeCreateComponent,
     EmployeeTypeEditComponent,
     EmployeeTypeComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
