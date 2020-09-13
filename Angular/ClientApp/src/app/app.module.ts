@@ -35,9 +35,9 @@ import { LoginComponent } from './Components/Auth/login/login.component';
 import { AboutComponent } from './Components/about/about.component';
 import { RecoveryComponent } from './Components/Auth/recovery/recovery.component';
 import { HomeComponent } from './Components/home/home.component';
-import { UsersComponent } from './Components/users/users/users/users.component';
-import { UserscreateComponent } from './Components/users/users/userscreate/userscreate.component';
-import { UserseditComponent } from './Components/users/users/usersedit/usersedit.component';
+import { UsersComponent } from './Components/configuration/users/users/users/users.component';
+import { UserscreateComponent } from './Components/configuration/users/users/userscreate/userscreate.component';
+import { UserseditComponent } from './Components/configuration/users/users/usersedit/usersedit.component';
 import { DefaultComponent } from './Components/default/default.component';
 import { ComplementsComponent } from './Components/complements/complements/complements.component';
 import { MantenainceComponent } from './Components/mantenaince/mantenaince/mantenaince.component';
@@ -45,9 +45,9 @@ import { EquipmentsComponent } from './Components/Mantenaince/equipments/equipme
 import { ProvidersComponent } from './Components/providers/providers/providers/providers.component';
 import { PageNotFoundComponent } from './Components/page-not-found/page-not-found.component';
 import { FabricationComponent } from './Components/fabrication/fabrication/fabrication.component';
-import { UsersTypeComponent } from './Components/users/users-type/users-type/users-type.component';
-import { UsersTypeCreateComponent } from './Components/users/Users-Type/users-type-create/users-type-create.component';
-import { UsersTypeEditComponent } from './Components/users/users-type/users-type-edit/users-type-edit.component';
+import { UsersTypeComponent } from './Components/configuration/users/users-type/users-type/users-type.component';
+import { UsersTypeCreateComponent } from './Components/configuration/users/Users-Type/users-type-create/users-type-create.component';
+import { UsersTypeEditComponent } from './Components/configuration/users/users-type/users-type-edit/users-type-edit.component';
 import { ProvidersTypeComponent } from './Components/providers/providers-type/providers-type.component';
 import { FixedAssetsComponent } from './Components/Accounting/Fixed-Assets/fixed-assets/fixed-assets/fixed-assets.component';
 import { AccountingComponent } from './Components/Accounting/Accounting/accounting.component';
@@ -65,7 +65,7 @@ import { CvDevicesCreateComponent } from './Components/Systems/cv-devices/cv-dev
 import { CvDevicesCreateCharacteristicsComponent } from './Components/Systems/cv-devices/cv-devices/cv-devices-create-characteristics/cv-devices-create-characteristics.component';
 import { CvDevicesCreateAccesoriesComponent } from './Components/Systems/cv-devices/cv-devices/cv-devices-create-accesories/cv-devices-create-accesories.component';
 import { ConfigurationComponent } from './Components/configuration/configuration/configuration.component';
-import { ProfileComponent } from './Components/users/profile/profile.component';
+import { ProfileComponent } from './Components/configuration/users/profile/profile.component';
 import { DatabaseComponent } from './Components/configuration/database/database.component';
 import { MigrationsComponent } from './Components/configuration/migrations/migrations.component';
 import { LogsComponent } from './Components/configuration/logs/logs.component';
@@ -90,6 +90,15 @@ import { OrdersPurchasesComponent } from './Components/purchases/OrdersPurchases
 import { OrdersPurchasesCreateComponent } from './Components/purchases/OrdersPurchases/orders-purchases-create/orders-purchases-create.component';
 import { ProvidersCreateComponent } from './Components/providers/providers/providers-create/providers-create.component';
 import { ProvidersEditComponent } from './Components/providers/providers/providers-edit/providers-edit.component';
+import { UsersMenuComponent } from './Components/configuration/users/users-menu/users-menu.component';
+
+import { EmployeeComponent } from './Components/THuman/Employees/Employees/employee/employee.component';
+import { EmployeeCreateComponent } from './Components/THuman/Employees/Employees/employee-create/employee-create.component';
+import { EmployeeEditComponent } from './Components/THuman/Employees/Employees/employee-edit/employee-edit.component';
+
+import { EmployeeTypeComponent } from './Components/THuman/Employees/Employees-Type/employee-type/employee-type.component';
+import { EmployeeTypeCreateComponent } from './Components/THuman/Employees/Employees-Type/employee-type-create/employee-type-create.component';
+import { EmployeeTypeEditComponent } from './Components/THuman/Employees/Employees-Type/employee-type-edit/employee-type-edit.component';
 
 @NgModule({
   declarations: [
@@ -154,7 +163,14 @@ import { ProvidersEditComponent } from './Components/providers/providers/provide
     OrdersPurchasesComponent,
     OrdersPurchasesCreateComponent,
     ProvidersCreateComponent,
-    ProvidersEditComponent
+    ProvidersEditComponent,
+    UsersMenuComponent,
+    EmployeeComponent,
+    EmployeeCreateComponent,
+    EmployeeEditComponent,
+    EmployeeTypeCreateComponent,
+    EmployeeTypeEditComponent,
+    EmployeeTypeComponent,
   ],
   imports: [
     BrowserModule,
