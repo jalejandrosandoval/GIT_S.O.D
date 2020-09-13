@@ -4,15 +4,22 @@
 
         <div class="row justify-content-center">
 
-            <div class="col-xl-5 col-lg-12 col-md-8">
+            <div class="col-xl-10 col-lg-12 col-md-8">
 
-                     <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="card o-hidden border-0 shadow-lg my-5">
 
                     <div class="card-body p-0">
+
                         <div class="row">
-                            <div class="col-lg-12">
+
+                            <div class="col-lg-6 d-none d-lg-block">
+                                <img src="../../../../assets/images/icons/Maintenance_Image.png"
+                                    class="img-fluid mx-auto d-block" alt="Responsive image" />
+                            </div>
+
+                            <div class="col-lg-6">
                                 <div class="p-5">
-                                   
+
                                     <div class="d-sm-flex align-items-center justify-content-center mb-4">
                                         <h3 class="text-center h3 mb-0 text-gray-900">
                                             <b> Petroco S.A</b>
@@ -24,10 +31,12 @@
                                         <p>Proporciona el número de tú documento en el cuadro de texto...</p>
                                     </div>
                                     <div class="form-group">
-                                    
-                                        <input class="form-control form-control-user" type="text" placeholder="Número de Documento..."
-                                            formControlName="_identificationUser" title="Número de Documento" required />
-                                        <div *ngIf="gIdentificationUser.invalid && (gIdentificationUser.dirty || gIdentificationUser.touched)"  class="text-center text-danger small">
+
+                                        <input class="form-control form-control-user" type="text"
+                                            placeholder="Número de Documento..." formControlName="_identificationUser"
+                                            title="Número de Documento" required />
+                                        <div *ngIf="gIdentificationUser.invalid && (gIdentificationUser.dirty || gIdentificationUser.touched)"
+                                            class="text-center text-danger small">
                                             <div *ngIf="gIdentificationUser.errors.required">
                                                 <b> Campo Obligatorio: </b> El número de documento es requerido!
                                             </div>
@@ -37,25 +46,31 @@
                                     <hr>
 
                                     <div class="text-center">
-                                        <button type="submit" value="Login" class="btn btn-danger btn-user btn-block" title="Recuperar Contraseña" [disabled]="recoveryForm.invalid">
+                                        <button type="submit" value="Login" class="btn btn-danger btn-user btn-block"
+                                            title="Recuperar Contraseña" [disabled]="recoveryForm.invalid">
                                             Recuperar Contraseña
                                         </button>
                                     </div>
 
                                     <hr>
-                                
-                                    <div class="text-center">                                       
-                                        <button class="btn btn-link btn-user btn-block" style="text-decoration:none" title="Iniciar Sesión"  routerLink="/login">
+
+                                    <div class="text-center">
+                                        <button class="btn btn-link btn-user btn-block" style="text-decoration:none"
+                                            title="Iniciar Sesión" routerLink="/login">
                                             <b> Iniciar Sesión </b> </button>
-                                    </div>                                        
+                                    </div>
                                 </div>
                             </div>
+
                         </div>
+
                     </div>
-                    
+
                 </div>
 
             </div>
         </div>
+
     </div>
+    
 </form>

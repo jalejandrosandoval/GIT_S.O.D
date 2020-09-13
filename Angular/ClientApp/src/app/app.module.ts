@@ -29,8 +29,10 @@ import { ErrorInterceptorService } from './Services/Auth/error-interceptor.servi
 
 //COMPONENTS
 
+// Menu
 import { NavBarComponent } from './Components/Menu/nav-bar/nav-bar.component';
 import { FooterComponent } from './Components/Menu/footer/footer.component';
+
 import { LoginComponent } from './Components/Auth/login/login.component';
 import { AboutComponent } from './Components/about/about.component';
 import { RecoveryComponent } from './Components/Auth/recovery/recovery.component';
@@ -51,7 +53,7 @@ import { ProvidersTypeComponent } from './Components/providers/providers-type/pr
 import { FixedAssetsComponent } from './Components/Accounting/Fixed-Assets/fixed-assets/fixed-assets/fixed-assets.component';
 import { AccountingComponent } from './Components/Accounting/Accounting/accounting.component';
 import { PurchasesComponent } from './Components/purchases/purchases/purchases.component';
-import { AssetsTypeComponent } from './Components/Accounting/Fixed-Assets/assets-type/assets-type.component';
+import { AssetsTypeComponent } from './Components/Accounting/Fixed-Assets/assets-type/assets-type/assets-type.component';
 import { AssetsTypeCreateComponent } from './Components/Accounting/Fixed-Assets/assets-type/assets-type-create/assets-type-create.component';
 import { AssetsTypeEditComponent } from './Components/Accounting/Fixed-Assets/assets-type/assets-type-edit/assets-type-edit.component';
 import { SystemsComponent } from './Components/Systems/systems/systems.component';
