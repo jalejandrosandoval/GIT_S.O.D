@@ -16,16 +16,16 @@ import { RecoveryComponent } from './Components/Auth/recovery/recovery.component
 
 import { DefaultComponent } from './Components/default/default.component';
 
-import { UsersComponent } from './Components/users/users/users/users.component';
-import { UserscreateComponent } from './Components/users/users/userscreate/userscreate.component';
-import { UserseditComponent } from './Components/users/users/usersedit/usersedit.component';
+import { UsersComponent } from './Components/configuration/users/users/users/users.component';
+import { UserscreateComponent } from './Components/configuration/users/users/userscreate/userscreate.component';
+import { UserseditComponent } from './Components/configuration/users/users/usersedit/usersedit.component';
 
-import { UsersTypeComponent } from './Components/users/users-type/users-type/users-type.component';
-import { UsersTypeCreateComponent } from './Components/users/Users-Type/users-type-create/users-type-create.component';
-import { UsersTypeEditComponent } from './Components/users/users-type/users-type-edit/users-type-edit.component';
+import { UsersTypeComponent } from './Components/configuration/users/users-type/users-type/users-type.component';
+import { UsersTypeCreateComponent } from './Components/configuration/users/Users-Type/users-type-create/users-type-create.component';
+import { UsersTypeEditComponent } from './Components/configuration/users/users-type/users-type-edit/users-type-edit.component';
 
 import { ConfigurationComponent } from './Components/configuration/configuration/configuration.component';
-import { ProfileComponent } from './Components/users/profile/profile.component';
+import { ProfileComponent } from './Components/configuration/users/profile/profile.component';
 
 // MANTENAICE 
 
@@ -82,6 +82,18 @@ import { DevicesTypesComponent } from './Components/Systems/CV-Devices/devices-t
 
 import { CellComponent } from './Components/Cell/Cell/cell/cell.component';
 
+//THUMAN
+import { THumanComponent } from './Components/Thuman/thuman/thuman.component';
+
+import { EmployeeComponent } from './Components/THuman/Employees/Employees/employee/employee.component';
+import { EmployeeCreateComponent } from './Components/THuman/Employees/Employees/employee-create/employee-create.component';
+import { EmployeeEditComponent } from './Components/THuman/Employees/Employees/employee-edit/employee-edit.component';
+
+import { EmployeeTypeComponent } from './Components/THuman/Employees/Employees-Type/employee-type/employee-type.component';
+import { EmployeeTypeCreateComponent } from './Components/THuman/Employees/Employees-Type/employee-type-create/employee-type-create.component';
+import { EmployeeTypeEditComponent } from './Components/THuman/Employees/Employees-Type/employee-type-edit/employee-type-edit.component';
+
+
 // COMPLEMENTS
 
 import { ComplementsComponent } from './Components/complements/complements/complements.component';
@@ -99,6 +111,8 @@ import { MantenaincesComponent } from './Components/mantenaince/mantenainces/man
 
 import { HelpComponent } from './Components/menu/help/help.component';
 
+import { UsersMenuComponent } from './Components/configuration/users/users-menu/users-menu.component';
+
 const routes: Routes = [
   
     { path: '',  component: HomeComponent },
@@ -107,20 +121,29 @@ const routes: Routes = [
     { path: 'recovery', component: RecoveryComponent },
     { path: 'default', component: DefaultComponent, canActivate: [AuthGuardService]},
     { path: 'help', component: HelpComponent, canActivate: [AuthGuardService]},
-    { path: 'configuration', component: ConfigurationComponent, canActivate: [AuthGuardService]},
+    { path: 'config', component: ConfigurationComponent, canActivate: [AuthGuardService]},
 
-    { path: 'configuration/database', component: DatabaseComponent, canActivate: [AuthGuardService]},
-    { path: 'configuration/migrations', component: MigrationsComponent, canActivate: [AuthGuardService]},
-    { path: 'configuration/logs', component: LogsComponent, canActivate: [AuthGuardService]},
+    { path: 'thuman', component: THumanComponent, canActivate: [AuthGuardService]},
+    { path: 'thuman/employee', component: EmployeeComponent, canActivate: [AuthGuardService]},
+    { path: 'thuman/employee/create', component: EmployeeCreateComponent, canActivate: [AuthGuardService]},
+    { path: 'thuman/employee/edit', component: EmployeeEditComponent, canActivate: [AuthGuardService]},
+    { path: 'thuman/employee-type', component: EmployeeTypeComponent, canActivate: [AuthGuardService]},
+    { path: 'thuman/employee-type/create', component: EmployeeTypeCreateComponent, canActivate: [AuthGuardService]},
+    { path: 'thuman/employee-type/edit', component: EmployeeTypeEditComponent, canActivate: [AuthGuardService]},
+    
+    { path: 'config/users-menu', component: UsersMenuComponent, canActivate: [AuthGuardService]},
+    { path: 'config/database', component: DatabaseComponent, canActivate: [AuthGuardService]},
+    { path: 'config/migrations', component: MigrationsComponent, canActivate: [AuthGuardService]},
+    { path: 'config/logs', component: LogsComponent, canActivate: [AuthGuardService]},
 
     { path: 'profile', component: ProfileComponent, canActivate: [AuthGuardService]},
-    { path: 'users', component: UsersComponent, canActivate: [AuthGuardService]},
-    { path: 'users/create', component: UserscreateComponent, canActivate: [AuthGuardService]},
-    { path: 'users/edit/:IdUsers', component: UserseditComponent, canActivate: [AuthGuardService]},
+    { path: 'config/users', component: UsersComponent, canActivate: [AuthGuardService]},
+    { path: 'config/users/create', component: UserscreateComponent, canActivate: [AuthGuardService]},
+    { path: 'config/users/edit/:IdUsers', component: UserseditComponent, canActivate: [AuthGuardService]},
 
-    { path: 'userstypes', component: UsersTypeComponent, canActivate: [AuthGuardService]},
-    { path: 'userstypes/create', component: UsersTypeCreateComponent, canActivate: [AuthGuardService]},
-    { path: 'userstypes/edit/:Id_UsersType', component: UsersTypeEditComponent, canActivate: [AuthGuardService]},
+    { path: 'config/userstypes', component: UsersTypeComponent, canActivate: [AuthGuardService]},
+    { path: 'config/userstypes/create', component: UsersTypeCreateComponent, canActivate: [AuthGuardService]},
+    { path: 'config/userstypes/edit/:Id_UsersType', component: UsersTypeEditComponent, canActivate: [AuthGuardService]},
 
     { path: 'complements', component: ComplementsComponent, canActivate: [AuthGuardService]},
     { path: 'departments', component: DepartmentsComponent, canActivate: [AuthGuardService]},
