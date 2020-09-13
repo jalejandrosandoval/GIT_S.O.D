@@ -6,6 +6,8 @@ import { AccountService } from 'src/app/Services/Account/account.service';
 import { LoginModel } from 'src/app/Models/Login/login-model';
 import { IUsersModel } from 'src/app/Models/Users/users-model';
 import { Observable } from 'rxjs';
+import { IConfigInitial } from 'src/app/Models/Config/config-initial';
+import { ConfigInitialService } from 'src/app/Services/Config/config-initial.service';
 
 @Component({
   selector: 'app-login',
@@ -14,14 +16,46 @@ import { Observable } from 'rxjs';
 })
 export class LoginComponent implements OnInit {
 
+  _IConfigInit: IConfigInitial;
   _IUsers: IUsersModel[];
   _InUserCurrent : Observable<IUsersModel[]>;
 
-  constructor(private accountservice: AccountService, private router: Router,
-    private formBuilder: FormBuilder, private toastr: ToastrService) { }
+  constructor(
+    private configInitService: ConfigInitialService,
+    private accountservice: AccountService, 
+    private router: Router,
+    private formBuilder: FormBuilder, 
+    private toastr: ToastrService) { }
 
   ngOnInit(): void {
+    this.dataConfig();
+  }
+
+  private dataConfig(){
     
+    var _ConfigId = 1;
+
+    // this.configInitService.getConfigInit().subscribe(res=> {this._IConfigInit = res 
+    //   });
+
+    this.configInitService.getConfigInitById(_ConfigId).subscribe(
+      res => 
+      {
+        this._IConfigInit = res
+        // console.log(Object.values(this._IConfigInit))
+      }
+    );    // this.configInitService
+    //   .getConfigInitById(_ConfigId)
+    //   .subscribe(
+    //     res =>
+    //     {
+    //       this._IConfigInit = res
+    //     },
+    //     error => this.getError(error)
+    //   );
+
+      
+
   }
 
   //Initializing form fields

@@ -5,7 +5,7 @@
         <button class="btn btn-link d-md-none rounded-circle mr-3 text-dark" type="button" data-toggle="collapse"
             data-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false"
             aria-label="Toggle navigation">
-            <i class="fa fa-bars"></i>
+            <i class="fa fa-bars text-danger"></i>
         </button>
 
         <div class="collapse navbar-collapse">
@@ -19,7 +19,7 @@
                                 <i class="fas fa-home"></i> </b> </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" title="Talento Humano" routerLink="/users"> <b> THumano </b> </a>
+                        <a class="nav-link text-dark" title="Talento Humano" routerLink="/thuman"> <b> THumano </b> </a>
                     </li>
                     
                     <li class="nav-item">
@@ -47,13 +47,20 @@
                     </li>
                     
                     <li class="nav-item">
+                        <a class="nav-link text-dark" title="Bodega" routerLink="/cell"> <b> Bodega </b> </a>
+                    </li>        
+
+                    <li class="nav-item">
                         <a class="nav-link text-dark" title="Complementos" routerLink="/complements"> <b> Complementos
                             </b> </a>
                     </li>
-                    
+
                     <li class="nav-item">
-                        <a class="nav-link text-dark" title="Bodega" routerLink="/cell"> <b> Bodega </b> </a>
-                    </li>                    
+                      <a class="nav-link text-dark" title="Configuraciones" routerLink="/config"> <b> Config.
+                      </b> </a>
+                    </li>
+                    
+                               
                 </ul>
 
             </div>
@@ -128,10 +135,6 @@
                             </a>
                             <div class="dropdown-divider"></div>
 
-                            <a class="dropdown-item" title="Configuraciones del Sistema" routerLink="/configuration">
-                                <b> <i class="fas fa-cog"></i> </b> Configuraciones del Sistema</a>
-                       
-                     
                             <a class="dropdown-item" title="Ayuda | PDF" routerLink="/help">
                                 <b> <i class="fas fa-question-circle"></i> </b> Ayuda <span class="small bg-success text-white"> &nbsp; <b> PDF </b> &nbsp;</span> 
                             </a>
