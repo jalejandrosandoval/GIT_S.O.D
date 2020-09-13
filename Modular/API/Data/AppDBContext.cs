@@ -2,6 +2,7 @@
 using Bussiness_Logic.Models.Afiliations;
 using Bussiness_Logic.Models.Col;
 using Bussiness_Logic.Models.Complements;
+using Bussiness_Logic.Models.Configuration;
 using Bussiness_Logic.Models.Employee;
 using Bussiness_Logic.Models.Providers;
 using Bussiness_Logic.Models.Users;
@@ -21,32 +22,37 @@ namespace API.Data
 
         }
 
-        //UsersDbSet
+        // * DBsets for the call the models from project bussiness_logic.
+
+        //Configuration_Initial -> DbSet
+        public DbSet<Configuration_Initial> Configuration_Initial { get; set; }
+
+        //Users -> DbSet
         public DbSet<Users> Users { get; set; }
         public DbSet<UsersType> UsersType { get; set; }
 
-        //ProvidersDbSet
+        //Providers -> DbSet
         public DbSet<Providers> Providers { get; set; }
         public DbSet<ProvidersType> ProvidersType { get; set; }
 
-        //EmployeeDbSet
+        //Employee -> DbSet
         public DbSet<Employees> Employees { get; set; }
         public DbSet<EmployeeType> EmployeeTypes { get; set; }
         public DbSet<Departments> Departments {get; set;}
         public DbSet<Employee_Cities> Employee_Cities { get; set; }
 
-        //ColDbSet
+        //Cities and Departments -> DbSet
         public DbSet<DepartmentsCol> DepartmentsCols { get; set; }
         public DbSet<CitiesCol> CitiesCols { get; set; }
 
-        //AfiliationsDbSet
+        //Afiliations -> DbSet
         public DbSet<Afiliation> Afiliation { get; set; }
         public DbSet<AFP> AFP { get; set; }
         public DbSet<ARL> ARL { get; set; }
         public DbSet<EPS> EPS { get; set; }
         public DbSet<CCF> CCF { get; set; }
 
-        //ComplementsDbSet
+        //Complements -> DbSet
         public DbSet<Internal_Information> Internal_Information { get; set; }
         public DbSet<StatusCivil> StatusCivil { get; set; }
         public DbSet<TypeCity> TypeCity { get; set; }
@@ -61,9 +67,17 @@ namespace API.Data
         //public DbSet<Mantenaince> Mantenainces { get; set; }
         //public DbSet<Purchase> Purchases { get; set; }
 
+        /// <summary>
+        /// This method allows configuration to be specified without modifying your entity classes.
+        /// </summary>
+        /// <param name="modelBuilder"></param>
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            //Configuration_Initial
+            modelBuilder.Entity<Configuration_Initial>().ToTable("Configuration_Initial");
 
             //Users
             modelBuilder.Entity<Users>().ToTable("Users");

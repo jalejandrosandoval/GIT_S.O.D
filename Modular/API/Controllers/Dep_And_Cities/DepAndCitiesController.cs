@@ -16,6 +16,8 @@ namespace API.Controllers.Dep_And_Cities
 
     [Route("api/[controller]")]
     [ApiController]
+
+    //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)
     public class DepAndCitiesController : ControllerBase
     {
         private readonly AppDBContext _context;
@@ -25,12 +27,34 @@ namespace API.Controllers.Dep_And_Cities
             _context = context;
         }
 
+        /// <summary>
+        /// GET: API/GetDeparments.
+        /// - Getting the data about the departments of Colombia.
+        /// </summary>
+        /// <returns>Object in .JSON the deparments</returns>
+        
         [HttpGet]
         [Route("GetDeparments")]
         public async Task<ActionResult<IEnumerable<DepartmentsCol>>> GetDepartmentsCol()
         {
             return await _context.DepartmentsCols.ToListAsync();
         }
+
+        /// <summary>
+        /// GET: API/GetDeparments.
+        /// - Getting the data about the departments of Colombia from param id.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        /// 
+        ///     GET / GetDeparments
+        ///     {
+        ///        "id": 1,
+        ///     }
+        ///     
+        /// </remarks>
+        /// <returns>Object in .JSON the deparments</returns>
+        
         [HttpGet("GetDeparments/{id}")]
         public async Task<ActionResult<DepartmentsCol>> GetDepartmentsCol(int id)
         {
@@ -44,12 +68,33 @@ namespace API.Controllers.Dep_And_Cities
             return departmentsCol;
         }
 
+        /// <summary>
+        /// GET: API/GetCities.
+        /// - Getting the data about the Cities of Colombia.
+        /// </summary>
+        /// <returns>Object in JSON the Cities</returns>
+
         [HttpGet]
         [Route("GetCities")]
         public async Task<ActionResult<IEnumerable<CitiesCol>>> GetCitiesCol()
         {
             return await _context.CitiesCols.ToListAsync();
         }
+
+        /// <summary>
+        /// GET: API/GetCities.
+        /// - Getting the data about the Cities of Colombia from param id.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        /// 
+        ///     GET / GetCities
+        ///     {
+        ///        "id": 1,
+        ///     }
+        ///     
+        /// </remarks>
+        /// <returns>Object in .JSON the cities data by departments</returns>
 
         [HttpGet("GetCities/{id}")]
         public async Task<ActionResult<CitiesCol>> GetCitiessCol(int id)
@@ -63,6 +108,21 @@ namespace API.Controllers.Dep_And_Cities
 
             return citiesCol;
         }
+
+        /// <summary>
+        /// GET: API/GetCitiesByDptos.
+        /// - Getting the data about the cities by departments of Colombia with a param id .
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        /// 
+        ///     GET / GetCitiesByDptos
+        ///     {
+        ///        "id": 1,
+        ///     }
+        ///     
+        /// </remarks>
+        /// <returns>Object in .JSON the deparments</returns>
 
         [HttpGet("GetCitiesByDptos/{id}")]
         public async Task<ActionResult<IEnumerable<CitiesCol>>> GetDepartmentsByCitiesCol(int id)

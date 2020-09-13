@@ -7,6 +7,7 @@ namespace Bussiness_Logic.Models
     [Serializable]
     public class Ubication
     {
+        //Primary Key 
         [Key]
         public int Id_Ubication { get; set; }
 

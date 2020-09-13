@@ -1,9 +1,7 @@
 using API.Data;
-using API.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -11,6 +9,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System;
+using System.IO;
+using System.Reflection;
 using System.Text;
 
 namespace API
@@ -23,6 +23,12 @@ namespace API
         }
 
         public IConfiguration Configuration { get; }
+
+        /// <summary>
+        /// Method calls the "ConfigureServices" and the function principal is configure the various services like:
+        /// Migrations, Cors, JSON, JWT and the Swagger.
+        /// </summary>
+        /// <param name="services"></param>
 
         public void ConfigureServices(IServiceCollection services)
         {
@@ -80,13 +86,20 @@ namespace API
             //Configuration the Swagger Docs
 
             services.AddSwaggerGen(config =>
-              config.SwaggerDoc("V1.0", new OpenApiInfo
-              {
-                  Title = "PetManAPP - API V1.0",
-                  Version = "V1.0",
-                  Description = "PetManAPP APP - WEB API"
-              })
-              );
+            {
+                config.SwaggerDoc("V1.0", new OpenApiInfo
+                {
+                    Title = "PetManAPP - API V1.0",
+                    Version = "V1.0",
+                    Description = "PetManAPP APP - WEB API"
+                });
+
+                //Add the document XML for the coments in the Swagger
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                config.IncludeXmlComments(xmlPath);
+
+             });
 
             services.AddControllers();
 

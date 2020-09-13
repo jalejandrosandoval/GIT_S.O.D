@@ -1,17 +1,21 @@
-﻿ using System;
+﻿using API.Data;
+using Bussiness_Logic.Models.Users;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using API.Data;
-using Bussiness_Logic.Models.Users;
 
 namespace API.Controllers.User
 {
+    /// <summary>
+    /// Controller for the Users.
+    /// </summary>
+
     [Route("api/[controller]")]
     [ApiController]
+
+    //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)
     public class UsersTypesController : ControllerBase
     {
         private readonly AppDBContext _context;
