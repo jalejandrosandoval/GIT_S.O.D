@@ -81,7 +81,7 @@ export class UserseditComponent implements OnInit {
       this.userService.putUsers(this.UserEditForm.value).subscribe(
         res => {
           this.toastr.info("¡Actualización Exitosa!", "Usuarios:"),
-          this.router.navigateByUrl("users")
+          this.router.navigateByUrl("config/users")
         },
         error => this.getError(error), 
       );

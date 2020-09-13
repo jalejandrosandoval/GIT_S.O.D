@@ -40,7 +40,7 @@ export class UsersTypeCreateComponent implements OnInit {
         res => {
           this.toastr.success("¡Creación Exitosa!", "Tipo de Usuarios:"), 
           this.UTypeCreateForm.reset(),
-          this.router.navigate(["/userstypes"]);
+          this.router.navigate(["/config/userstypes"]);
         },
         error => this.getError(error)  
         );

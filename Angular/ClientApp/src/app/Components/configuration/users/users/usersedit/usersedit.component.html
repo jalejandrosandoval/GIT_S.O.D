@@ -24,9 +24,8 @@
                     No existen registros para editar
                 </p>
 
-                <div class="card shadow" *ngIf="UserEditForm">
-
-                    <div class="card-header py-3">
+                <div class="card shadow mb-4" *ngIf="UserEditForm">
+<div class="card-header">
                         <h6 class="text-primary">
                             <i class="fas fa-user-edit"> </i> <b> Edición de Tipo de Usuarios </b>
                         </h6>
@@ -113,7 +112,7 @@
                                         <div class="form-group row">
                                             <div class="col-lg-3 mb-3 mb-lg-0 offset-lg-3">
                                                 <a class="btn btn-danger btn-user btn-block text-white" title="Cancelar"
-                                                    routerLink="/users">
+                                                    routerLink="/config/users">
                                                     <i class="fas fa-times-circle"></i> Cancelar
                                                 </a>
                                             </div>

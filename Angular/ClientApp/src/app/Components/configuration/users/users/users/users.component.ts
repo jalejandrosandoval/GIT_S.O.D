@@ -91,7 +91,7 @@ export class UsersComponent implements OnInit {
 
     var IdUsers = _IUsers.id_Users;
 
-    var ruta = `users/edit/`;
+    var ruta = `config/users/edit/`;
 
     this.router.navigateByUrl(ruta + `${IdUsers}`);
   }

@@ -64,7 +64,7 @@ export class UsersTypeComponent implements OnInit {
 
     var Id_UsersType = _IUTypes.id_UsersType;
 
-    var ruta = `userstypes/edit/`;
+    var ruta = `config/userstypes/edit/`;
 
     this.router.navigateByUrl(ruta + `${Id_UsersType}`);
   }
