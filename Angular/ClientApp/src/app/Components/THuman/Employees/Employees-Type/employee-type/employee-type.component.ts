@@ -10,6 +10,7 @@ export class EmployeeTypeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }

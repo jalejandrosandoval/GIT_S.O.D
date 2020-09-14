@@ -4,7 +4,7 @@
 
         <div class="row justify-content-center">
 
-            <div class="col-xl-10 col-lg-12 col-md-8">
+            <div class="col-xl-8 col-lg-12 col-md-8">
 
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
@@ -22,7 +22,8 @@
                 </div>
 
                 <div class="card shadow mb-4">
-<div class="card-header">
+
+                    <div class="card-header">
                         <h6 class="text-primary">
                             <i class="fas fa-plus"> </i> <b> Creación de Departamentos </b>
                         </h6>
@@ -41,15 +42,18 @@
                                     <form [formGroup]="DepartmentsCreateForm" (ngSubmit)="onCreate()">
                                         <div class="form-group row">
                                             <label class="font-weight-bold text-dark"> Nombre Deparamento(*):</label>
-                                            <input type="hidden" formControlName="DeparmentsId" value="DeparmentsId" id="DeparmentsId"
-                                                name="DeparmentsId">
+                                            <input type="hidden" formControlName="DeparmentsId" value="DeparmentsId"
+                                                id="DeparmentsId" name="DeparmentsId">
                                             <input class="form-control form-control-user"
-                                                formControlName="DepartmentsName" type="text" titlle="Nombre Departamento"
-                                                placeholder="Nombre Departmamento..." required />
-                                            <span *ngIf="gDepartmentsName.invalid && (gDepartmentsName.dirty || gDepartmentsName.touched)"
+                                                formControlName="DepartmentsName" type="text"
+                                                titlle="Nombre Departamento" placeholder="Nombre Departamento..."
+                                                required />
+                                            <span
+                                                *ngIf="gDepartmentsName.invalid && (gDepartmentsName.dirty || gDepartmentsName.touched)"
                                                 class="text-center text-danger small">
+                                                <br>
                                                 <span *ngIf="gDepartmentsName.errors.required">
-                                                    <b> * Campo Requerido: </b> Nombre Departmaneto Requerido!
+                                                    <b> * Campo Requerido: </b> Nombre Departamento Requerido!
                                                 </span>
                                             </span>
                                         </div>
@@ -57,13 +61,13 @@
                                         <br>
 
                                         <div class="form-group row">
-                                            <div class="col-lg-3 mb-3 mb-lg-0 offset-lg-3">
+                                            <div class="col-lg-4 mb-3 mb-lg-0 offset-lg-2">
                                                 <a class="btn btn-danger btn-user btn-block text-white" title="Cancelar"
                                                     routerLink="/departments">
                                                     <i class="fas fa-times-circle"></i> Cancelar
                                                 </a>
                                             </div>
-                                            <div class="col-lg-3 mb-3 mb-lg-0 ">
+                                            <div class="col-lg-4 mb-3 mb-lg-0">
                                                 <button type="submit" value="Create"
                                                     class="btn btn-primary btn-user btn-block text-white"
                                                     title="Guardar" [disabled]="DepartmentsCreateForm.invalid">
@@ -73,15 +77,15 @@
 
                                         </div>
                                     </form>
-    
+
                                 </div>
-    
+
                             </div>
-    
+
                         </div>
-    
+
                     </div>
-    
+
                 </div>
 
             </div>

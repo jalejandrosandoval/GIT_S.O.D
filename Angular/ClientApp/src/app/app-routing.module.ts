@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-// COMPONENTS
-
-//import { PageNotFoundComponent } from './Components/page-not-found/page-not-found.component';
+// ----------- COMPONENTS -----------
 
 import { HomeComponent } from './Components/home/home.component';
+
+//import { PageNotFoundComponent } from './Components/page-not-found/page-not-found.component';
 
 // AUTH
 import { LoginComponent } from './Components/Auth/login/login.component';
@@ -53,8 +53,10 @@ import { OrdersPurchasesCreateComponent } from './Components/purchases/OrdersPur
 
 // PURCHASES - PROVIDERS
 
-import { ProvidersComponent } from './Components/providers/providers/providers/providers.component';
-import { ProvidersTypeComponent } from './Components/providers/providers-type/providers-type.component';
+import { ProvidersComponent } from './Components/purchases/providers/providers/providers.component';
+import { ProvidersTypeComponent } from './Components/complements/providers-type/providers-type/providers-type.component';
+import { ProvidersTypeEditComponent } from './Components/Complements/providers-type/providers-type-edit/providers-type-edit.component';
+import { ProvidersTypeCreateComponent } from './Components/Complements/providers-type/providers-type-create/providers-type-create.component';
 
 // ACCOUNTING
 
@@ -76,7 +78,6 @@ import { CVDevicesComponent } from './Components/Systems/cv-devices/cv-devices/c
 import { CvDevicesCreateComponent } from './Components/Systems/cv-devices/cv-devices/cv-devices-create/cv-devices-create.component';
 import { CvDevicesCreateCharacteristicsComponent } from './Components/Systems/cv-devices/cv-devices/cv-devices-create-characteristics/cv-devices-create-characteristics.component';
 import { CvDevicesCreateAccesoriesComponent } from './Components/Systems/cv-devices/cv-devices/cv-devices-create-accesories/cv-devices-create-accesories.component';
-import { DevicesTypesComponent } from './Components/Systems/CV-Devices/devices-types/devices-types.component';
 
 // CELL
 
@@ -93,10 +94,13 @@ import { EmployeeTypeComponent } from './Components/THuman/Employees/Employees-T
 import { EmployeeTypeCreateComponent } from './Components/THuman/Employees/Employees-Type/employee-type-create/employee-type-create.component';
 import { EmployeeTypeEditComponent } from './Components/THuman/Employees/Employees-Type/employee-type-edit/employee-type-edit.component';
 
-
 // COMPLEMENTS
 
 import { ComplementsComponent } from './Components/complements/complements/complements.component';
+
+import { DevicesTypesComponent } from './Components/complements/devices-types/devices-types/devices-types.component';
+import { DevicesTypesEditComponent } from './Components/Complements/devices-types/devices-types-edit/devices-types-edit.component';
+import { DevicesTypesCreateComponent } from './Components/Complements/devices-types/devices-types-create/devices-types-create.component';
 
 import { DepartmentsComponent } from './Components/complements/departments/departments/departments.component';
 import { DepartmentsCreateComponent } from './Components/complements/departments/departments-create/departments-create.component';
@@ -164,7 +168,10 @@ const routes: Routes = [
     { path: 'fabrication/tracings', component: TracingsComponent , canActivate: [AuthGuardService]}, 
 
     { path: 'providers', component: ProvidersComponent, canActivate: [AuthGuardService]},
-    { path: 'providerstypes', component: ProvidersTypeComponent, canActivate: [AuthGuardService]},
+    { path: 'complements/providerstypes', component: ProvidersTypeComponent, canActivate: [AuthGuardService]},
+    { path: 'complements/providerstypes/create', component: ProvidersTypeCreateComponent, canActivate: [AuthGuardService]},
+    { path: 'complements/providerstypes/edit', component: ProvidersTypeEditComponent, canActivate: [AuthGuardService]},
+    
     { path: 'purchases', component: PurchasesComponent, canActivate: [AuthGuardService]},
     { path: 'orderspurchases', component:OrdersPurchasesComponent, canActivate: [AuthGuardService]},
     { path: 'orderspurchases/create', component:OrdersPurchasesCreateComponent, canActivate: [AuthGuardService]},

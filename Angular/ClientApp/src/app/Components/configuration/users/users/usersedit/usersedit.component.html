@@ -4,12 +4,18 @@
 
         <div class="row justify-content-center">
 
-            <div class="col-xl-10 col-lg-12 col-md-8">
+            <div class="col-xl-12 col-lg-12 col-md-8">
 
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"> <a href="" routerLink="/users"> Usuarios </a> </li>
-                        <li class="breadcrumb-item active" aria-current="page"><b> Edición </b></li>
+                        <li class="breadcrumb-item"> <a href="" routerLink="/config" title="Configuración">
+                                Configuración </a> </li>
+                        <li class="breadcrumb-item"> <a href="" routerLink="/config/users-menu" title="Menú Usuarios">
+                                Menú Usuarios </a>
+                        </li>
+                        <li class="breadcrumb-item"> <a href="" routerLink="/config/users" title="Usuarios"> Usuarios
+                            </a> </li>
+                        <li class="breadcrumb-item active" aria-current="page" title="Edición"><b> Edición </b></li>
                     </ol>
                 </nav>
 
@@ -19,13 +25,13 @@
                         <b> Usuarios </b>
                     </h1>
                 </div>
-                
+
                 <p *ngIf="!UserEditForm" class="text-center">
                     No existen registros para editar
                 </p>
 
                 <div class="card shadow mb-4" *ngIf="UserEditForm">
-<div class="card-header">
+                    <div class="card-header">
                         <h6 class="text-primary">
                             <i class="fas fa-user-edit"> </i> <b> Edición de Tipo de Usuarios </b>
                         </h6>
@@ -51,9 +57,11 @@
                                         <div class="form-group row">
                                             <div class="col-sm-6 mb-3 mb-sm-0">
                                                 <label class="font-weight-bold text-dark"> Primer Nombre:</label>
-                                                <input class="form-control form-control-user" formControlName="firstName" title="Primer Nombre"
-                                                    type="text" placeholder="Primer Nombre..." />
-                                                    <span *ngIf="UserEditFormData.firstName.invalid && (UserEditFormData.firstName.dirty || UserEditFormData.firstName.touched)"
+                                                <input class="form-control form-control-user"
+                                                    formControlName="firstName" title="Primer Nombre" type="text"
+                                                    placeholder="Primer Nombre..." />
+                                                <span
+                                                    *ngIf="UserEditFormData.firstName.invalid && (UserEditFormData.firstName.dirty || UserEditFormData.firstName.touched)"
                                                     class="text-center text-danger small">
                                                     <span *ngIf="UserEditFormData.firstName.errors.required">
                                                         <b> * Campo Requerido: </b> Primer Nombre Requerido!
@@ -62,38 +70,43 @@
                                             </div>
                                             <div class="col-sm-6">
                                                 <label class="font-weight-bold text-dark"> Segundo Nombre:</label>
-                                                <input class="form-control form-control-user" formControlName="lastName" title="Segundo Nombre"
-                                                    type="text" placeholder="Segundo Nombre..." />
+                                                <input class="form-control form-control-user" formControlName="lastName"
+                                                    title="Segundo Nombre" type="text"
+                                                    placeholder="Segundo Nombre..." />
                                             </div>
                                         </div>
-        
+
                                         <div class="form-group row">
                                             <div class="col-sm-6 mb-3 mb-sm-0">
-                                                <label class="font-weight-bold text-dark"> Número de Identificación:</label>
-                                                <input class="form-control form-control-user" formControlName="n_Identification" title="Número de Identificación"
+                                                <label class="font-weight-bold text-dark"> Número de
+                                                    Identificación:</label>
+                                                <input class="form-control form-control-user"
+                                                    formControlName="n_Identification" title="Número de Identificación"
                                                     type="text" placeholder="Número de Identificación..." />
                                             </div>
                                             <div class="col-sm-6">
                                                 <label class="font-weight-bold text-dark"> Tipo de Documento:</label>
-                                                <input class="form-control form-control-user" formControlName="typeDocument" title="Tipo de Documento"
-                                                    type="text" placeholder="Tipo de Documento..."  />
+                                                <input class="form-control form-control-user"
+                                                    formControlName="typeDocument" title="Tipo de Documento" type="text"
+                                                    placeholder="Tipo de Documento..." />
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-sm-4">
                                                 <label class="font-weight-bold text-dark"> Usuario:</label>
-                                                <input class="form-control form-control-user" formControlName="username" title="Usuario"
-                                                    type="text" placeholder="Usuario..." />
+                                                <input class="form-control form-control-user" formControlName="username"
+                                                    title="Usuario" type="text" placeholder="Usuario..." />
                                             </div>
                                             <div class="col-sm-4">
                                                 <label class="font-weight-bold text-dark"> Contraseña:</label>
-                                                <input class="form-control form-control-user" formControlName="userPassword" title="Contraseña"
-                                                    type="password" placeholder="Contraseña..."  />
+                                                <input class="form-control form-control-user"
+                                                    formControlName="userPassword" title="Contraseña" type="password"
+                                                    placeholder="Contraseña..." />
                                             </div>
                                             <div class="col-sm-4">
                                                 <label class="font-weight-bold text-dark"> Estado:</label>
-                                                <select class="form-control form-control-user" formControlName="status" title="Estado"
-                                                    type="text" placeholder="Seleccione..." >
+                                                <select class="form-control form-control-user" formControlName="status"
+                                                    title="Estado" type="text" placeholder="Seleccione...">
                                                     <option value=true> Activo </option>
                                                     <option value=false> Inactivo </option>
                                                 </select>
@@ -102,8 +115,9 @@
                                         <div class="form-group row">
                                             <div class="col-sm-6 mb-3 mb-sm-0">
                                                 <label class="font-weight-bold text-dark"> Tipo Usuario:</label>
-                                                <input class="form-control form-control-user" formControlName="id_UsersType"
-                                                    type="text" placeholder="Nombre Tipo Usuario..." disabled />                                    
+                                                <input class="form-control form-control-user"
+                                                    formControlName="id_UsersType" type="text"
+                                                    placeholder="Nombre Tipo Usuario..." disabled />
                                             </div>
                                         </div>
 
