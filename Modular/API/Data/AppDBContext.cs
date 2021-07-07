@@ -12,7 +12,7 @@ namespace API.Data
 
         public AppDBContext(DbContextOptions<AppDBContext> options) : base(options)
         {
-
+            Database.EnsureCreated();
         }
 
         public DbSet<Users> Users { get; set; }
@@ -41,6 +41,32 @@ namespace API.Data
             modelBuilder.Entity<Providers>().ToTable("Providers");
             modelBuilder.Entity<ProviderType>().ToTable("ProvidersType");
             modelBuilder.Entity<Logs>().ToTable("Logs");
+
+            modelBuilder.Entity<Users>().HasData(
+                new Users {
+                    Id_Users=1,
+                    N_Identification="1098657000",
+                    FirstName="wallas",
+                    LastName="Trigos",
+                    Username="wallas",
+                    Status=true,
+                    TypeDocument="CC",
+                    UserPassword="wallas",
+                    UsersTypeId = 1
+                    // ,
+                    // UserType = new UsersType{
+                    //     Id_UsersType =1,
+                    //     UsersTypeName = "Admin"
+                    // }
+                }
+            );
+
+            modelBuilder.Entity<UsersType>().HasData(
+                new UsersType{
+                    Id_UsersType = 1,
+                    UsersTypeName = "Admin"
+                }
+            );
         }
 
     }

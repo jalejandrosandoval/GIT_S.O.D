@@ -28,7 +28,11 @@ namespace API.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Users>>> GetUsers()
         {
-            return await _ContextUsers.Users.ToListAsync();
+            return await _ContextUsers
+                        .Users
+                        .Include(u=> u.UserType)
+                        .Where(u => u.UserType.Id_UsersType == u.UsersTypeId)
+                        .ToListAsync();
         }
 
         [HttpGet("{id}")]
